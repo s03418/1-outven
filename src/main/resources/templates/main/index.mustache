@@ -1,0 +1,357 @@
+{{>layouts/header}}
+<article>
+	{{>layouts/nav}}
+
+	<section class="commu-center">
+		<div id="comAdExtVideo" class="comAdExtVideo floating">
+			<div style="width: 800px;">
+				<div id="__A1VideoLargeBanner" style="float: none; display: block;"></div>
+			</div>
+		</div>
+		<div class="commu-body pcMain">
+			<div class="ibuilderModules">
+				<section class="list-wrap  w-100">
+					<article class="list-common">
+						<div class="dummywrap title" id="imid_f061a073621f814">
+							<h3 class="commu-title" align="center">
+								<a class="tit-btn"
+									target="_self" style="cursor: context-menu; color: #ffffff; font-weight: bold; 
+									text-indent: 10px">
+									추천 게시판 </a> <a class="more-btn"
+									href="/board/recommend_BoardList">더보기+</a>
+							</h3>
+						</div>
+						<article class="report-issue" style="margin-left: 20%;">
+							<ul>
+								{{#recommend_board}}
+								<li><a
+									href="/board/recommend_BoardView?board_num={{board_num}}&pg=1&detail_category={{detail_category}}"
+									class="hot_bg">
+										<div class="icon hot">추천</div>
+										<div class="tit">{{board_title}}</div>
+								</a></li> {{/recommend_board}}
+							</ul>
+						</article>
+					</article>
+				</section>
+
+
+				<section class="list-wrap  w-100">
+					<article class="list-common">
+						<style>
+#imid_f061a073621f814 .commu-title {
+	height: 40px;
+	background-color: #3a7aa0;
+	border-width: 4px;
+	border-color: #14617d;
+	border-style: solid
+}
+
+#imid_f061a073621f814 .commu-title a {
+	line-height: 40px;
+	line-height: 32px
+}
+
+#imid_f061a073621f814 .commu-title a.more-btn {
+	padding-top: 0px
+}
+
+#imid_f061a073621f814 a:first-child {
+	font-family: inherit
+}
+
+#imid_f061a073621f814 .commu-title a.tit-btn {
+	color: #000000
+}
+</style>
+
+						<!-- ==================== Module [title] Begin ==================== -->
+						<div class="dummywrap title" id="imid_f061a073621f814">
+							<h3 class="commu-title" align="center">
+								<a class="tit-btn"
+									style="cursor: context-menu; color: #ffffff; font-weight: bold; text-indent: 10px">
+									팬아트 &amp; 카툰 갤러리 </a> <a class="more-btn"
+									href="/board/imageBoardList">더보기+</a>
+							</h3>
+						</div>
+						<!-- ==================== Module [title] End ==================== -->
+
+
+						<style>
+#imid_614f5be9f82cc80 li>a::before {
+	border-color: #2fafca
+}
+
+.commu-center .list-common .gallery.ver2>li:nth-child(3) {
+	margin: 0;
+	width: 362px;
+}
+
+.commu-center .list-common .gallery.ver2>li {
+	float: left;
+	margin: 0 0 0 20px;
+	width: 178px;
+	height: 254px;
+}
+</style>
+{{#art_board}}
+	<ul id="imid_614f5be9f82cc80" class="gallery ver2">
+		<!-- 좌측 게시물 -->
+
+		<li><a href="/board/imageBoardView?board_num={{board_num}}&pg=1&detail_category={{detail_category}}">
+				<div class="thumb">
+					<img src="../storage/{{board_img}}">
+				</div>
+				<div class="txt">
+					<p class="tit">{{board_title}}</p>
+					<div class="info">
+						<div class="nick">{{nick_name}}</div>
+					</div>
+				</div>
+		</a></li>
+	</ul>
+{{/art_board}}
+
+					</article>
+				</section>
+				<style>
+#imid_741cf88650e1c62 .commu-title {
+	height: 33px;
+	background-repeat: no-repeat;
+	background-position: 0px center;
+	background-color: #ffffff;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	border-bottom-style: solid
+}
+
+#imid_741cf88650e1c62 .commu-title a {
+	line-height: 33px
+}
+
+#imid_741cf88650e1c62 .commu-title a.more-btn {
+	padding-top: 0px
+}
+
+#imid_741cf88650e1c62 a:first-child {
+	font-family: inherit
+}
+
+#imid_741cf88650e1c62 .commu-title a.tit-btn {
+	color: #000000
+}
+
+#imid_741cf88650e1c62 .commu-title .more-btn {
+	text-indent: 0;
+	font-family: inherit;
+	font-weight: normal;
+	color: #999999
+}
+
+* {
+	box-sizing: inherit;
+	outline: none;
+}
+</style>
+
+				<!-- ==================== Module [title] Begin ==================== -->
+				<section class="list-wrap w-50">
+					<article class="list-common left">
+						<div class="dummywrap title" id="imid_741cf88650e1c62">
+							<h3 class="commu-title">
+								<a class="tit-btn"
+									style="cursor: context-menu; color: #000000; font-weight: bold; text-indent: 15px">
+									<b style="color: #1e56ad">포지션별</b> 게시판
+								</a><a class="more-btn" href="/board/positionBoardList">더보기+</a>
+							</h3>
+						</div>
+						<!-- ==================== Module [title] End ==================== -->
+
+
+
+						<div id="imid_4c71474f5341b03" class=" type-h">
+
+
+
+							<!-- ==================== Module [list-bbs] Begin ==================== -->
+							{{#position_board}}
+							<ul class="basic board2778">
+								<li class="rows1 b2778"><a
+									href="/board/positionBoardView?board_num={{board_num}}&pg=1&detail_category={{detail_category}}"
+									class="link_txt flex align-items-center">
+										<div class="txt-wrap">
+											<div class="cate" style="color: #3d85c6;">{{detail_category}}</div>
+											<div class="tit" style="color: #222222;">{{board_title}}</div>
+										</div>
+								</a></li>
+							</ul>
+							{{/position_board}}
+
+							<!-- ==================== Module [list-bbs] End ==================== -->
+
+
+
+
+						</div>
+					</article>
+					<article class="list-common right">
+						<style>
+#imid_d3af5fcea70c2eb .commu-title {
+	height: 33px;
+	background-repeat: no-repeat;
+	background-position: 0px center;
+	background-color: #ffffff;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	border-bottom-style: solid
+}
+
+#imid_d3af5fcea70c2eb .commu-title a {
+	line-height: 33px
+}
+
+#imid_d3af5fcea70c2eb .commu-title a.more-btn {
+	padding-top: 0px
+}
+
+#imid_d3af5fcea70c2eb a:first-child {
+	font-family: inherit
+}
+
+#imid_d3af5fcea70c2eb .commu-title a.tit-btn {
+	color: #000000
+}
+</style>
+
+						<!-- ==================== Module [title] Begin ==================== -->
+						<div class="dummywrap title" id="imid_d3af5fcea70c2eb">
+							<h3 class="commu-title">
+								<a class="tit-btn"
+									style="cursor: context-menu; color: #000000; font-weight: bold; text-indent: 15px">
+									<b style="color: #b60000">패치 & 정보</b> 게시판
+								</a><a class="more-btn" href="/board/patchBoardList">더보기+</a>
+							</h3>
+						</div>
+						<!-- ==================== Module [title] End ==================== -->
+
+						<!-- ==================== Module [list-bbs] Begin ==================== -->
+
+						{{#patch_board}}
+						<ul class="basic board0 list-bbs">
+							<li class="b4625"><a
+								href="/board/patchBoardView?board_num={{board_num}}&pg=1&detail_category={{detail_category}}"
+								class="link_txt flex align-items-center">
+									<div class="txt-wrap">
+										<div class="cate" style="color: #3d85c6;">{{detail_category}}</div>
+										<div class="tit" style="color: #222222;">{{board_title}}</div>
+									</div>
+							</a></li>
+						</ul>
+						{{/patch_board}}
+
+						<!-- ==================== Module [list-bbs] End ==================== -->
+					</article>
+				</section>
+
+				<section class="list-wrap w-50">
+					<article class="list-common left">
+						<!-- ==================== Module [title] Begin ==================== -->
+						<div class="dummywrap title" id="imid_741cf88650e1c62">
+							<h3 class="commu-title">
+								<a class="tit-btn"
+									style="cursor: context-menu; color: #000000; font-weight: bold; text-indent: 15px">
+									<b style="color: #1e56ad">팁&공략</b> 게시판
+								</a><a class="more-btn" href="/board/tipBoardList">더보기+</a>
+							</h3>
+						</div>
+						<!-- ==================== Module [title] End ==================== -->
+
+
+
+						<div id="imid_4c71474f5341b03" class=" type-h">
+
+							<!-- ==================== Module [list-bbs] Begin ==================== -->
+
+							{{#tip_board}}
+							<ul class="basic board2778">
+								<li class="rows1 b2778"><a
+									href="/board/tipBoardView?board_num={{board_num}}&pg=1&detail_category={{detail_category}}"
+									class="link_txt flex align-items-center">
+										<div class="txt-wrap">
+											<div class="cate" style="color: #3d85c6;">{{detail_category}}</div>
+											<div class="tit" style="color: #222222;">{{board_title}}</div>
+										</div>
+								</a></li>
+							</ul>
+							{{/tip_board}}
+
+							<!-- ==================== Module [list-bbs] End ==================== -->
+
+
+
+
+						</div>
+					</article>
+					<article class="list-common right">
+						<style>
+#imid_d3af5fcea70c2eb .commu-title {
+	height: 33px;
+	background-image:
+		url(https://upload3.inven.co.kr/upload/2021/07/05/data/i21309143942.png);
+	background-repeat: no-repeat;
+	background-position: 0px center;
+	background-color: #ffffff;
+	border-bottom-width: 1px;
+	border-bottom-color: #000000;
+	border-bottom-style: solid
+}
+
+#imid_d3af5fcea70c2eb .commu-title a {
+	line-height: 33px
+}
+
+#imid_d3af5fcea70c2eb .commu-title a.more-btn {
+	padding-top: 0px
+}
+
+#imid_d3af5fcea70c2eb a:first-child {
+	font-family: inherit
+}
+
+#imid_d3af5fcea70c2eb .commu-title a.tit-btn {
+	color: #000000
+}
+</style>
+
+						<!-- ==================== Module [title] Begin ==================== -->
+						<div class="dummywrap title" id="imid_d3af5fcea70c2eb">
+							<h3 class="commu-title">
+								<a class="tit-btn"
+									style="cursor: context-menu; color: #000000; font-weight: bold; text-indent: 15px">
+									<b style="color: #b60000">사건 & 사고 </b>게시판
+								</a><a class="more-btn" href="/board/accidentBoardList">더보기+</a>
+							</h3>
+						</div>
+						<!-- ==================== Module [title] End ==================== -->
+
+						<!-- ==================== Module [list-bbs] Begin ==================== -->
+						{{#acc_board}}
+						<ul class="basic board0 list-bbs">
+							<li class="b4625"><a
+								href="/board/accidentBoardView?board_num={{board_num}}&pg=1&detail_category={{detail_category}}"
+								class="link_txt flex align-items-center">
+									<div class="txt-wrap">
+										<div class="cate" style="color: #3d85c6;">{{detail_category}}</div>
+										<div class="tit" style="color: #222222;">{{board_title}}</div>
+									</div>
+							</a></li>
+						</ul>
+						{{/acc_board}}
+					</article>
+				</section>
+			</div>
+		</div>
+	</section>
+</article>
+
+{{>layouts/footer}}

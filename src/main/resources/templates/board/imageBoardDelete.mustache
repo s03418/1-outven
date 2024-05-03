@@ -1,0 +1,13 @@
+{{>layouts/header}}
+
+<script>
+	if(!{{result}}){
+		alert("삭제 성공");
+		location.href="/board/imageBoardList?pg={{pg}}"
+	} else{
+		alert("삭제 실패");
+		history.back();
+	}
+</script>
+
+{{>layouts/footer}}

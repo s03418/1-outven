@@ -1,0 +1,392 @@
+{{>layouts/header}}
+<article>
+	{{>layouts/nav}}
+<script type="text/javascript">
+function confirmDel() {
+	if(confirm("정말 삭제하시겠습니까?")) {
+		location.href="/board/tipBoardDelete?board_num={{board_num}}&pg={{pg}}";
+	}
+}
+</script>
+	<section class="commu-center">
+		<div id="comAdExtVideo" class="comAdExtVideo floating">
+			<div style="width: 800px;">
+				<div id="__A1VideoLargeBanner" style="float: none; display: block;"></div>
+			</div>
+		</div>
+		<div class="commu-body pcMain">
+			<div id="nickNameLayer"></div>
+			<!-- ADOP SEO Tag S-->
+			<div class="articleView ">
+				<!-- A1 Video Code S -->
+				<div style="width: 100%; position: relative">
+					<div
+						style="position: absolute; z-index: 99999999; top: 0; left: 0; right: 0;">
+						<div id="__A1VideoLargeBanner_board"
+							style="float: none; display: block;"></div>
+					</div>
+				</div>
+				<!-- A1 Video Code E -->
+				<div class="viewTopBoardName"
+					style="float: right; display: inline; padding-top: 2px;">
+					<a style="color: #787878;" href="/board/tipBoardList">팁 & 공략 게시판</a>
+				</div>
+				<table cellpadding="0" cellspacing="0" border="0"
+					style="table-layout: fixed; word-wrap: break-word; clear: both;">
+					<tbody>
+						<tr>
+							<td>
+								<div id="tbArticle">
+									<div class="articleHead hC_purple1">
+										<div class="articleInfo">
+											<div class="articleWriter">
+												<span>
+													&nbsp;{{board.nick_name}}({{board.member_id}})
+												</span>
+											</div>
+											<div class="articleDate">{{board.board_logtime}}</div>
+											<div class="articleHit">
+												<strong>조회: </strong>{{board.board_hit}}&nbsp;&nbsp;&nbsp;&nbsp;
+												<strong>추천: </strong><span id="bbsRecommendNum1">{{board.board_recommend}}</span>
+											</div>
+										</div>
+									</div>
+									<div class="articleHeadMenu">
+										<div class="topmenuInfo">
+											<div class="articleCategory">{{board.detail_category}}&nbsp;</div>
+											<div class="articleIp">&nbsp;</div>
+											<div class="articleTopMenu">
+												<span style="color: #787878;"> <a
+													style="color: #787878;"
+													href="/board/tipBoardList?pg={{pg}}">목록</a>
+													{{#isMemId}} <a style="color: #787878;"
+													href="#"
+													onclick="confirmDel()">삭제</a> <a style="color: #787878;"
+													href="/board/tipBoardModifyForm?board_num={{board_num}}&pg={{pg}}">수정</a>
+													{{/isMemId}}
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="articleMain">
+										<div class="articleSubject ">
+											<div class="articleTitle">
+												<h1>{{board.board_title}}</h1>
+											</div>
+											<div class="googleSubjectAd"></div>
+										</div>
+										<div class="articleContent">
+											<div id="imageCollectDiv" class="contentBody">
+												<!-- ============== CONTENT ============== -->
+
+												<div id="powerbbsContent">
+													<div>
+														{{#board.board_img}} <img
+															src="../storage/{{board.board_img}}" border="0"
+															loading="lazy"
+															style="aspect-ratio: 800/519; cursor: pointer; width: 800px;"><br>
+														{{/board.board_img}} {{^board.board_img}}
+														<!-- 이미지가 없는 경우 -->
+														<p style="display: none;">이미지가 없습니다.</p>
+														{{/board.board_img}}
+													</div>
+													{{board.board_content}}
+													<!-- ============== End CONTENT ============== -->
+
+												</div>
+												{{#member}}<input type="hidden" id="hiddenData"
+													data-id="{{member_id}}" data-wid="{{board.member_id}}"
+													data-bnum={{board.board_num}}>{{/member}}
+												<!-- 24/02/23 추가 -->
+												<script type="text/javascript">
+	$(function(){
+		// 추천 버튼 클릭시 이벤트 처리
+		$("#btnRecom").click(function(){
+			{{^member}}
+			alert("로그인을 해야 추천 할 수 있습니다.");
+			{{/member}}
+			
+			{{#member}}
+			// alert("로그인 되면 뜨는 창");
+			var member_id = $("#hiddenData").data("id");
+			var board_num = $("#hiddenData").data("bnum");
+			var pg = {{pg}};
+			// alert("member_id : " + member_id + " board_num : " + board_num + " pg :" + pg);
+			$.ajax({
+				type : "POST",
+				url : "/checkRecommend",
+				data : {
+					"board_num" : board_num,
+					"member_id" : member_id
+					
+				},
+				success : function(data){
+					if(data == true){
+						alert("추천은 한번만 줄 수 있습니다.");
+						return false;
+					}else{
+						// alert("추천 주기")
+						location.href="/board/recommend?board_num="+ board_num +"&member_id="+ member_id +"&pg=" + pg;
+					}
+				}
+			});
+			{{/member}}
+		});
+		// 신고 버튼 클릭시 이벤트 처리
+		$("#btnreport").click(function(){
+			{{^member}}
+			alert("로그인후 이용하세요.");
+			{{/member}}
+			
+			{{#member}}
+			// alert("로그인 후 상태 이벤트")
+			var member_id = $("#hiddenData").data("id");
+			var board_num = $("#hiddenData").data("bnum");
+			var pg = {{pg}};
+			// alert("member_id : " + member_id + " board_num : " + board_num + " pg :" + pg);
+			// 중복 신고 검사 값이 있으면 신고 처리 안됨
+				$.ajax({
+				type : "POST",
+				url : "/checkReport",
+				data : {
+					"board_num" : board_num,
+					"member_id" : member_id
+					
+				},
+				success : function(data){
+					if(data == true){
+						alert("신고는 한번만 줄 수 있습니다.");
+						return false;
+					}else{
+						// 새창 실행
+						var popup = window.open("/reportForm?member_id=" + member_id +"&board_num="+ board_num 
+								+"&pg=" + pg, "", "width=500 height=300 left=500 top=200");
+					}
+				}
+			});
+			
+			{{/member}}
+		});
+		
+	});
+</script>
+												<!-- id = 현재 로그인 아이디 wid = 게시글 작성자의 id -->
+												{{#member}}<input type="hidden" id="hiddenData"
+													data-id="{{member_id}}" data-wid="{{board.member_id}}"
+													data-bnum={{board.board_num}}>{{/member}}
+												<div id="bbsViewRecom">
+													<div class="contentsBotMenu" style="margin-top: 15%;">
+														<div class="botMenuLeft">
+															<div class="articleBottomMenuTop"></div>
+															<div class="articleBottomMenu"></div>
+														</div>
+														<div class="botMenuCenter">
+															<div class="bttnRecom onlyRecom">
+																<!-- 24/02/23 수정 -->
+																<a class="bttnRecommend" id="btnRecom" href="#"
+																	title="추천하기"><span class="reqnum reqblue"><span
+																		id="recomresult_41904">{{board.board_recommend}}</span></span></a>
+															</div>
+														</div>
+
+														<div class="botMenuRight">
+															<!-- 24/02/23 수정 -->
+															<div class="bttn84report">
+																<a class="bttnReport" id="btnreport" href="#"
+																	title="신고하기">신고하기</a>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table cellpadding="0" cellspacing="0" border="0"
+					style="table-layout: fixed; word-wrap: break-word; clear: both;">
+					<tbody>
+						<tr>
+							<td>
+								<div id="powerbbsCmt2">
+									<div id="i-comment-list"></div>
+									<div class="cmtWrap">
+										<div class="cmtHead">
+											<h4>
+												댓글<strong id="cmtCount_1707878367"></strong>
+											</h4>
+										</div>
+
+										<div id="cmtWrapMain_1707878367" class="cmtMain">
+											<div id="pwbbsbestCmt_1707878367"
+												class="commentList1 bestComment"></div>
+											<div id="pwbbsCmt_1707878367" class="commentList1"></div>
+										</div>
+										<script type="text/javascript">
+	$(function(){
+		// 댓글 입력 기능 눌렀을때 member값이 없으면 로그인 해주세요 창 뛰움
+		$("#write").click(function(){
+			{{^member}}
+			alert("로그인부터 해주세요");
+			return false;
+			{{/member}}
+			
+			{{#member}}
+			var frm1 = document.comWrite;
+			if(!frm1.comment_content.value){
+				alert("내용을 입력해주세요");
+				frm1.comment_content.focus;
+				return false;
+			}
+			frm1.submit();
+			return false;
+			{{/member}}
+		});
+		
+		
+		// 평점 버튼을 클릭했을 때 세션에 값이 없으면 로그인하라고 창뛰우기
+		// html() : 태그의 값을 읽어오던지, 태그에 값을 집어 넣을 때 사용
+		// 답글 기능 숨기기
+		$("#comment_table .recomment").hide();
+		$(".rc_btn").click(function() {
+			// 아이디가 없을때 로그인 하라고 알림창 뜨기
+			{{^member}}
+			alert("로그인부터 해주세요");
+			return false;
+			{{/member}}
+			$(".recomment").slideUp(10);
+			$('.reText').val('');
+			// 답글버튼(input의 부모 td tr next .recomment)
+			// 답글 버튼을 눌렀을때 활성화
+			$(this).parent().parent().next().children().slideDown(10);
+			
+		});
+		
+		$(".delCom").click(function(){
+			var comment_num = $(this).data("num");
+			alert(comment_num);
+			if (confirm("삭제하시겠습니까?")) {
+				location.href="/commentDelete?comment_num=" + comment_num;
+			}
+		});
+	});
+</script>
+
+										<div id="cmtFormWrap_1707878367" class="cmtBottom">
+											<div id="cmtForm_1707878367" class="commentWrite">
+
+												<form action="../board/commentWrite" id="fmCmtF1_1707878367"
+													name="comWrite" method="post">
+													<input type="hidden" name="board_num" value="{{board_num}}">
+													<input type="hidden" name="comPg" value="{{comPg}}">
+													<div class="cmtWriteForm">
+														<table cellspacing="0" cellpadding="0">
+															<tbody>
+																<tr>
+																	<td class="cmtContentTd">
+																		<div class="cmtContent textLogin">
+																			<textarea id="cmtComment" name="comment_content"
+																				class="notice textareaIME" rows="3" tabindex="99"
+																				onfocus="login();"></textarea>
+																		</div>
+																		<div id="cmtUploadImgBot_1707878367"></div>
+																	</td>
+																	<td class="cmtBttnTd" style="vertical-align: bottom;">
+																		<div class="cmtSubmit">
+																			<button id="write" tabindex="100">등록</button>
+																		</div>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</form>
+
+											</div>
+
+										</div>
+										<div class="commentWrap">
+											{{#listExist}}
+											<table border="1" id="comment_table" style="width: 700px">
+												{{#boardCom}} {{^com_judge}}
+												<tr>
+													<td>{{nick_name}}</td>
+													<td>{{comment_content}}</td>
+													<td>{{comment_logtime}}<br> <input type="button"
+														class="rc_btn" value="답글" data-num="{{board_num}}">
+														: <a href="#">신고</a> {{#match_id}} <input type="button"
+														class="delCom" data-num="{{comment_num}}" value="삭제">
+														{{/match_id}}
+													</td>
+												</tr>
+													<tr>
+													<td colspan="3" class="recomment">
+														<form action="/board/recomment" method="post" name="comRe">
+															<input type="hidden" name="com_re_ref"
+																value="{{comment_num}}"> 
+																<input type="hidden" name="com_re_lev"
+																value="{{com_re_lev}}">
+																<input type="hidden" name="com_re_seq"
+																value="{{com_re_seq}}">
+																<input type="hidden"
+																name="board_num" value="{{board_num}}"> <input
+																type="hidden" name="comPg" value="{{comPg}}">
+															<table>
+																<tr>
+																	<td><textarea class="reText" rows="5" cols="10"
+																			name="comment_content"></textarea></td>
+																	<td><input type="submit" value="등록"></td>
+																</tr>
+															</table>
+														</form>
+													</td>
+												</tr>
+												{{/com_judge}} {{#com_judge}}
+												<tr>
+													<td>{{nick_name}}</td>
+													<td>&nbsp;└ &nbsp;{{comment_content}}</td>
+													<td>{{comment_logtime}}<br> {{#islogin}} <a
+														href="#">신고</a> {{/islogin}} {{#match_id}} <input
+														type="button" class="delCom" data-num="{{comment_num}}"
+														value="삭제"> {{/match_id}}
+													</td>
+												</tr>
+												{{/com_judge}}
+											
+												{{/boardCom}}
+
+												<tr>
+													<td colspan="3" align="center">{{#previousPage}} [<a
+														class="paging"
+														href="tipBoardView?pg={{pg}}&board_num={{board_num}}&comPg={{previousPage}}">이전</a>]
+														{{/previousPage}} {{#pageList}} {{#current}} [<a
+														class="currentPaging"
+														href="tipBoardView?pg={{pg}}&board_num={{board_num}}&comPg={{page}}">{{page}}</a>]
+														{{/current}} {{^current}} [<a class="paging"
+														href="tipBoardView?pg={{pg}}&board_num={{board_num}}&comPg={{page}}">{{page}}</a>]
+														{{/current}} {{/pageList}} {{#nextPage}} [<a
+														class="paging"
+														href="tipBoardView?pg={{pg}}&board_num={{board_num}}&comPg={{nextPage}}">다음</a>]
+														{{/nextPage}}
+													</td>
+												</tr>
+											</table>
+											{{/listExist}} {{^listExist}}
+											<h2 align="center">작성된 글이 없습니다 첫 작성자가 되어보세요!</h2>
+											{{/listExist}}
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+</article>
+{{>layouts/footer}}

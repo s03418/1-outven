@@ -1,0 +1,150 @@
+{{>layouts/header}}
+<article>
+	{{>layouts/nav}}
+	<section class="commu-center">
+		<div id="comAdExtVideo" class="comAdExtVideo floating">
+			<div style="width: 800px;">
+				<div id="__A1VideoLargeBanner" style="float: none; display: block;"></div>
+			</div>
+		</div>
+		<div class="commu-body pcMain">
+			<div id="iBuilderHeader">
+				<section class="list-wrap  w-100">
+					<article class="list-common">
+<style>
+#board_category .common-title::before {
+	background: #074f68
+}
+
+#board_category .common-title {
+	background: #047e99;
+	color: #ffffff
+}
+</style>
+<script src="../lib/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    // 이전에 선택한 값 불러오기
+    var selectedCategory = localStorage.getItem('selectedCategory');
+    if (selectedCategory) {
+        $("#detail_category").val(selectedCategory);
+    }
+    
+    // 카테고리 값 검사 및 설정
+    $("select[id='detail_category']").change(function(){
+        var result = $(this).val();
+        // 선택한 값을 로컬 스토리지에 저장
+        localStorage.setItem('selectedCategory', result);
+        location.href="/board/reporter_news_BoardList?detail_category="+result;
+    });
+});
+</script>
+						<section class="commu-common" id="board_category">
+							<h2 class="common-title">
+								<span class="main">아웃벤 통합검색</span> <span class="sub"></span>
+							</h2>
+						</section>
+					</article>
+				</section>
+			</div>
+			<div id="powerbbsHead"></div>
+			<article class="new-board" id="new-board">
+				<h3 class="commu-hidden">아웃벤 통합검색</h3>
+				<div class="admin-area"></div>
+				<form name="board_list1">
+					<input type="hidden" name="come_idx" value="2771">
+
+					<div class="board-list">
+						<table>
+							<caption>아웃벤 통합검색</caption>
+							<colgroup>
+								<col class="size01" data-alias="number">
+								<col class="size02" data-alias="subject">
+								<col class="size03" data-alias="board">
+								<col class="size04" data-alias="writer">
+								<col class="size05" data-alias="date">
+								<col class="size06" data-alias="hit">
+								<col class="size07" data-alias="req">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>번호</th>
+									
+									<th>제목</th>
+									
+									<th>게시판</th>
+
+									<th>글쓴이</th>
+
+									<th>등록일</th>
+
+									<th>조회</th>
+
+									<th>추천</th>
+								</tr>
+							<tbody>
+								{{#list}}
+									{{#detail_category}}
+										<tr>
+											<td>{{board_num}}</td>
+											<td><a href="/board/boardMainSearchView?board_num={{board_num}}&pg={{pg}}&detail_category={{detail_category}}" id="subjectA" onclick="isLogin({{board_num}})">[{{detail_category}}] {{board_title}}</a></td>
+											<td>{{board_category}}</td>
+											<td>{{nick_name}}</td>
+											<td>{{board_logtime}}</td>
+											<td>{{board_hit}}</td>
+											<td>{{board_recommend}}</td>
+										</tr>
+									{{/detail_category}}
+								{{/list}}
+								<tr>
+							  	<td colspan="5" align="center">
+							  	{{#previousPage}}
+							  		{{^detail_category}}
+							  			[<a class="paging" href="/board/reporter_news_BoardList?pg={{previousPage}}">이전</a>]
+							  		{{/detail_category}}
+							  		{{#detail_category}}
+							  			[<a class="paging" href="/board/reporter_news_BoardList?pg={{previousPage}}&detail_category={{detail_category}}">이전</a>]
+							  		{{/detail_category}}
+							  	{{/previousPage}}
+							  	{{#pageList}}
+							  		{{#current}}
+							  			{{^detail_category}}
+							  				[<a class="currentPaging" href="/board/reporter_news_BoardList?pg={{page}}">{{page}}</a>]
+							  			{{/detail_category}}
+							  			{{#detail_category}}
+							  				[<a class="currentPaging" href="/board/reporter_news_BoardList?pg={{page}}&detail_category={{detail_category}}">{{page}}</a>]
+							  			{{/detail_category}}
+							  		{{/current}}
+							  		
+							  		{{^current}}
+							  			{{^detail_category}}
+							  				[<a class="paging" href="/board/reporter_news_BoardList?pg={{page}}">{{page}}</a>]
+							  			{{/detail_category}}
+							  			{{#detail_category}}
+							  				[<a class="paging" href="/board/reporter_news_BoardList?pg={{page}}&detail_category={{detail_category}}">{{page}}</a>]
+							  			{{/detail_category}}
+							  		{{/current}}
+							  	{{/pageList}}
+							  	
+							  	
+							  	{{#nextPage}}
+							  		{{^detail_category}}
+							  			[<a class="paging" href="/board/reporter_news_BoardList?pg={{nextPage}}">다음</a>]
+							  		{{/detail_category}}
+							  		{{#detail_category}}
+							  			[<a class="paging" href="/board/reporter_news_BoardList?pg={{nextPage}}&detail_category={{detail_category}}">다음</a>]
+							  		{{/detail_category}}
+							  	{{/nextPage}}
+							  	</td>
+							  </tr> 
+							</tbody>
+							</thead>
+						</table>
+					</div>
+				</form>
+			</article>
+		</div>
+	</section>
+</article>
+
+{{>layouts/footer}}

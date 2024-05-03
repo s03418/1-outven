@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>아웃벤 회원정보수정</title>
+<script type="text/javascript">
+	if({{result}}) {
+		alert("회원정보가 수정되었습니다. 다시 로그인 해주세요");
+		location.href="/loginForm";
+	} else {
+		alert("[ERROR] 회원정보 수정 실패!")
+		history.back();
+	}
+</script>
+</head>
+<body>
+</body>
+</html>

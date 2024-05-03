@@ -1,0 +1,16 @@
+
+{{>layouts/header}}
+<article>
+	{{>layouts/nav}}
+		<script>
+			if(!{{result}}){
+				alert("삭제 성공");
+				location.href="positionBoardList?pg={{pg}}"
+			} else{
+				alert("삭제 실패");
+				history.back();
+			}
+		</script>
+		
+</article>
+{{>layouts/footer}}

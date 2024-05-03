@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script type="text/javascript">
+	if ({{result}}) {
+		alert("관리자 로그인");
+		window.opener.location.href = '/admin/index';
+		window.close();
+	} else {
+		alert("아이디나 비밀번호가 틀립니다");
+		history.back();
+	}
+</script>
+<body>
+
+</body>
+</html>

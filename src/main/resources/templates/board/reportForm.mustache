@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="../lib/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#reportform").submit(function(){
+			alert("test!");
+			if($("#selReport").val() == ''){
+				alert("선택해주세요.");
+			}else{
+				$.ajax({
+					type : "POST",
+					url:"/report",
+					data : $('#reportform').serialize(),
+					datatype: "json",
+					success : function(data){
+						alert("신고가 완료되었습니다!");
+						window.close();
+					}
+				});
+			}
+			
+			return false;
+		});
+		
+		
+	});
+</script>
+</head>
+<body>
+	<div>
+	<form id="reportform" action="/reportform" method="get" name="form1">
+	<input type="hidden" name="member_id" value="{{member_id}}">
+	<input type="hidden" name="pg" value="{{pg}}">
+		{{#board}}
+			<input type="hidden" name="board_num" value="{{board_num}}">
+			<h2 align="center">글제목 : {{board_title}}</h2> &nbsp; <p>작성자 : {{nick_name}}</p>
+			 <hr>
+			 <select id="selReport" name="report_category">
+			 	<option value="">-- 신고 사유 --</option>
+			 	<option value="0">욕설</option>
+			 	<option value="1">불법 광고</option>
+			 	<option value="2">선정성</option>
+			 </select>
+			 <hr>
+			 <input type="submit" value="신고하기"> <input type="button" value="취소하기">
+		{{/board}}
+	</form>
+	</div>
+</body>
+</html>

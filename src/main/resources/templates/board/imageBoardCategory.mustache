@@ -1,0 +1,360 @@
+{{>layouts/header}} 
+
+<style>
+#imagetable td{
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-top: 10px;	
+}
+
+#imagetable {
+	table-layout:fixed;
+}
+#imglist  {
+	width:"175" ;
+	height:"165";
+}
+#subjectA:link {color:black; text-decoration: none;}
+#subjectA:visited {color:black; text-decoration: none;}
+#subjectA:hover {color:green; text-decoration: underline;}
+#subjectA:active {color:black; text-decoration: none;}
+</style>
+
+<article>
+	{{>layouts/nav}}
+	<section class="commu-center">
+<script src="https://www.inven.co.kr/board/bbs/include/board.js"></script><div id="iBuilderHeader" >	<section class="list-wrap  w-100">
+		<article class="list-common">
+<style>#imid_bc7508c96f3cc48 .common-title::before{background:#074f68}#imid_bc7508c96f3cc48 .common-title{background:#047e99;color:#ffffff}</style>
+
+<section class="commu-common" id=imid_bc7508c96f3cc48>
+	<h2 class="common-title">
+		<span class="main">LoL 팬아트/카툰 게시판</span>
+		<span class="sub"></span>
+	</h2>
+</section>
+</article>
+
+</div>
+<div id="powerbbsHead"></div><script>
+function cmp(query, changevalue) //카테고리 변경 -> changevalue 추가 12.20
+{
+	var cateval = "&cateval=" + changevalue;
+	var f = document.forms.board_list1;
+	var i = 0;
+	var chked = 0;
+	var qval = "";
+	var qval_idx = "";
+	for (i = f.length -1 ; i >= 0; i-- ) {
+		if (f[i].type == 'checkbox') {
+			if (f[i].checked) {
+				chked++;
+				qval = qval + "&" + f[i].name + "=" + f[i].value;
+				qval_idx = qval_idx + ',' + f[i].value;
+			}
+		}
+	}
+	if (query == 'view') {
+		if( chked < 1 ) {
+			alert('조회하고자 하는 게시물을 먼저 선택해 주세요.');
+			return false;
+		}
+		window.location.href = "https://www.inven.co.kr/board/powerbbs.php?come_idx=2775&query=multi&p=1"+qval;
+	}
+}
+
+function bbs_sort(sort,orderby)
+{
+	var sort;
+	window.location.href = "https://www.inven.co.kr/board/powerbbs.php?come_idx=2775&query=list&category=&sort=" + sort +
+	"&where=&name=&subject=&content=" +
+	"&keyword=&p=1&sterm=&orderby=" + orderby;
+}
+
+function category_go() {
+	window.location = "https://www.inven.co.kr/board/powerbbs.php?come_idx=2775&query=list&sterm=&category=" + document.board_list1.catego.value;
+}
+
+function select_all() {
+	var f = document.board_list1;
+	for (var i=0; i<f.elements.length; i++) {
+		var ele=f.elements[i];
+		if (ele.name.substring(0,5)=="multi" || ele.name.substring(0,6)=="fmulti") {
+			if (ele.checked==true) {
+				ele.checked=false;
+			} else {
+				ele.checked=true;
+			}
+		}
+	}
+}
+
+function view_arti(uid) {
+	location.href = "https://www.inven.co.kr/board/powerbbs.php?come_idx=2775&query=view&p=1&my=&category=&sort=PID&orderby=&where=&name=&subject=&content=&keyword=&sterm=&iskin=&mskin=&l=" + uid;
+}
+
+function view_blind(uid) {
+	if (confirm('블라인드 처리된 게시물입니다.\n글을 보시겠습니까?')) {
+		view_arti(uid);
+	}
+}
+
+function viewBlindArticle() {
+	if (confirm('블라인드 처리된 게시물입니다.\n글을 보시겠습니까?')) {
+		$('#powerbbsBodyBlindMenu').css('display', 'none');
+		$('#powerbbsBodyBlind').css('display', 'block').find('[data-sized]').removeAttr('data-sized');
+		$('.inven-poll-vote').removeClass('blind');
+		INVEN.Media.Resizer.resizeAll('powerbbsBodyBlind');
+	}
+}
+
+function viewDeleteArticle() {
+	if (confirm('비추천 삭제 처리된 게시물입니다.\n글을 보시겠습니까?')) {
+		$('#powerbbsBodyBlindMenu').css('display', 'none');
+		$('#powerbbsBodyBlind').css('display', 'block').find('[data-sized]').removeAttr('data-sized');
+		INVEN.Media.Resizer.resizeAll('powerbbsBodyBlind');
+	}
+}
+
+function view_blind_comment(obj) {
+	if (confirm('블라인드 처리된 코멘트입니다.\n글을 보시겠습니까?')) {
+		obj = getObj(obj);
+		var commentBody = INVEN.Html.nextObj(obj.parentNode);
+		obj.style.display = 'none';
+		commentBody.innerHTML = '<br /><br />' + commentBody.innerHTML;
+		commentBody.style.display = 'inline';
+		//commentBody.style.color = 'black';
+	}
+}
+
+function showText(articleNum) {
+	var x,y,realy,realx;
+	var bodyHeight = document.body.offsetHeight+document.body.scrollTop;
+	var bodyWidth = document.body.offsetWidth+document.body.scrollLeft;
+	var over = document.getElementById('overDiv'+articleNum);
+
+	over.style.visibility = 'visible';
+
+		x=event.x+document.body.scrollLeft;
+		y=event.y+document.body.scrollTop;
+		totaly = y + over.offsetHeight;
+		totalx = x + over.offsetWidth;
+
+		if(totaly > bodyHeight) {
+			realy = y - (totaly - bodyHeight);
+		} else {
+			realy = y;
+		}
+
+		if(x >500) {
+			realx = x - 460;
+		} else if(totalx > bodyWidth) {
+			realx = x - (totalx - bodyWidth);
+		} else {
+			realx = x;
+		}
+
+	over.style.left = realx;
+	over.style.top = realy;
+}
+
+function nd(articleNum) {
+	document.getElementById('overDiv'+articleNum).style.visibility='hidden';
+}
+
+function writeArticle() {
+						loginWrite('2775','');
+			}
+
+function viewCateChange(changevalue, comeIdx, lNum) {
+	if (changevalue) {
+		if (confirm('\n\n게시물 카테고리변경은 관리자만 가능합니다.\n\n정말로 변경 하시겠습니까?\n\n')) {
+			window.location.href = "https://www.inven.co.kr/board/bbs/include/view_catechange.php?come_idx="+ comeIdx + "&l=" + lNum + "&cateValue="+changevalue;
+		}
+	} else {
+		alert("변경될 카테고리를 선택해주세요.");
+		return false;
+	}
+
+}
+</script>
+<script>
+var owURL = 'https://www.inven.co.kr/board/opinionbbs.php?come_idx=2775&iskin=&l=';
+$(function() {$(".articleList table tbody tr.tr").each(function(){$(this).mouseover(function(){$(this).addClass('ov');}).mouseout(function(){$(this).removeClass('ov');});});$(".articleList table tbody tr.ls .bbsSubject span.sj_cm").each(function(){$(this).click(function(){var datacmtuid = $(this).attr("data-cmt-uid");if (datacmtuid>0) {var woURL = owURL+datacmtuid;if ($(this).hasClass('opv')) woURL = woURL + '&openview=1';window.open(woURL, '', 'left=100,top=100,width=750,height=500,resizable=yes,scrollbars=yes,toolbar=no');}});});
+});
+</script>
+
+<script>
+$(function () {
+    $('body [data-opinion-bbs-comeidx]').on('click', function (e) {
+        var self = $(this)
+        var comeidx = self.attr('data-opinion-bbs-comeidx').trim()
+        var uid = self.attr('data-opinion-bbs-uid').trim()
+	    var opinum = self.attr('data-opinion-bbs-opi').trim()
+        var opinionUri = '//www.inven.co.kr/board/opinionbbs.php?come_idx=' + comeidx + '&l=' + uid
+	    opinionUri += '&iskin='
+	    opinionUri += (opinum < 1) ? '&openview=1' : ''
+
+        e.stopPropagation()
+	    /*
+	    var event  = e || window.event;
+	    var xcr = event.screenX;
+	    var ycr = event.screenY;
+	     */
+        INVEN.Location.openWin(opinionUri, 'popup', 'left=100,top=100,width=750,height=700,resizable=yes,scrollbars=yes,toolbar=no')
+        return false
+    })
+})
+</script>
+
+<article class="new-board" id="new-board">
+    <h3 class="commu-hidden">LoL 팬아트/카툰 게시판 게시판</h3>
+
+    
+
+<div class="admin-area">
+    </div>
+
+<div class="post-area">
+    
+    </div><script type="text/javascript"  src="https://www.inven.co.kr/common/lib/js/store.min.js"></script>
+<script type="text/javascript"  src="https://www.inven.co.kr/board/lib/js/bbs_history.js?v=20210824"></script>
+<link rel="stylesheet" type="text/css" href="https://www.inven.co.kr/board/lib/style/dist/bbs_history.css"/>
+<div class="board-top">
+    <div class="left">
+                <select  name="board_category" onchange="location.href =/board/imageBoardCategory">
+            			<option value="">카테고리</option>
+                        <option value="일반">일반</option>
+                        <option value="습작">습작</option>
+                        <option value="기타">기타</option>            
+                </select>
+        
+        
+    <a href="https://www.inven.co.kr/board/lol/2775?my=chu" class="board-img reco10">3추글</a>
+                    
+   <a href="javascript:nothing()" onclick="login()" class="board-img bookmark">즐겨찾기</a>
+            </div>
+    <div class="right">
+                <div class="bbs-history-wrap">
+            <select id="selectbox-bbs-history">
+                <option value="" selected>최근 방문 게시판</option>
+            </select>
+            <div id="bbs-history-button"></div>
+        </div>
+        <script>
+        (function () {
+            INVEN.BoardHistory(
+                20,
+                1,
+                2775,
+                'LoL 팬아트/카툰 게시판',
+                'lol',
+                function (boards, list, sites) {
+                    var self = this, result = [];
+
+                    $.each(list, function (i, comeIdx) {
+                        var site = comeIdx in sites ? sites[comeIdx] : 'webzine';
+                        var boardName = self.getName(i);
+                        if (!boardName && comeIdx in boards) boardName = boards[comeIdx];
+                        result.push({
+                            comeIdx: comeIdx,
+                            site: site,
+                            boardName: boardName,
+                            uri: ('https://www.inven.co.kr/board/' + site + '/' + comeIdx),
+                        });
+                    });
+
+                    var $select = $('#selectbox-bbs-history'), $button = $('#bbs-history-button');
+                    var $layer = result.length > 0 ? $('<ul id="bbsHistoryLayer" />') : null;
+                    var numResult = result.length;
+
+                    $.each(result, function (_, history) {
+                        $select.append(
+                            $('<option />', {
+                                value: history.uri,
+                                text: history.boardName
+                            })
+                        );
+                        var li = $('<li />');
+                        if (2775 === history.comeIdx) {
+                            li.addClass('current');
+                        }
+                        li.append($('<a />', {
+                            href: history.uri,
+                            text: history.boardName
+                        }));
+                        li.append($('<span />', { 'data-comeidx': history.comeIdx }));
+                        $layer.append(li);
+                    });
+
+                    $select.on('change', function () {
+                        if (this.value.length) {
+                            window.location.href = this.value;
+                        }
+                    });
+
+                    $button.on('click', function() {
+                        $select.blur();
+                        if ($layer) {
+                            if ($layer.css('display') != 'block') {
+                                if ($layer.parent().length == 0) $layer.appendTo('body');
+                                var offset = $select.offset();
+                                $layer.css({
+                                    'top': (offset.top + $select.height()) + 'px',
+                                    'left': offset.left + 'px',
+                                    'display': 'block'
+                                });
+                            } else {
+                                $layer.css('display', 'none');
+                            }
+                        }
+                    });
+
+                    if ($layer) {
+                        $layer.append('<li class="clear"><span data-comeidx="all" /></li>').on('click', 'li span[data-comeidx]', function() {
+                            var comeIdx = this.getAttribute('data-comeidx');
+                            if (comeIdx == 'all') {
+                                if (self.reset()) numResult = 0;
+                            } else {
+                                comeIdx = parseInt(comeIdx, 10);
+                                if (!isNaN(comeIdx) && comeIdx > 0) {
+                                    --numResult;
+                                    self.del(comeIdx);
+                                    $(this).parents('li').remove();
+                                }
+                            }
+                            if (numResult < 1) {
+                                $layer.empty().append('<li class="empty">최근 방문한 게시판이 없습니다</li>');
+                                $layer.css('display', 'none');
+                            }
+                        });
+
+                        $(document).on('mousedown', function(e) {
+                            if (e.target && $layer.css('display') == 'block' && !$button.is(e.target) && $button.find(e.target).length == 0 && !$layer.is(e.target) && $layer.find(e.target).length == 0) {
+                                $layer.css('display', 'none');
+                            }
+                        });
+                    }
+                }
+            );
+        })();
+        </script>
+            </div>
+</div>
+
+<div class="detail_category">
+        &nbsp;&nbsp;<a href="/board/imageBoardList" class="all active">전체 |</a>
+    
+        <a href="/board/imageBoardList?category=일반" class="category-one">
+        일반   | </a>
+        <a href="/board/imageDetailCategory?category=습작" class="category-one">
+        습작   | </a>
+        <a href="/board/imageDetailCategory?category=기타" class="category-one">
+        기타   | </a>    
+</div>   
+        
+		<br>
+</article>
+{{>layouts/footer}}	
+	

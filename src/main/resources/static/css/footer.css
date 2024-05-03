@@ -1,0 +1,230 @@
+@charset "utf-8";
+
+#comTailCoplyright {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    float: none;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    width: 1170px;
+    border-top: 2px solid #cacaca;
+    background-color: #fff; clear: both;
+}
+/* 푸터 공용 */
+#comTailCoplyright .hidden {
+    display: none;
+}
+#comTailCoplyright a,
+#comTailCoplyright div,
+#comTailCoplyright span,
+#comTailCoplyright .infomationContent .textWrap p {
+    font-size: 11px;
+    font-family: 'Malgun Gothic','맑은 고딕',helvetica,'Apple SD Gothic Neo',sans-serif;
+}
+#comTailCoplyright .infomationContent .infoBanner .onc::before,
+#comTailCoplyright .infomationContent .infoBanner .isms::before,
+#comTailCoplyright .infomationContent .infoText::before,
+#comTailCoplyright .tail2TopBttn {
+    background: url('../image/footer.png') no-repeat;
+}
+#comTailCoplyright a {
+    display: block;
+    padding: 10px 15px 10px 10px;
+    color: #7c7c7c;
+    font-size: 12px;
+    text-decoration: none;
+    letter-spacing: -1px;
+}
+#comTailCoplyright a:hover {
+    color: #262b28;
+}
+/* 푸터 레이아웃 */
+#comTailCoplyright .infomationMenu {
+    width: 100%;
+}
+#comTailCoplyright .infomationMenuList {
+    display: block;
+    float: none;
+    border-bottom: 1px solid #cbcbcb;
+    text-align: center;
+}
+#comTailCoplyright .infomationMenuList li {
+    display: inline-block;
+    float: none;
+}
+#comTailCoplyright .infomationMenuList li.menu {
+    padding: 0;
+}
+#comTailCoplyright .infomationMenuList li a {
+    position: relative;
+}
+#comTailCoplyright .infomationMenuList li a::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 13px;
+    right: 0;
+    width: 1px;
+    height: 11px;
+    background: #7d7b7b;
+}
+#comTailCoplyright .infomationMenuList li:last-child a::after {
+    display: none;
+}
+#comTailCoplyright .infomationContent {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 100px 0;
+    color: #525252;
+    line-height: 14px;
+    letter-spacing: -0.5px;
+}
+#comTailCoplyright .infomationContent .infoText {
+    display: flex;
+}
+#comTailCoplyright .infomationContent .infoText::before {
+    content: '';
+    display: block;
+    position: relative;
+    top: -5px;
+    margin-right: 20px;
+    width: 107px;
+    height: 43px;
+    background-position: -10px -10px;
+}
+#comTailCoplyright .infomationContent .textWrap {
+    text-align: left;
+}
+#comTailCoplyright .infomationContent .textWrap p {
+    margin: 0;
+}
+#comTailCoplyright .infomationContent .textWrap p.gap {
+    margin: 15px 0 0 ;
+}
+#comTailCoplyright .infomationContent .textWrap p span.mo-br {
+    display: none;
+    line-height: 0px;
+}
+#comTailCoplyright .infomationContent .infoBanner {
+    display: flex;
+}
+#comTailCoplyright .infomationContent .infoBanner > div {
+    display: flex;
+    overflow: hidden;
+}
+#comTailCoplyright .infomationContent .infoBanner > div span {
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+	position: absolute;
+	margin: -1px;
+	padding: 0;
+	clip: rect(0, 0, 0, 0);
+	background: transparent;
+}
+#comTailCoplyright .infomationContent .infoBanner .onc::before {
+    content: '인터넷 신문 위원회 윤리강령을 준수합니다';
+    display: block;
+    width: 190px;
+    height: 45px;
+    background-position: 0px -132px;
+    background-size: 190px;
+    text-indent: -9999px;
+}
+#comTailCoplyright .infomationContent .infoBanner .isms {
+    width: 178px;
+    height: 43px;
+    background-position: -9px -65px;
+}
+#comTailCoplyright .infomationContent .infoBanner .isms::before {
+    content: "isms";
+    display: block;
+    margin: 0 8px 0 0;
+    width: 46px;
+    height: 42px;
+    background-position: -10px -66px;
+    text-indent: -9999px;
+}
+#comTailCoplyright .infomationContent .infoBanner .isms .txt-box {
+    width: calc(100% - 54px);
+}
+#comTailCoplyright .infomationContent .infoBanner .isms p {
+    margin: 0;
+    font-size: 11px;
+}
+#comTailCoplyright .infomationContent .copyrightInven {
+    color: #6eb929;
+}
+#comTailCoplyright .tail2TopBttn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 26px;
+    height: 24px;
+    background-position: -15px -125px;
+    cursor: pointer;
+    text-indent: -9999px;
+}
+#comTailGotoMobileWeb {
+    display: block;
+    float: none;
+    margin: 20px auto 20px;
+    width: 915px;
+    box-sizing: border-box;
+}
+#comTailGotoMobileWeb a {
+    display: block;
+    overflow: hidden;
+    padding: 22px 0;
+    border: 2px solid #b5b8bf;
+    font-size: 52px;
+    color: #222;
+    font-family: '돋움', dotum, sans-serif;
+    text-align: center;
+    border-radius: 12px;
+    background-color: #f9fafb;
+    background: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#eaebef));box-shadow:0 2px 1px rgba(0,0,0,0.06), inset 0 0 3px #fff;
+    -webkit-box-shadow:0 2px 1px rgba(0,0,0,0.06), inset 0 0 3px #fff;
+    text-decoration: none;
+    letter-spacing: -2px;}
+
+body.b800 #comTailCoplyright,
+body.b915 #comTailCoplyright {
+    width: 100%;
+}
+body.b800 #comTailCoplyright .infomationContent,
+body.b915 #comTailCoplyright .infomationContent {
+    margin: 20px 0 0;
+    width: 100%;
+}
+body.b800 #comTailCoplyright .infomationContent .infoBanner,
+body.b915 #comTailCoplyright .infomationContent .infoBanner {
+    flex-direction: column-reverse;
+}
+body.b800 #comTailCoplyright .infomationContent .infoBanner .onc::before,
+body.b915 #comTailCoplyright .infomationContent .infoBanner .onc::before {
+    margin: 5px 0 0;
+}
+body.b800 #comTailCoplyright .infomationContent .infoBanner .isms,
+body.b915 #comTailCoplyright .infomationContent .infoBanner .isms {
+    margin: 0 auto;
+}
+body.b800 #comTailCoplyright .tail2TopBttn {
+    display: none;
+}
+body.b800 #comTailCoplyright .infomationMenu::after,
+body.b915 #comTailCoplyright .infomationMenu::after {
+    right: 55px;
+}
+body.b915 #comTailCoplyright .infomationMenu::before {
+    top: 100px; right: 46px;
+}
+body.b1170 #comTailCoplyright {
+    margin-bottom: 0px;
+}
+body.b1170 #comTailCoplyright .tail2TopBttn {
+    right: 130px;
+}
+
+

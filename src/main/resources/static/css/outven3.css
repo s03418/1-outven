@@ -1,0 +1,362 @@
+#lolBody .commu-content header h1 a img {
+	margin-top: -16px
+}
+
+#lolBody nav ul {
+	background: #061c25
+}
+
+#lolBody nav ul>li {
+	border-color: #000
+}
+
+#lolBody nav ul>li>a .text {
+	color: #fff
+}
+
+#lolBody nav ul>li>a::before {
+	background: #00b2cf
+}
+
+#lolBody nav ul>li>a::after {
+	background: #00b2cf
+}
+
+#lolBody nav ul>li>a:hover {
+	background: #061c25
+}
+
+#lolBody nav ul>li>a:hover .text {
+	color: #00b2cf
+}
+
+#lolBody nav ul>li>a:hover::before {
+	background: #00b2cf
+}
+
+#lolBody nav ul>li>ol {
+	width: 160px;
+	background-color: #123643;
+	border-color: #2b9cb9;
+	z-index: 99
+}
+
+#lolBody nav ul>li>ol>li a {
+	color: #f2f4f4;
+	letter-spacing: -1px
+}
+
+#lolBody nav ul>li>ol>li a:hover {
+	color: #f2f4f4;
+	text-decoration: underline
+}
+
+#lolBody .commu-left .search form button {
+	background-color: darkseagreen;
+}
+
+#lolBody .commu-left .left-menu h3 {
+	border-top-color: #000;
+	color: #000
+}
+
+#lolBody .commu-left .left-menu ul.tablist li a.on, #lolBody .commu-left .left-menu ul.tablist li a:hover
+	{
+	background: #000;
+	text-decoration: none
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li a.on, #lolBody .commu-left .left-menu ul.tablist-icon li a:hover
+	{
+	background-color: #636d86;
+	color: #fff
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li a.on::before,
+	#lolBody .commu-left .left-menu ul.tablist-icon li a:hover::before {
+	border-color: red
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li a::after {
+	background:
+		url("http://static.inven.co.kr/image_2011/test/lokeu/sample_sprite.png?v=210514b")
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li a:hover::after {
+	background-position: 0
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(1) a::after
+	{
+	background-position-x: 0px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(1) a:hover::after
+	{
+	background-position-y: -24px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(2) a::after
+	{
+	background-position-x: -20px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(2) a:hover::after
+	{
+	background-position-y: -24px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(3) a::after
+	{
+	background-position-x: -40px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(3) a:hover::after
+	{
+	background-position-y: -24px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(4) a::after
+	{
+	background-position-x: -60px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(4) a:hover::after
+	{
+	background-position-y: -24px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(5) a::after
+	{
+	background-position-x: -80px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(5) a:hover::after
+	{
+	background-position-y: -24px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(6) a::after
+	{
+	background-position-x: -100px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(6) a:hover::after
+	{
+	background-position-y: -24px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(7) a::after
+	{
+	background-position-x: -120px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(7) a:hover::after
+	{
+	background-position-y: -24px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(8) a::after
+	{
+	background-position-x: -140px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(8) a:hover::after
+	{
+	background-position-y: -24px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(9) a::after
+	{
+	background-position-x: -160px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(9) a:hover::after
+	{
+	background-position-y: -24px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(10) a::after
+	{
+	background-position-x: -180px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(10) a:hover::after
+	{
+	background-position-y: -24px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(11) a::after
+	{
+	background-position-x: -200px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(11) a:hover::after
+	{
+	background-position-y: -24px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(12) a::after
+	{
+	background-position-x: -220px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(12) a:hover::after
+	{
+	background-position-y: -24px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(13) a::after
+	{
+	background-position-x: -240px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(13) a:hover::after
+	{
+	background-position-y: -24px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(14) a::after
+	{
+	background-position-x: -260px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(14) a:hover::after
+	{
+	background-position-y: -24px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(15) a::after
+	{
+	background-position-x: -280px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(15) a:hover::after
+	{
+	background-position-y: -24px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(16) a::after
+	{
+	background-position-x: -300px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(16) a:hover::after
+	{
+	background-position-y: -24px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(17) a::after
+	{
+	background-position-x: -320px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(17) a:hover::after
+	{
+	background-position-y: -24px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(18) a::after
+	{
+	background-position-x: -340px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(18) a:hover::after
+	{
+	background-position-y: -24px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(19) a::after
+	{
+	background-position-x: -360px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(19) a:hover::after
+	{
+	background-position-y: -24px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(20) a::after
+	{
+	background-position-x: -380px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(20) a:hover::after
+	{
+	background-position-y: -24px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(21) a::after
+	{
+	background-position-x: -400px
+}
+
+#lolBody .commu-left .left-menu ul.tablist-icon li:nth-child(21) a:hover::after
+	{
+	background-position-y: -24px
+}
+
+#lolBody .commu-right #wide_ad {
+	padding: 0;
+	height: 250px
+}
+
+#module-youtube-movie h3 {
+	height: 33px;
+	background-image:
+		url(https://upload3.inven.co.kr/upload/2021/07/05/data/i21316728931.png);
+	background-repeat: no-repeat;
+	background-position: 0px center
+}
+
+#module-youtube-movie h3 a {
+	line-height: 33px
+}
+
+#module-youtube-movie h3 a.tit-btn {
+	padding-left: 18px
+}
+
+#eventPopup {
+	display: inline;
+	position: absolute;
+	top: 470px;
+	left: 987px;
+	z-index: 20;
+	background: #000000;
+}
+body.b915 #eventPopup { left: 1102px; }
+#eventPopup table {
+	width: 220px;
+	height: auto;
+	float: left;
+	background: #000000;
+}
+#eventPopup td {
+	padding-bottom: 2px;
+}
+#eventPopup img {
+	width: 220px;
+	height: 270px;
+	border: none;
+}
+#eventPopup a {
+	color: #FFFFFF;
+	text-decoration: none;
+	font-size: 9pt;
+	float: right;
+	margin: 5px 5px 0 0;
+}
+#eventPopup a:hover {
+	text-decoration: underline;
+}
+#eventPopup label {
+	color: #FFFFFF;
+	font-size: 9pt;
+	float: left;
+	margin: 5px 0 0 2px;
+}
+#eventPopup input {
+	float: left;
+	clear: both;
+}

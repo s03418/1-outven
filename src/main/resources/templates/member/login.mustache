@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>아웃벤 로그인</title>
+<meta charset="UTF-8">
+</head>
+<script type="text/javascript">
+	if ({{result}} && {{attendance}}) {
+		alert("로그인 되었습니다.");
+		location.href="/index";
+	} else if({{result}} && !{{attendance}}) {
+		alert("[출석체크 보너스] 경험치 +10");
+		location.href="/index";
+	} else {
+		alert("아이디나 비밀번호가 틀립니다");
+		history.back();
+	}
+</script>
+<body>
+</body>
+</html>

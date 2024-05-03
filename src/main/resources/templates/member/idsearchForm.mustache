@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>아웃벤 아이디 찾기</title>
+<link rel="stylesheet" href="../css/joinForm.css">
+<link rel="stylesheet" href="../css/footer.css">
+</head>
+<script src="../lib/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+
+	var code = "";
+	emailconfirmcheck = false;
+	
+	 function mailconfirm(code) {
+	        if ($("#mailcode").val() == code) {    // 인증번호가 맞는 경우
+	            emailconfirmcheck = true;
+	            $("#codelabel").html("<span id='confirmcss'>인증번호 확인 완료</span>")
+	            $("#confirmcss").css({
+	                "color" : "#0D6EFD",
+	                "font-weight" : "bold",
+	                "font-size" : "13px"
+	            })
+	            // 타이머 제거
+	            $("#timercss").remove();
+	            clearInterval(timer);
+	            // 버튼 제거
+	            $("#mailconfirmbtn").remove();
+	            } 
+	        else {    // 인증번호가 틀린 경우
+	            emailconfirmcheck = false;
+	            $("#codelabel").html("<span id='confirmcss'>인증번호가 잘못되었습니다</span>")
+	            $("#confirmcss").css({
+	                "color" : "#FA3E3E",
+	                "font-weight" : "bold",
+	                "font-size" : "13px"
+	            })
+	        }
+	    }
+	
+	$(function() {
+		$("#email").on("keyup", function() {
+			var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z]+)*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z]+)*\.[a-zA-Z]{2,3}$/;
+			if (!$("#email").val()) { // 입력값이 비어있는 경우
+		        $("#maillabel").html("<b>본인 확인 이메일</b>");
+		        $("#mailcss").remove(); // 메시지가 있는 경우 삭제
+		    } 
+			else if (!regExp.test($("#email").val())) {		// 잘못된 이메일 형식
+				$("#maillabel").html("<span id='mailcss'>이메일 형식이 맞지 않습니다</span>")
+				$("#mailcss").css({
+					"color" : "#FA3E3E",
+					"font-weight" : "bold",
+					"font-size" : "13px"
+				})
+			} else {		
+				$("#maillabel").html("<span id='mailcss'>이메일을 형식을 확인했습니다</span>")
+				$("#mailcss").css({
+					"color" : "#0D6EFD",
+					"font-weight" : "bold",
+					"font-size" : "13px"
+				})
+			}
+		});
+		
+		// 타이머
+		function startTimer() {
+			// 제한시간 지정
+		    var count = 300;
+		    timer = setInterval(function() {
+		        count--;
+		        $("#timer").html("<span id='timercss'>남은 시간: " + count + "초</span>");
+		        $("#timercss").css({
+		            "color": "#FA3E3E",
+		            "font-weight": "bold",
+		            "font-size": "10px"
+		        });
+		        // 타이머가 종료되면 clearInterval을 통해 타이머를 멈춥니다.
+		        if (count <= 0) {
+		            clearInterval(timer);
+		            $("#timercss").text("시간 초과");
+		            emailconfirmcheck = false;
+		            $("#mailconfirmbtn").remove();
+		            // 제한시간 초과시 code 삭제
+		            code = "";
+		        }
+		    }, 1000); // 1000(1초씩 줄어듦)
+		}
+		
+		    // 인증번호 받기 클릭 시
+	        $("#checkEmail").click(function() {
+	            // 타이머 초기화
+	            $("#timercss").remove();
+	            clearInterval(timer);
+	            // 아이디 입력 확인
+	            if (!$("#membername").val()) {
+	                alert("이름을 확인해주세요");
+	                $("#membername").focus();
+	                return false;
+	            }
+	            // 이메일 입력 확인
+	            if (!$("#email").val()) {
+	                alert("이메일을 확인해주세요");
+	                $("#email").focus();
+	                return false;
+	            }
+	            
+	            var name = $("#membername").val()
+	            var email = $("#email").val();
+	            
+	            // 무작위 인증코드 생성 후 이메일 전송
+	                $.ajax({
+	            type : "POST",
+	            url : "/IDsearchMail",
+	            data : {
+	                "name"  : name,
+	                "email" : email
+	            },
+	            success: function(data) {
+	                    alert("해당 이메일로 인증번호 발송이 완료되었습니다. \n확인부탁드립니다.");
+	                    code = data;
+	                    // console.log("이메일 전송 : " + code);
+	                }
+	            })  
+	            // 인증완료하고 다시 받기 버튼을 누른경우, 인증완료 상태 창을 지우기 위한 코드
+	            $("#confirmcss").remove()
+	            document.getElementById("mailcode").value = "";
+	            // 인증번호 입력란에 포커스 설정
+	            $("input[name='mailcode']").focus();
+	            
+	            // 인증번호 확인 버튼 생성
+	            $("#certbutton").html("<button type='button' class='btn' id='mailconfirmbtn' onclick='mailconfirm(code)'>인증번호확인</button>")
+	            // 타이머 시작
+	            startTimer();
+	        });
+	});
+	
+    function formSubmit() {
+        if (!emailconfirmcheck) {
+            alert("이메일 인증을 진행해주십시오");
+            $("input[name='mailcode']").focus();
+            return false;
+        }
+        if (!$("#membername").val()) {
+            alert("이름을 입력해주십시오");
+            $("input[name='membername']").focus();
+            return false;
+        }       
+        document.getElementsByName("form1")[0].submit();
+    }
+</script>
+<body>
+	<div class="member">
+		<!-- 로고 -->
+		<a href="/index"><img class="logo" src="../image/logo.png"
+			width="350" style="align-content: center;"></a>
+		<form action="/idsearch" method="post" name="form1">	
+			<!-- 이름 -->
+			<div class="field" style="margin-top: 100px;">
+				<label id="namelabel"><b>이름을 입력해주세요</b></label>
+				<input type="text" class="form-control" name="membername" id="membername">
+			</div>
+	
+			<!-- 이메일 인증 -->
+			<div class="field tel-number" style="margin-bottom: 50px;">
+				<label id="maillabel"><b>본인 확인 이메일</b></label>
+				<div>
+					<input type="email" placeholder="example@naver.com" name="email"
+						id="email">
+					<button type="button" class="btn" id="checkEmail">인증번호받기</button>
+				</div>
+				<div>
+					<input type="text" placeholder="인증번호를 입력하세요" name="mailcode"
+						id="mailcode">
+					<div id="certbutton"></div>
+				</div>
+				<div id="codelabel"></div>
+				<div id="timer"></div>
+			</div>
+			<div style="margin-bottom: 200px;">
+				<button type="button" class="btn_submit" 
+				onclick="formSubmit()">아이디 찾기</button>
+			</div>
+		</form>
+	</div>
+	<div class="member-footer">
+		{{>layouts/footer}}
+	</div>

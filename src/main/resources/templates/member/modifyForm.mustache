@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>아웃벤 회원정보수정</title>
+<link rel="stylesheet" href="../css/joinForm.css">
+<script src="../lib/jquery-3.7.1.min.js"></script>
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+</head>
+<script type="text/javascript">
+
+var code = null;
+pwdconfirmcheck = false;
+pwdcheck = false;
+namecheck = false;
+emailconfirmcheck = false;
+
+function modifyAddress() {
+	
+    // div 태그 클래스 변경
+    var addressField = document.querySelector('.field.address');
+    addressField.classList.remove('address');
+    addressField.classList.add('tel-number');
+
+    // 내용 대체
+    var newContent = `
+        <b>주소</b>
+        <div>
+            <input type="text" name="address1" id="address1" readonly="readonly">
+            <button type="button" class="btn" id="findAddr" onclick="daumPostcode()">주소찾기</button>
+        </div>
+        <input type="text" name="address2" id="address2" placeholder="상세주소">
+    `;
+    addressField.innerHTML = newContent;
+}
+
+//타이머
+function startTimer() {
+	// 제한시간 지정
+    var count = 300;
+    timer = setInterval(function() {
+        count--;
+        $("#timer").html("<span id='timercss'>남은 시간: " + count + "초</span>");
+        $("#timercss").css({
+            "color": "#FA3E3E",
+            "font-weight": "bold",
+            "font-size": "10px"
+        });
+        // 타이머가 종료되면 clearInterval을 통해 타이머를 멈춥니다.
+        if (count <= 0) {
+            clearInterval(timer);
+            $("#timercss").text("시간 초과");
+            $("#mailconfirmbtn").remove();
+            // 제한시간 초과시 인증 테이블에 있는 해당 정보 삭제
+            code = null;
+            emailconfirmcheck = false;
+        }
+    }, 1000); // 1000(1초씩 줄어듦)
+}
+
+//이메일 인증번호 체크 함수
+function mailconfirm(code) {
+	console.log(code);
+	if ($("#mailcode").val() == code) {	// 인증번호가 맞는 경우
+		emailconfirmcheck = true;
+		$("#codelabel").html("<span id='confirmcss'>인증번호 확인 완료</span>")
+		$("#confirmcss").css({
+			"color" : "#0D6EFD",
+			"font-weight" : "bold",
+			"font-size" : "13px"
+		})
+		// 타이머 제거
+     $("#timercss").remove();
+     clearInterval(timer);
+     // 버튼 제거
+     $("#mailconfirmbtn").remove();
+		} 
+	else {	// 인증번호가 틀린 경우
+		emailconfirmcheck = false;
+		$("#codelabel").html("<span id='confirmcss'>인증번호가 잘못되었습니다</span>")
+		$("#confirmcss").css({
+			"color" : "#FA3E3E",
+			"font-weight" : "bold",
+			"font-size" : "13px"
+		})
+ 	}
+}
+
+//비밀번호 정규식
+$(function() {
+	$("#password1").on("keyup", function() {
+	    var regExp = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+[\]{};:'",.<>\/?])[A-Za-z\d!@#$%^&*()\-_=+[\]{};:'",.<>\/?]{8,20}$/;
+	    // 문자열이 최소 8자 이상 20자 이하의 영문자와 숫자로만 이루어져 있으며, 
+	    // 최소한 하나의 영문자와 하나의 숫자를 포함하고 있는지를 확인
+	    // 최소한 하나의 특수문자가 포함되어야 합니다.
+	    if (!$("#password1").val()) { // 입력값이 비어있는 경우
+	        $("#pwdlabel").html("<b>비밀번호<small>[8~20자리] 영문, 숫자만 입력가능 특수문자는 반드시 한개이상</small></b>");
+	        $("#pwdcss").remove(); // 메시지가 있는 경우 삭제
+	        pwdcheck = false;
+	    } else if (!regExp.test($("#password1").val())) { // 비밀번호가 유효하지 않은 경우
+	        $("#pwdlabel").html("<span id='pwdcss'>패스워드 형식이 맞지 않습니다</span>");
+	        $("#pwdcss").css({
+	            "color" : "#FA3E3E",
+	            "font-weight" : "bold",
+	            "font-size" : "13px"
+	        });
+	        pwdcheck = false;
+	    } else { // 유효한 경우
+	        $("#pwdlabel").html("<span id='pwdcss'>올바른 비밀번호 입니다</span>");
+	        $("#pwdcss").css({
+	            "color" : "#0D6EFD",
+	            "font-weight" : "bold",
+	            "font-size" : "13px"
+	        });
+	    }
+	});
+	
+	// 이메일 정규식 검사
+	$("#email").on("keyup", function() {
+		var regExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z]+)*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z]+)*\.[a-zA-Z]{2,3}$/;
+		if (!$("#email").val()) { // 입력값이 비어있는 경우
+	        $("#maillabel").html("<b>본인 확인 이메일</b>");
+	        $("#mailcss").remove(); // 메시지가 있는 경우 삭제
+	    } 
+		else if (!regExp.test($("#email").val())) {
+			$("#maillabel").html("<span id='mailcss'>이메일 형식이 맞지 않습니다</span>")
+			$("#mailcss").css({
+				"color" : "#FA3E3E",
+				"font-weight" : "bold",
+				"font-size" : "13px"
+			})
+		} else {		
+			$("#maillabel").html("<span id='mailcss'>이메일을 형식을 확인했습니다</span>")
+			$("#mailcss").css({
+				"color" : "#0D6EFD",
+				"font-weight" : "bold",
+				"font-size" : "13px"
+			})
+		}
+	});
+	
+	
+	// 패스워드 2중 검사
+	$("#password2").on("keyup", function() {
+	    if (!$("#password2").val()) { // 입력값이 비어있는 경우
+	        $("#pwdconfirmlabel").html("<b>비밀번호 재확인</b>");
+	        $("#pwdcss2").remove(); // 메시지가 있는 경우 삭제
+	        pwdcheck = false;
+	    } else {
+	        if ($("#password2").val() != $("#password1").val()) {
+	            pwdconfirmcheck = false;
+	            $("#pwdconfirmlabel").html("<span id='pwdcss2'>비밀번호가 일치하지 않습니다</span>")
+	            $("#pwdcss2").css({
+	                "color" : "#FA3E3E",
+	                "font-weight" : "bold",
+	                "font-size" : "13px"
+	            })
+	        } else {
+	            pwdconfirmcheck = true;
+		        pwdcheck = true;
+	            //console.log("동일한 비밀번호");
+	            $("#pwdconfirmlabel").html("<span id='pwdcss2'>비밀번호 일치 확인</span>")
+	            $("#pwdcss2").css({
+	                "color" : "#0D6EFD",
+	                "font-weight" : "bold",
+	                "font-size" : "13px"
+	            })
+	        }
+	    }
+	});
+	
+		// 핸드폰 번호
+		$("#phone").on("keyup", function() {
+			var regExp = /^\d{3}-\d{4}-\d{4}$/;
+			if (!$("#phone").val()) { // 입력값이 비어있는 경우
+		        $("#phonelabel").html("<b>휴대전화</b>");
+		        $("#chkphone").remove(); // 메시지가 있는 경우 삭제
+		        phonecheck = false;
+		    } 
+			else if (!regExp.test($("#phone").val())) {
+				$("#phonelabel").html("<span id='chkphone'>올바르지 않은 핸드폰 번호입니다</span>")
+				$("#chkphone").css({
+					"color" : "#FA3E3E",
+					"font-weight" : "bold",
+					"font-size" : "13px"
+				})
+				phonecheck = false;
+			} else {
+				$("#phonelabel").html("<span id='chkphone'>핸드폰 번호를 확인했습니다</span>")
+				$("#chkphone").css({
+					"text-align" : "center",
+					"color" : "#0D6EFD",
+					"font-weight" : "bold",
+					"font-size" : "13px"
+					})
+					phonecheck = true;
+				}
+			})
+		});
+	
+		// 이름 확인
+		$("#membername").on("keyup", function() {
+			var regExp = /^[가-힣]{2,}$/;
+			// 한글로만 구성되어야함(공백 없고 2글자 이상)
+			if (!$("#membername").val()) { // 입력값이 비어있는 경우
+		        $("#namelabel").html("<b>이름</b>");
+		        $("#namecss").remove(); // 메시지가 있는 경우 삭제
+		        namecheck = false;
+		    } else {
+		        if (!regExp.test($("#membername").val())) {
+		        	namecheck = false;
+		            $("#namelabel").html("<span id='namecss'>올바른 이름을 작성해주세요</span>")
+		            $("#namecss").css({
+		                "color" : "#FA3E3E",
+		                "font-weight" : "bold",
+		                "font-size" : "13px"
+		            })
+		        } else {
+		        	namecheck = true;
+		            $("#namelabel").html("<span id='namecss'>멋진 이름이네요!</span>")
+		            $("#namecss").css({
+		                "color" : "#0D6EFD",
+		                "font-weight" : "bold",
+		                "font-size" : "13px"
+		            })
+		        }
+		    }
+		})
+	
+		//주소 찾기 script
+		function daumPostcode() {
+			$("#address1").val("");
+			$("#address2").val("");
+			new daum.Postcode({
+				oncomplete : function(data) {
+					// 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+		
+					// 각 주소의 노출 규칙에 따라 주소를 조합한다.
+					// 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+					var addr = ''; // 주소 변수
+					var extraAddr = ''; // 참고항목 변수
+		
+					//사용자가 선택한 주소 타입에 따라 해당 주소 값을 가져온다.
+					if (data.userSelectedType === 'R') { // 사용자가 도로명 주소를 선택했을 경우
+						addr = data.roadAddress;
+					} else { // 사용자가 지번 주소를 선택했을 경우(J)
+						addr = data.jibunAddress;
+					}
+		
+					// 사용자가 선택한 주소가 도로명 타입일때 참고항목을 조합한다.
+					if (data.userSelectedType === 'R') {
+						// 법정동명이 있을 경우 추가한다. (법정리는 제외)
+						// 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+						if (data.bname !== '' && /[동|로|가]$/g.test(data.bname)) {
+							extraAddr += data.bname;
+						}
+						// 건물명이 있고, 공동주택일 경우 추가한다.
+						if (data.buildingName !== '' && data.apartment === 'Y') {
+							extraAddr += (extraAddr !== '' ? ', '
+									+ data.buildingName : data.buildingName);
+						}
+						// 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+						if (extraAddr !== '') {
+							extraAddr = extraAddr;
+						}
+						// 조합된 참고항목을 해당 필드에 넣는다.
+						document.getElementById("address2").value = extraAddr;
+		
+					} else {
+						document.getElementById("address2").value = '';
+					}
+		
+					// 우편번호와 주소 정보를 해당 필드에 넣는다.
+					$("#address1").val(addr);
+					$("#address2").val(extraAddr + " ")
+		
+					$("#mmaddr").remove();
+					$("#mmaddr2").remove();
+		
+					// 커서를 상세주소 필드로 이동한다.
+					document.getElementById("address2").focus();
+				}
+			}).open();
+		}
+
+	
+		// 인증번호 받기 클릭 시
+	   $(document).ready(function() {
+		    $("#checkEmail").click(function() {
+		    	var frm = document.form1;
+		    	
+		    	// 이메일 변경 감지
+		    	var mail1 = frm.email.value;
+		    	var mail2 = "{{ member.email }}";
+		    	
+		    	if(mail1 == mail2) {
+		    		alert("이미 인증된 메일입니다. 재인증 하실 필요없습니다.");
+		    		return false;
+		    	}
+		    				    	
+	 			// 타이머 초기화
+	 	        $("#timercss").remove();
+	 	        clearInterval(timer);
+	 	        
+	 	    		// 인증완료하고 다시 받기 버튼을 누른경우, 인증완료 상태 창을 지우기 위한 코드
+					$("#confirmcss").remove()
+					document.getElementById("mailcode").value = "";
+			        // 인증번호 입력란에 포커스 설정
+			        $("input[name='mailcode']").focus();
+	 	        
+			        // 이메일 입력 확인
+			        if (!mail1) {
+			            alert("이메일을 확인해주세요");
+			            $("#email").focus();
+			            return false;
+			        }
+					
+					// 무작위 인증코드 생성 후 이메일 전송
+					$.ajax({
+					    type: "POST",
+					    url: "/ModifyMail",
+					    data: {
+					    	"id" : $("#member_id").val(),
+					        "email": $("#email").val()
+					    },
+					    success: function(data) {
+					        alert("해당 이메일로 인증번호 발송이 완료되었습니다. \n확인부탁드립니다.");
+					        code = data; // 전역변수 code에 인증코드 저장
+					       	// console.log("code : " + code);
+					        // console.log("data : " + data);
+					    }
+					});
+					// 인증번호 확인 버튼 생성
+					$("#certbutton").html("<button type='button' class='btn' id='mailconfirmbtn' onclick='mailconfirm(code)'>인증번호확인</button>")
+			        // 타이머 시작
+					startTimer();
+		    });
+	   });
+
+
+function modifyCheck() {
+	
+	var frm = document.form1;
+	
+	// 이메일 변경 감지
+	var mail1 = frm.email.value;
+	var mail2 = "{{ member.email }}";
+	// 기존메일과 다른값이 입력되었고, 이메일 재인증을 하지 않았을 시
+	if (mail1 != mail2 && !emailconfirmcheck) {
+		alert("이메일 인증이 필요합니다");
+		return false;
+	}
+	
+	if (!pwdconfirmcheck || !pwdcheck) {
+		alert("비밀번호 입력칸을 확인해주세요");
+		return false;
+	}
+	
+	frm.submit();
+}
+</script>
+<body>
+	<form action="/modify" method="post" name="form1">
+		<div class="member">
+			<!-- 1. 로고 -->
+			<a href="/index"><img class="logo" src="../image/logo.png" width="350"
+				style="align-content: center;"></a>
+
+			<!-- 2. 필드 -->
+			<div class="field">
+    			<label id="idlabel"><b>아이디를 입력해주세요<small>(6~15자 입력, 소문자 영어와 숫자만 허용)</small></b></label>
+    			<input type="text" class="form-control" disabled="disabled" value="{{member.member_id}}">
+    			<input type="hidden" name="member_id" id="member_id" value="{{member.member_id}}">
+			</div>
+			<div class="field">
+				<label id="pwdlabel"><b>비밀번호<small>[8~20자리] 영문, 숫자만 입력가능 특수문자는 반드시 한개이상</small></b></label>
+				<input type="password" name="password1" id="password1">	
+			</div>
+			<div class="field">
+				<label id="pwdconfirmlabel"><b>비밀번호 재확인</b></label>
+				<input type="password" name="password2" id="password2">
+			</div>
+			<div class="field">
+				<label id="nicklabel"><b>닉네임을 입력해주세요<small>(중복 불가, 한/영 2글자 이상)</small></b></label>
+				<input type="text" class="form-control" disabled="disabled"
+				name="nick_name" id="nick_name" value="{{member.nick_name}}">
+			</div>
+			<div class="field">
+				<label id="namelabel"><b>이름</b></label>
+				<input type="text" name="membername" id="membername" value="{{member.membername}}">
+			</div>
+
+			<!-- 5. 이메일_전화번호 -->
+			<div class="field tel-number">
+			    <label id="maillabel"><b>이메일(변경 시, 재 인증 필요)</b></label>
+			    <div>
+			        <input type="email" placeholder="example@naver.com" name="email" id="email" value="{{member.email}}">
+			        <button type="button" class="btn" id="checkEmail">인증번호받기</button>
+			    </div>
+			    <div>
+				    <input type="text" placeholder="인증번호를 입력하세요" name="mailcode" id="mailcode">
+				    <div id="certbutton"></div>
+				</div>
+				<div id="codelabel"></div>
+			    <div id="timer"></div>
+			</div>
+
+			<div class="field">
+				<label id="phonelabel"><b>휴대전화</b></label> <select>
+					<option value="+82">대한민국 +82</option>
+				</select>
+				<div>
+					<input type="tel" placeholder="전화번호 입력 (Ex. 010-1234-5678)"
+						name="phone" id="phone" value="{{member.phone}}">
+				</div>
+			</div>
+			
+			<div class="field address">
+			    <b>주소</b> 
+			    <div class="address">
+			        <input type="text" name="address" id="address" readonly="readonly" value="{{member.address}}">
+			        <button type="button" class="btn_submit" onclick="modifyAddress()">주소변경</button>
+			    </div>
+			</div>
+			<br><br>
+
+			<!-- 8. 수정하기 버튼 -->
+			<div>
+				<button type="button" id="btnAgree" class="btn_submit"
+					onclick="modifyCheck()">회원정보 수정</button>
+			</div>
+			<!-- 9. 탈퇴하기 버튼 -->
+			<div class="member-leave">
+				<button type="button" id="btnAgree" class="btn_submit"
+					onclick="location.href='/memberLeaveForm'" style="margin-top: 20px;">회원탈퇴</button>
+			</div>
+			<!-- footer -->
+			<div class="member-footer">
+				<div>
+					<a href="#">이용약관</a> <a href="#">개인정보처리방침</a>
+				</div>
+				<span><a href="#">OUTVEN Corp.</a></span>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

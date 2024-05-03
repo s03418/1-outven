@@ -1,0 +1,17 @@
+{{>layouts/header}}
+<article>
+	{{>layouts/nav}}
+	
+<script>
+	if({{result}}){
+		alert("저장 성공");
+		location.href="tipBoardList?pg={{pg}}"
+	} else{
+		alert("저장 실패");
+		history.back();
+	}
+</script>	
+	</section>
+</article>
+{{>layouts/footer}}
+		

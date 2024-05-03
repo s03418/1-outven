@@ -1,0 +1,59 @@
+{{>layouts/header}} 
+
+<style>
+.champimg1{
+float: left;
+padding: 10px;
+
+}
+
+#imid_bc7508c96f3cc48 .common-title::before {
+    background: #074f68; /* 가상 요소에 배경색 지정 */
+}
+
+#imid_bc7508c96f3cc48 .common-title {
+    background: #047e99; /* 요소에 배경색 지정 */
+    color: #ffffff; /* 글자색 지정 */
+
+}
+</style>
+<article>
+	{{>layouts/nav}}
+	<section class="commu-center">
+	<script type="text/javascript">
+		$(function(){
+			$("#cbutton").click(function(){
+				$("#search").val("");
+				$(".champimg1").show();
+			});
+			$("#search").keyup(function(){
+				var k = $(this).val();
+				$(".champimg1").hide();
+				var temp = $(".champimg1 nobr:contains('" + k +"')");
+				//$('.commu-center').html(temp.parent().parent());
+				$(temp).parent().parent().show();
+			});
+		});
+	</script>
+		<section class="commu-common"  id=imid_bc7508c96f3cc48>
+			<h2 class="common-title">
+				<span class="main">스킨 갤러리</span> <span class="sub"></span>
+			</h2>
+		</section>	
+		<input type="button" id="cbutton" value="초기화">
+		<input type="text" id="search">
+		<br><br>
+		
+		<ul class="champlist">
+		{{#champList}}
+			<li class="champimg1">
+			<a href="/champ_skin/champSkinView?champ_code={{champ_code}}">
+			<img alt="" src="../champion_image/{{champ_image}}" width="64px" height="64px"></a>
+			<div class="cname" align="center" style="font: 11px bold; width: 64px;"><nobr>{{champ_name}}</nobr></div>
+			</li>
+		{{/champList}}
+		</ul>
+		
+	</section>
+</article>
+{{>layouts/footer}}

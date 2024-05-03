@@ -1,0 +1,207 @@
+{{>layouts/header}}
+<article>
+	{{>layouts/nav}}
+	<section class="commu-center">
+		<div id="comAdExtVideo" class="comAdExtVideo floating">
+			<div style="width: 800px;">
+				<div id="__A1VideoLargeBanner" style="float: none; display: block;"></div>
+			</div>
+		</div>
+		
+		<div class="commu-body pcMain">
+			<div id="iBuilderHeader">
+				<section class="list-wrap  w-100">
+					<article class="list-common">
+<style>
+#board_category .common-title::before {
+	background: #074f68
+}
+
+#board_category .common-title {
+	background: #047e99;
+	color: #ffffff
+}
+</style>
+<script src="../lib/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+    // 페이지 로드 시 사용자 유형에 따라 버튼 초기 설정
+    var savedUserType = localStorage.getItem('detail_category');
+    var userType = savedUserType ? savedUserType : $('#detail_category').val();
+
+    // URL에서 role 파라미터 가져오기
+    var urlParams = new URLSearchParams(window.location.search);
+    var roleParam = urlParams.get('detail_category');
+
+    // role 파라미터가 존재한다면 선택된 값으로 설정
+    if (roleParam) {
+        $('#detail_category').val(roleParam);
+    }
+
+    // 셀렉트 박스 변경 시
+    $('#detail_category').change(function() {
+        var detail_category = $(this).val();
+        if(detail_category == "") {
+        	location.href='/board/imageBoardList';
+        } else {
+	        localStorage.setItem('detail_category', detail_category); // 사용자 유형 저장
+	
+	        var currentPage = window.location.href.split('?')[0]; // 현재 페이지 URL에서 쿼리 파라미터 제외
+	
+	        // 사용자 유형에 따른 role 파라미터 추가
+	        var roleParam = "detail_category=" + detail_category;
+	
+	        // 현재 페이지 URL과 role 파라미터를 조합하여 새로운 URL 생성
+	        var newURL = currentPage + '?pg=1&' + roleParam;
+	
+	        // 새로운 URL로 페이지 다시로드
+	        window.location.href = newURL;
+        }
+    });
+});
+</script>
+						<section class="commu-common" id="board_category">
+							<h2 class="common-title">
+								<span class="main">LoL 팬아트/카툰 게시판</span> <span class="sub"></span>
+							</h2>
+						</section>
+					</article>
+				</section>
+			</div>
+			<div id="powerbbsHead"></div>
+			<article class="new-board" id="new-board">
+				<h3 class="commu-hidden">LoL 팬아트/카툰 게시판</h3>
+				<div class="admin-area"></div>
+				<div class="post-area">
+					
+					<a class="btn" href="/board/imageBoardList?pg={{pg}}">목록</a>
+					{{#member}}<a class="btn dark write" href="/board/imageBoardWriteForm">글쓰기</a>{{/member}}
+					
+				</div>
+				<div class="board-top">
+					<div class="left">
+						<select id="detail_category">
+							<option value="">카테고리</option>
+							<option value="일반">일반</option>
+							<option value="습작">습작</option>
+							<option value="기타">기타</option>
+						</select>
+					</div>
+				</div>
+				<form name="board_list1" action="/ImageSearch" method="GET">
+					<div class="board-list">
+						<table>
+							<caption>LoL 팬아트/카툰 게시판</caption>
+							<colgroup>
+								<col class="size01" data-alias="number">
+								<col class="size02" data-alias="subject">
+								<col class="size03" data-alias="writer">
+								<col class="size04" data-alias="date">
+								<col class="size05" data-alias="hit">
+								<col class="size06" data-alias="req">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>번호</th>
+
+									<th>제목</th>
+
+									<th>글쓴이</th>
+
+									<th>등록일</th>
+
+									<th>조회</th>
+
+									<th>추천</th>
+								</tr>
+							<tbody>
+								{{#list}}
+									{{^detail_category}}
+										<tr>
+											<td>{{board_num}}</td>
+											<td><a href="/board/imageBoardView?board_num={{board_num}}&pg={{pg}}" id="subjectA">{{board_title}}</a></td>
+											<td>{{nick_name}}({{member_id}})</td>
+											<td>{{board_logtime}}</td>
+											<td>{{board_hit}}</td>
+											<td>{{board_recommend}}</td>
+										</tr>
+									{{/detail_category}}
+									{{#detail_category}}
+										<tr>
+											<td>{{board_num}}</td>
+											<td><a href="/board/imageBoardView?board_num={{board_num}}&pg={{pg}}&detail_category={{detail_category}}" id="subjectA" >[{{detail_category}}] {{board_title}}</a></td>
+											<td>{{nick_name}}({{member_id}})</td>
+											<td>{{board_logtime}}</td>
+											<td>{{board_hit}}</td>
+											<td>{{board_recommend}}</td>
+										</tr>
+									{{/detail_category}}
+								{{/list}}
+								<tr>
+							  	<td colspan="6" align="center">
+							  	{{#previousPage}}
+							  		{{^detail_category}}
+							  			[<a class="paging" href="/board/imageBoardList?pg={{previousPage}}">이전</a>]
+							  		{{/detail_category}}
+							  		{{#detail_category}}
+							  			[<a class="paging" href="/board/imageBoardList?pg={{previousPage}}&detail_category={{detail_category}}">이전</a>]
+							  		{{/detail_category}}
+							  	{{/previousPage}}
+							  	{{#pageList}}
+							  		{{#current}}
+							  			{{^detail_category}}
+							  				[<a class="currentPaging" href="/board/imageBoardList?pg={{page}}">{{page}}</a>]
+							  			{{/detail_category}}
+							  			{{#detail_category}}
+							  				[<a class="currentPaging" href="/board/imageBoardList?pg={{page}}&detail_category={{detail_category}}">{{page}}</a>]
+							  			{{/detail_category}}
+							  		{{/current}}
+							  		
+							  		{{^current}}
+							  			{{^detail_category}}
+							  				[<a class="paging" href="/board/imageBoardList?pg={{page}}">{{page}}</a>]
+							  			{{/detail_category}}
+							  			{{#detail_category}}
+							  				[<a class="paging" href="/board/imageBoardList?pg={{page}}&detail_category={{detail_category}}">{{page}}</a>]
+							  			{{/detail_category}}
+							  		{{/current}}
+							  	{{/pageList}}
+							  	
+							  	
+							  	{{#nextPage}}
+							  		{{^detail_category}}
+							  			[<a class="paging" href="/board/imageBoardList?pg={{nextPage}}">다음</a>]
+							  		{{/detail_category}}
+							  		{{#detail_category}}
+							  			[<a class="paging" href="/board/imageBoardList?pg={{nextPage}}&detail_category={{detail_category}}">다음</a>]
+							  		{{/detail_category}}
+							  	{{/nextPage}}
+							  	</td>
+							  </tr> 
+							</tbody>
+						</table>
+						<div style="float: left; display: inline; width: 710px; height: 30px;">&nbsp;</div>
+							<article class="new-board" id="new-board">
+								<div class="board-bottom" align="center">
+										<input type="hidden" name="query" value="list"> 
+										<input type="hidden" name="p" value="1"> 
+										<input type="hidden" name="sterm" value=""> 
+										<select name="name">
+											<option value="subject">제목</option>
+											<option value="content">내용</option>
+											<option value="nicname">닉네임</option>
+											<option value="category">카테고리</option>
+											<option value="subjcont">제목+내용</option>
+										</select> <input type="text" name="keyword" id="sword" value="">
+										<button type="submit">검색</button>
+									</form>
+								</div>
+							</article>
+					</div>
+				</form>
+			</article>
+		</div>
+	</section>
+</article>
+
+{{>layouts/footer}}

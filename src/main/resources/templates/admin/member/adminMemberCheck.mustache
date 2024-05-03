@@ -1,0 +1,406 @@
+{{> admin/layouts/adminheader}}
+<article>
+	{{> admin/layouts/adminnav}}
+	<section class="commu-center">
+		<div id="comAdExtVideo" class="comAdExtVideo floating">
+			<div style="width: 800px;">
+				<div id="__A1VideoLargeBanner" style="float: none; display: block;"></div>
+			</div>
+		</div>
+
+		<div class="commu-body pcMain">
+			<div id="iBuilderHeader">
+				<section class="list-wrap  w-100">
+					<article class="list-common">
+						<style>
+#board_category .common-title::before {
+	background: #074f68
+}
+
+#board_category .common-title {
+	background: #047e99;
+	color: #ffffff
+}
+</style>
+<script type="text/javascript">
+{{#member}}
+var role = "{{member.user_role}}";
+if(role != "admin") {
+	alert("관리자가 아닙니다.")
+	location.href="/index";
+} 
+{{/member}}
+{{^member}}
+	alert("관리자 로그인을 해주십시오")
+	location.href="/index";
+{{/member}}
+
+$(document).ready(function() {
+    // 페이지 로드 시 사용자 유형에 따라 버튼 초기 설정    
+    var savedUserType = localStorage.getItem('userType');
+    var userType = savedUserType ? savedUserType : $('#userType').val();
+    toggleButtons(userType);
+
+    // URL에서 role 파라미터 가져오기
+    var urlParams = new URLSearchParams(window.location.search);
+    var roleParam = urlParams.get('role');
+
+    // role 파라미터가 존재한다면 선택된 값으로 설정
+    if (roleParam) {
+        $('#userType').val(roleParam);
+    }
+
+    // 셀렉트 박스 변경 시
+    $('#userType').change(function() {
+        var userType = $(this).val();
+        localStorage.setItem('userType', userType); // 사용자 유형 저장
+
+        var currentPage = window.location.href.split('?')[0]; // 현재 페이지 URL에서 쿼리 파라미터 제외
+
+        // 사용자 유형에 따른 role 파라미터 추가
+        var roleParam = "role=" + userType;
+
+        // 현재 페이지 URL과 role 파라미터를 조합하여 새로운 URL 생성
+        var newURL = currentPage + '?pg=1&' + roleParam;
+
+        // 새로운 URL로 페이지 다시로드
+        window.location.href = newURL;
+
+        // 셀렉트 박스 변경 시
+        toggleButtons(userType);
+    });
+
+    // 버튼 표시/숨김 함수
+    function toggleButtons(userType) {
+        if (userType === "user") {
+            $('#admin-btn').show();
+            $('#admin-del-btn').hide();
+            $('#member-modify-btn').show();
+            $('#member-exile').show();
+            $('#member-exile-cancel').hide();
+            $('#time').html('가입날짜');
+        } else if (userType === "admin") {
+            $('#admin-btn').hide();
+            $('#admin-del-btn').show();
+            $('#member-modify-btn').hide();
+            $('#member-exile').hide();
+            $('#member-exile-cancel').hide();
+            $('#time').html('가입날짜');
+        } else if (userType === "blacklist") {
+            $('#admin-btn').hide();
+            $('#admin-del-btn').hide();
+            $('#member-modify-btn').hide();
+            $('#member-exile').hide();
+            $('#member-exile-cancel').show();
+            $('#time').html('차단날짜');
+        }
+    }
+});
+
+    
+   // '관리자임명' 버튼 클릭 시
+   $(document).on('click', '#admin-btn', function() {
+	   if ($('input[type="checkbox"]:checked').length === 0) {
+		    alert("선택된 회원이 없습니다");
+		    return false;
+		}
+
+	   // 선택된 회원 정보 수집
+       var selectedMembers = [];
+       
+       $('input[type="checkbox"]:checked').each(function() {
+           var memberId = $(this).closest('tr').find('td:eq(1)').text(); // 회원 아이디
+
+           // 선택된 회원 정보를 객체로 만들어 배열에 추가
+           selectedMembers.push({
+               member_id: memberId,
+           });
+       });
+       
+	   if(confirm("정말 임명시키시겠습니까?")) {
+       // 서버로 선택된 회원 정보 전송
+       $.ajax({
+    	    url: '/admin/appointAdmin',
+    	    method: 'POST',
+    	    contentType: 'application/json',
+    	    data: JSON.stringify(selectedMembers),
+    	    success: function(response) {
+    	        // 성공적으로 처리된 후에 할 일
+    	        // console.log(response);
+   	        	alert("성공적으로 임명되었습니다");
+   	        	location.href="/admin/memberCheck?pg=1&role=user";
+    	    },
+    	    error: function(xhr, status, error) {
+    	        // 오류 처리
+    	        alert("[ERROR] 관리자 임명 실패");
+    	        // console.error(error);
+    	    	}
+    		});
+	   }
+   });
+   
+   // '관리자해임' 버튼 클릭 시
+   $(document).on('click', '#admin-del-btn', function() {
+	   if ($('input[type="checkbox"]:checked').length === 0) {
+		    alert("선택된 회원이 없습니다");
+		    return false;
+		}
+	   // 선택된 회원 정보 수집
+       var selectedMembers = [];
+       
+       $('input[type="checkbox"]:checked').each(function() {
+           var memberId = $(this).closest('tr').find('td:eq(1)').text(); // 회원 아이디
+
+           // 선택된 회원 정보를 객체로 만들어 배열에 추가
+           selectedMembers.push({
+               member_id: memberId,
+           });
+       });
+       if(confirm("정말 해임시키시겠습니까?")) {
+	       // 서버로 선택된 회원 정보 전송
+	       $.ajax({
+	    	    url: '/admin/dismissAdmin',
+	    	    method: 'POST',
+	    	    contentType: 'application/json',
+	    	    data: JSON.stringify(selectedMembers),
+	    	    success: function(response) {
+	    	        // 성공적으로 처리된 후에 할 일
+	    	        // console.log(response);
+    	        	alert("성공적으로 해임되었습니다");
+    	        	location.href="/admin/memberCheck?pg=1&role=admin";
+	    	    },
+	    	    error: function(xhr, status, error) {
+	    	        // 오류 처리
+	    	        alert("[ERROR] 관리자 해임 실패");
+	    	        // console.error(error);
+	    	    }
+	    	});
+	   }
+   });
+   
+   // '회원수정' 버튼 클릭 시
+   $(document).on('click', '#member-modify-btn', function() {
+	   if ($('input[type="checkbox"]:checked').length === 0) {
+		    alert("선택된 회원이 없습니다");
+		    return false;
+		}
+
+	   // 선택된 회원 정보 수집
+       var selectedMembers = [];
+       $('input[type="checkbox"]:checked').each(function() {
+           var memberId = $(this).closest('tr').find('td:eq(1)').text(); // 회원 아이디
+           var memberLevel = $(this).closest('tr').find('#member_level').val(); // 회원 등급
+           var memberExp = $(this).closest('tr').find('#member_exp').val(); // 회원 경험치
+
+        	// 입력값 유효성 검사: 빈 값 또는 숫자가 아닌 값이 입력되었는지 확인
+           if (memberLevel === "" || memberExp === "" || isNaN(memberLevel) || isNaN(memberExp)) {
+               alert("등급과 경험치는 숫자로 입력해주세요.");
+               return false; // 각 회원에 대한 유효성 검사 실패 시 반복문 종료
+           }
+           
+           // 선택된 회원 정보를 객체로 만들어 배열에 추가
+           selectedMembers.push({
+               member_id: memberId,
+               member_level: memberLevel,
+               member_exp: memberExp
+           });
+       });
+	   if(confirm("정말 수정하시겠습니까?")) {
+	       // 서버로 선택된 회원 정보 전송
+	       $.ajax({
+	    	    url: '/admin/modifyMember',
+	    	    method: 'POST',
+	    	    contentType: 'application/json',
+	    	    data: JSON.stringify(selectedMembers),
+	    	    success: function(response) {
+	    	        // 성공적으로 처리된 후에 할 일
+	    	        // console.log(response);
+    	        	alert("성공적으로 수정되었습니다");
+    	        	location.href="/admin/memberCheck?pg=1&role=user";
+	    	    },
+	    	    error: function(xhr, status, error) {
+	    	        // 오류 처리
+	    	        alert("[ERROR] 회원 수정 실패");
+	    	        // console.error(error);
+	    	    }
+	    	});
+       }
+   });
+   
+   // '회원추방' 버튼 클릭 시
+   $(document).on('click', '#member-exile', function() {
+	   if ($('input[type="checkbox"]:checked').length === 0) {
+		    alert("선택된 회원이 없습니다");
+		    return false;
+		}
+	   // 선택된 회원 정보 수집
+       var selectedMembers = [];
+       
+       $('input[type="checkbox"]:checked').each(function() {
+           var memberId = $(this).closest('tr').find('td:eq(1)').text(); // 회원 아이디
+
+           // 선택된 회원 정보를 객체로 만들어 배열에 추가
+           selectedMembers.push({
+               member_id: memberId,
+           });
+       });
+       if(confirm("정말 추방시키시겠습니까?")) {
+	       // 서버로 선택된 회원 정보 전송
+	       $.ajax({
+	    	    url: '/admin/exileMember',
+	    	    method: 'POST',
+	    	    contentType: 'application/json',
+	    	    data: JSON.stringify(selectedMembers),
+	    	    success: function(response) {
+	    	        // 성공적으로 처리된 후에 할 일
+	    	        // console.log(response);
+    	        	alert("성공적으로 추방되었습니다");
+    	        	location.href="/admin/memberCheck?pg=1&role=user";
+	    	    },
+	    	    error: function(xhr, status, error) {
+	    	        // 오류 처리
+	    	        alert("[ERROR] 추방 실패");
+	    	        // console.error(error);
+	    	    }
+	    	});
+	   }
+   });
+   
+   // '회원금지해제' 버튼 클릭 시
+   $(document).on('click', '#member-exile-cancel', function() {
+	   if ($('input[type="checkbox"]:checked').length === 0) {
+		    alert("선택된 회원이 없습니다");
+		    return false;
+		}
+	   // 선택된 회원 정보 수집
+       var selectedMembers = [];
+       
+       $('input[type="checkbox"]:checked').each(function() {
+           var memberId = $(this).closest('tr').find('td:eq(1)').text(); // 회원 아이디
+
+           // 선택된 회원 정보를 객체로 만들어 배열에 추가
+           selectedMembers.push({
+               member_id: memberId,
+           });
+       });
+       if(confirm("정말 금지해제 시키시겠습니까?")) {
+	       // 서버로 선택된 회원 정보 전송
+	       $.ajax({
+	    	    url: '/admin/exileMemberCancel',
+	    	    method: 'POST',
+	    	    contentType: 'application/json',
+	    	    data: JSON.stringify(selectedMembers),
+	    	    success: function(response) {
+	    	        // 성공적으로 처리된 후에 할 일
+	    	        // console.log(response);
+    	        	alert("성공적으로 금지해제 되었습니다");
+    	        	location.href="/admin/memberCheck?pg=1&role=blacklist";
+	    	    },
+	    	    error: function(xhr, status, error) {
+	    	        // 오류 처리
+	    	        alert("[ERROR] 금지해제 실패");
+	    	        // console.error(error);
+	    	    }
+	    	});
+	   }
+   });
+</script>
+						<section class="commu-common" id="board_category">
+							<h2 class="common-title">
+								<span class="main">관리자 회원조회</span> <span class="sub"></span>
+							</h2>
+						</section>
+					</article>
+				</section>
+			</div>
+			<div id="powerbbsHead"></div>
+			<article class="new-board" id="new-board">
+				<h3 class="commu-hidden">관리자 회원조회</h3>
+				<div>
+					<select id="userType" style="margin-bottom: 10px;">
+						<option value="user">일반 사용자</option>
+						<option value="admin">관리자</option>
+						<option value="blacklist">차단된 이용자</option>
+					</select>
+				</div>
+				<div class="board-top">
+					<form name="board_list1">
+						<input type="hidden" name="come_idx" value="2771">
+						<div class="board-list">
+							<table>
+								<caption>회원조회</caption>
+								<colgroup>
+									<col class="size01">
+									<col class="size03">
+									<col class="size04">
+									<col class="size03">
+									<col class="size03">
+									<col class="size04">
+									<col class="size04">
+									<col class="size04">
+								</colgroup>
+								<thead>
+									<tr>
+										<th>선택</th>
+										<th>아이디</th>
+										<th>이름</th>
+										<th>닉네임</th>
+										<th id="time">가입날짜</th>
+										<th>등급</th>
+										<th>경험치</th>
+										<th>구분</th>
+									</tr>
+								</thead>
+								<tbody id="table-body">
+									{{#list}}
+									<tr>
+										<td><input type="checkbox"></td>
+										<td>{{member_id}}</td>
+										<td><a href="#">{{membername}}</a></td>
+										<td>{{nick_name}}</td>
+										<td>{{logtime}}</td>
+										<td><input type="text" style="text-align: center;"
+											id="member_level" value="{{member_level}}" size="1"></td>
+										<td><input type="text" style="text-align: center;"
+											id="member_exp" value="{{member_exp}}" size="1"></td>
+										<td>{{user_role}}</td>
+									</tr>
+									{{/list}}
+									<tr>
+										<td colspan="8" align="center">{{#previousPage}} [<a
+											class="paging"
+											href="/admin/memberCheck?pg={{previousPage}}&role={{role}}">이전</a>]
+											{{/previousPage}} {{#pageList}} {{#current}} [<a
+											class="currentPaging"
+											href="/admin/memberCheck?pg={{page}}&role={{role}}">{{page}}</a>]
+											{{/current}} {{^current}} [<a class="paging"
+											href="/admin/memberCheck?pg={{page}}&role={{role}}">{{page}}</a>]
+											{{/current}} {{/pageList}} {{#nextPage}} [<a class="paging"
+											href="/admin/memberCheck?pg={{nextPage}}&role={{role}}">다음</a>]
+											{{/nextPage}}
+										</td>
+									</tr>
+								</tbody>
+							</table>
+							{{#member}}
+							<div id="modify-btn-field">
+								<div style="float: right;">
+									<button type="button" class="btn" id="member-modify-btn">회원수정</button>
+									<button type="button" class="btn dark write" id="member-exile">회원추방</button>
+									<button type="button" class="btn" id="member-exile-cancel">회원금지해제</button>
+								</div>
+								<div style="float: left;">
+									<button type="button" class="btn" id="admin-btn">관리자임명</button>
+									<button type="button" class="btn" id="admin-del-btn">관리자해임</button>
+								</div>
+							</div>
+							{{/member}}
+						</div>
+					</form>
+				</div>
+			</article>
+		</div>
+	</section>
+</article>
+
+{{>layouts/footer}}

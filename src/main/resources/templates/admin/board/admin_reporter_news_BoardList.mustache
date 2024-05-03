@@ -1,0 +1,393 @@
+{{> admin/layouts/adminheader}}
+<article>
+	{{> admin/layouts/adminnav}}
+	<section class="commu-center">
+		<div id="comAdExtVideo" class="comAdExtVideo floating">
+			<div style="width: 800px;">
+				<div id="__A1VideoLargeBanner" style="float: none; display: block;"></div>
+			</div>
+		</div>
+
+		<div class="commu-body pcMain">
+			<div id="iBuilderHeader">
+				<section class="list-wrap  w-100">
+					<article class="list-common">
+						<style>
+#board_category .common-title::before {
+	background: #074f68
+}
+
+#board_category .common-title {
+	background: #047e99;
+	color: #ffffff
+}
+</style>
+<script src="../lib/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+	    $('#detail_category_move').on('change', function() {
+	        var selectedOption = $(this).val();
+	        // 모든 secondSelect 요소를 숨김과 비활성화 상태로 초기화
+	        $('[id^="secondSelect"]').css('display', 'none').attr('disabled', 'disabled');
+	        if (selectedOption === "팁 & 공략 게시판") {
+	            // 해당하는 secondSelect 요소만 보여주고 활성화 상태로 변경
+	            $('#secondSelect1').css('display', 'block').removeAttr('disabled');
+	        } else if (selectedOption === "패치 & 정보 게시판") {
+	            $('#secondSelect2').css('display', 'block').removeAttr('disabled');
+	        } else if (selectedOption === "포지션 게시판") {
+	            $('#secondSelect3').css('display', 'block').removeAttr('disabled');
+	        } else if (selectedOption === "자유 게시판") {
+	            $('#secondSelect4').css('display', 'block').removeAttr('disabled');
+	        } else if (selectedOption === "사건 & 사고 게시판") {
+	            $('#secondSelect5').css('display', 'block').removeAttr('disabled');
+	        } else if (selectedOption === "팬아트/카툰 게시판") {
+	            $('#secondSelect6').css('display', 'block').removeAttr('disabled');
+	        }
+	    });
+	});
+
+	$(function() {
+		// 이전에 선택한 값 불러오기
+		var selectedCategory = localStorage
+				.getItem('selectedCategory');
+		if (selectedCategory) {
+			$("#detail_category").val(selectedCategory);
+		}
+
+		// 카테고리 값 검사 및 설정
+		$("select[id='detail_category']").change(
+			function() {
+				var result = $(this).val();
+				if(!result) {
+					// 선택한 값을 로컬 스토리지에 저장
+					localStorage.setItem(
+							'selectedCategory',
+							result);
+					location.href = "/board/admin_reporter_news_BoardList";
+				} else {
+				// 선택한 값을 로컬 스토리지에 저장
+				localStorage.setItem(
+						'selectedCategory',
+						result);
+				location.href = "/board/admin_reporter_news_BoardList?detail_category="
+						+ result;
+				}
+			});
+	});
+
+	// 글삭제
+	$(document).on('click','#board-delete-btn', function() {
+			if ($('input[type="checkbox"]:checked').length === 0) {
+				alert("선택된 글이 없습니다");
+				return false;
+			}
+			// 선택된 회원 정보 수집
+			var selectedBoards = [];
+	
+			$('input[type="checkbox"]:checked').each(function() {
+				var boardnum = $(this).closest('tr').find('td:eq(1)').text();
+	
+				// 선택된 회원 정보를 객체로 만들어 배열에 추가
+				selectedBoards.push({
+						board_num : boardnum
+					});
+				});
+				if (confirm("정말 삭제 시키시겠습니까?")) {
+					// 서버로 선택된 회원 정보 전송
+					$.ajax({
+								url : '/admin/boardDelete',
+								method : 'POST',
+								contentType : 'application/json',
+								data : JSON
+										.stringify(selectedBoards),
+								success : function(
+										response) {
+									// 성공적으로 처리된 후에 할 일
+									// console.log(response);
+									alert("성공적으로 삭제 되었습니다");
+									location.href = "/board/admin_reporter_news_BoardList";
+								},
+								error : function(
+										xhr,
+										status,
+										error) {
+									// 오류 처리
+									alert("[ERROR] 삭제 실패");
+									// console.error(error);
+								}
+							});
+				}
+			});
+	
+	// 글이동
+	$(document).on('click','#board-move-btn', function() {
+			if ($('input[type="checkbox"]:checked').length === 0) {
+				alert("선택된 글이 없습니다");
+				return false;
+			}
+			// 선택된 회원 정보 수집
+			var selectedBoards = [];
+			var board_category = $("select[id='detail_category_move']").val();
+			var detail_category = "";
+			if (board_category === null) {
+			    alert("게시판 종류를 선택해주세요.");
+			    return false;
+			} else {
+				 if (board_category === "팁 & 공략 게시판") {
+		            // 해당하는 secondSelect 요소만 보여주고 활성화 상태로 변경
+		            detail_category = $("select[id='secondSelect1']").val();
+		        } else if (board_category === "패치 & 정보 게시판") {
+		        	detail_category = $("select[id='secondSelect2']").val();
+		        } else if (board_category === "포지션 게시판") {
+		        	detail_category = $("select[id='secondSelect3']").val();
+		        } else if (board_category === "자유 게시판") {
+		        	detail_category = $("select[id='secondSelect4']").val();
+		        } else if (board_category === "사건 & 사고 게시판") {
+		        	detail_category = $("select[id='secondSelect5']").val();
+		        } else if (board_category === "팬아트/카툰 게시판") {
+		        	detail_category = $("select[id='secondSelect6']").val();
+		        }
+			}			
+			
+			$('input[type="checkbox"]:checked').each(function() {
+				var boardnum = $(this).closest('tr').find('td:eq(1)').text();
+
+				// 선택된 회원 정보를 객체로 만들어 배열에 추가
+				selectedBoards.push({
+						board_num : boardnum,
+						board_category : board_category,
+						detail_category : detail_category
+					});
+				});
+				if (confirm("정말 이동 시키시겠습니까?")) {
+					// 서버로 선택된 회원 정보 전송
+					$.ajax({
+								url : '/admin/boardMove',
+								method : 'POST',
+								contentType : 'application/json',
+								data : JSON
+										.stringify(selectedBoards),
+								success : function(
+										response) {
+									// 성공적으로 처리된 후에 할 일
+									// console.log(response);
+									alert("성공적으로 이동 되었습니다");
+									location.href = "/board/admin_reporter_news_BoardList";
+								},
+								error : function(
+										xhr,
+										status,
+										error) {
+									// 오류 처리
+									alert("[ERROR] 이동 실패");
+									// console.error(error);
+								}
+							});
+				}
+			});
+</script>
+						<section class="commu-common" id="board_category">
+							<h2 class="common-title">
+								<span class="main">리포터 & 뉴스 게시판[관리자]</span> <span class="sub"></span>
+							</h2>
+						</section>
+					</article>
+				</section>
+			</div>
+			<div id="powerbbsHead"></div>
+			<article class="new-board" id="new-board">
+				<h3 class="commu-hidden">리포터 & 뉴스 게시판[관리자]</h3>
+				<div class="admin-area"></div>
+				<div class="post-area">
+
+					<a class="btn" href="/board/admin_reporter_news_BoardList?pg={{pg}}">목록</a>
+					{{#member}}<a class="btn dark write"
+						href="/board/reporter_news_BoardWriteForm">글쓰기</a>{{/member}}
+
+				</div>
+				<div class="board-top">
+					<div class="left">
+						<select id="detail_category">
+							<option value="">카테고리</option>
+							<option value="경기일정">경기일정</option>
+							<option value="선수출전">선수출전</option>
+							<option value="경기결과">경기결과</option>
+						</select>
+					</div>
+				</div>
+				<form name="board_list1">
+					<input type="hidden" name="come_idx" value="2771">
+
+					<div class="board-list">
+						<table>
+							<caption>리포터 뉴스 게시판</caption>
+							<colgroup>
+								<col class="size01">
+								<col class="size01" data-alias="number">
+								<col class="size03" data-alias="subject">
+								<col class="size03" data-alias="writer">
+								<col class="size03" data-alias="date">
+								<col class="size01" data-alias="hit">
+								<col class="size01" data-alias="req">
+								<col class="size01">
+							</colgroup>
+							<thead>
+								<tr>
+									<th>선택</th>
+
+									<th>번호</th>
+
+									<th>제목</th>
+
+									<th>글쓴이</th>
+
+									<th>등록일</th>
+
+									<th>조회</th>
+
+									<th>추천</th>
+									
+									<th>신고</th>
+								</tr>
+							<tbody>
+								{{#list}} {{^detail_category}}
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>{{board_num}}</td>
+									<td><a
+										href="/board/reporter_news_BoardView?board_num={{board_num}}&pg={{pg}}"
+										id="subjectA">{{board_title}}</a></td>
+									<td>{{nick_name}}</td>
+									<td>{{board_logtime}}</td>
+									<td>{{board_hit}}</td>
+									<td>{{board_recommend}}</td>
+									<td><p style="color: red;">{{board_report_count}}</p></td>
+								</tr>
+								{{/detail_category}} {{#detail_category}}
+								<tr>
+									<td><input type="checkbox"></td>
+									<td>{{board_num}}</td>
+									<td><a href="/board/reporter_news_BoardView?board_num={{board_num}}&pg={{pg}}&detail_category={{detail_category}}"
+										id="subjectA">[{{detail_category}}] {{board_title}}</a></td>
+									<td>{{nick_name}}</td>
+									<td>{{board_logtime}}</td>
+									<td>{{board_hit}}</td>
+									<td>{{board_recommend}}</td>
+									<td><p style="color: red;">{{board_report_count}}</p></td>
+								</tr>
+								{{/detail_category}} {{/list}}
+								<tr>
+									<td colspan="8" align="center">{{#previousPage}}
+										{{^detail_category}} [<a class="paging"
+										href="/board/admin_reporter_news_BoardList?pg={{previousPage}}">이전</a>]
+										{{/detail_category}} {{#detail_category}} [<a class="paging"
+										href="/board/admin_reporter_news_BoardList?pg={{previousPage}}&detail_category={{detail_category}}">이전</a>]
+										{{/detail_category}} {{/previousPage}} {{#pageList}}
+										{{#current}} {{^detail_category}} [<a class="currentPaging"
+										href="/board/admin_reporter_news_BoardList?pg={{page}}">{{page}}</a>]
+										{{/detail_category}} {{#detail_category}} [<a
+										class="currentPaging"
+										href="/board/admin_reporter_news_BoardList?pg={{page}}&detail_category={{detail_category}}">{{page}}</a>]
+										{{/detail_category}} {{/current}} {{^current}}
+										{{^detail_category}} [<a class="paging"
+										href="/board/admin_reporter_news_BoardList?pg={{page}}">{{page}}</a>]
+										{{/detail_category}} {{#detail_category}} [<a class="paging"
+										href="/board/admin_reporter_news_BoardList?pg={{page}}&detail_category={{detail_category}}">{{page}}</a>]
+										{{/detail_category}} {{/current}} {{/pageList}} {{#nextPage}}
+										{{^detail_category}} [<a class="paging"
+										href="/board/admin_reporter_news_BoardList?pg={{nextPage}}">다음</a>]
+										{{/detail_category}} {{#detail_category}} [<a class="paging"
+										href="/board/admin_reporter_news_BoardList?pg={{nextPage}}&detail_category={{detail_category}}">다음</a>]
+										{{/detail_category}} {{/nextPage}}
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						<div
+							style="float: left; display: inline; width: 710px; height: 30px;">&nbsp;</div>
+						<article class="new-board" id="new-board">
+							<div class="board-bottom" align="center">
+								<form action="/search" method="GET">
+									<input type="hidden" name="query" value="list"> <input
+										type="hidden" name="p" value="1"> <input type="hidden"
+										name="sterm" value=""> <select name="name">
+										<option value="subject">제목</option>
+										<option value="content">내용</option>
+										<option value="nicname">닉네임</option>
+										<option value="category">카테고리</option>
+										<option value="subjcont">제목+내용</option>
+									</select> <input type="text" name="keyword" id="sword" value="">
+									<button type="submit">검색</button>
+								</form>
+							</div>
+						</article>
+					</div>
+				</form>
+				<div id="modify-btn-field">
+					<div style="float: right;">
+					
+					<!-- ------------------------------------------------------------------- -->
+					<select id="secondSelect1" style="display: none;" disabled="disabled">
+						<option value="">카테고리</option>
+						<option value="일반">일반</option>
+					    <option value="가이드">가이드</option>
+					    <option value="전략">전략</option>
+					    <option value="아이템">아이템</option>
+					</select>
+					<select id="secondSelect2" style="display: none;" disabled="disabled">
+						<option value="">카테고리</option>
+						<option value="국내">국내</option>
+					</select>
+					<select id="secondSelect3" style="display: none;" disabled="disabled">
+						<option value="">카테고리</option>
+						<option value="Top">Top</option>
+						<option value="Jungle">Jungle</option>
+						<option value="Mid">Mid</option>
+						<option value="Bot">Bot</option>
+						<option value="Sup">Sup</option>
+					</select>
+					<select id="secondSelect4" style="display: none;" disabled="disabled">
+						<option value="">카테고리</option>
+						<option value="토론">토론</option>
+						<option value="이슈">이슈</option>
+						<option value="잡담">잡담</option>
+					</select>
+					<select id="secondSelect5" style="display: none;" disabled="disabled">
+						<option value="">카테고리</option>
+						<option value="욕설">욕설</option>
+						<option value="잠수">잠수</option>
+						<option value="게임방해">게임방해</option>
+						<option value="헬퍼">헬퍼</option>
+						<option value="오토">오토</option>
+					</select>
+					<select id="secondSelect6" style="display: none;" disabled="disabled">
+						<option value="">카테고리</option>
+						<option value="일반">일반</option>
+						<option value="습작">습작</option>
+						<option value="기타">기타</option>
+					</select>
+					<!-- ------------------------------------------------------------------- -->
+
+					<select id="detail_category_move" style="height: 20px;">
+						<option value="">게시판종류</option>
+						<option value="팁 & 공략 게시판">팁 & 공략 게시판</option>
+						<option value="패치 & 정보 게시판">패치 & 정보 게시판</option>
+						<option value="포지션 게시판">포지션 게시판</option>
+						<option value="자유 게시판">자유 게시판</option>
+						<option value="사건 & 사고 게시판">사건 & 사고 게시판</option>
+						<option value="팬아트/카툰 게시판">팬아트/카툰 게시판</option>
+					</select>
+						<button type="button" class="btn dark write" id="board-move-btn">글이동</button>
+						<button type="button" class="btn" id="board-delete-btn">글삭제</button>
+					</div>
+<!-- 					<div style="float: left;">
+						<button type="button" class="btn" id="1">1</button>
+						<button type="button" class="btn" id="2">2</button>
+					</div> -->
+				</div>
+			</article>
+		</div>
+	</section>
+</article>
+
+{{>layouts/footer}}

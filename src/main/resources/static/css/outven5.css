@@ -1,0 +1,4310 @@
+.powerbbsTopLeftButtons .shareBtn, .powerbbsTopLeftButtons .view-url-bttn,
+	.powerbbsTopLeftButtons .copy-url-bttn {
+	float: left;
+	height: 15px;
+	margin-right: 3px;
+	padding: 0px 2px;
+	border-radius: 2px;
+	background-color: #929caf;
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 16px;
+	color: #d8dbe1;
+	border: none;
+}
+
+#powerbbsBody .articleBotUrl {
+	height: auto;
+}
+
+.bt_GALLERY .articleSnsShare {
+	margin-top: 8px;
+}
+
+.articleSnsShare {
+	overflow: hidden;
+	float: none !important;
+	display: block !important;
+}
+
+.articleSnsShare .title {
+	float: left;
+	width: 65px;
+	height: 54px;
+	border: 1px solid #a3a3a3;
+	background:
+		url("//static.inven.co.kr/image_2011/board/common/title_sns_share.jpg")
+		center center no-repeat;
+	text-indent: -99999px;
+}
+
+.articleSnsShare .itemList {
+	float: none !important;
+	display: block !important;
+	min-height: 54px;
+	border: 1px solid #bcbcbc;
+	border-left: none;
+}
+
+.articleSnsShare .itemList .item {
+	display: block !important;
+	width: 60px;
+	margin: 7px 5px 6px 5px;
+	text-align: center !important;
+	letter-spacing: -1px;
+}
+
+.articleSnsShare .itemList .item img {
+	margin-bottom: 6px;
+}
+
+.articleSnsShare .btn {
+	padding: 0;
+	border: none;
+	background: none;
+	outline: none;
+	color: #555555 !important;
+	font-size: 11px;
+	font-family: "�뗭�", "dotum", "sans-serif";
+	letter-spacing: -1px;
+	cursor: pointer;
+}
+
+.articleSnsShare .btn p {
+	margin: -6px 0;
+}
+
+.articleSnsShare .permalink {
+	position: absolute;
+	top: -9999999px;
+	display: none;
+}
+
+/* bbs_list_notauth */
+#powerbbsBody .notauthAdultVerification {
+	position: relative;
+	width: 640px;
+	height: 185px;
+	margin-top: 15px;
+	margin-left: 15px;
+	overflow: hidden;
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/notauthBoard4.png')
+		no-repeat left top;
+}
+
+#powerbbsBody .notauthAdultVerification .button.exit {
+	position: absolute;
+	top: 128px;
+	left: 440px;
+	width: 110px;
+	height: 25px;
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/exit_19.jpg')
+		no-repeat;
+	text-indent: -9999px;
+	overflow: hidden;
+}
+
+#powerbbsBody .notauthAdultVerificationBttns {
+	width: 640px;
+	border-top: 2px solid #323232;
+	margin-left: 32px;
+}
+
+#powerbbsBody .notauthAdultVerificationBttns .bttnsWrap {
+	margin: 40px 0 0 40px;
+}
+
+#powerbbsBody .notauthAdultVerificationBttns .authMessage {
+	clear: both;
+	width: 560px;
+	line-height: 1.5;
+	font-size: 13px;
+	color: #323232;
+	font-weight: bold;
+}
+
+#powerbbsBody .notauthAdultVerificationBttns .bttns {
+	clear: both;
+	margin-top: 14px;
+	width: 560px;
+}
+
+#powerbbsBody .notauthAdultVerificationBttns .bttns ul {
+	display: inline-block;
+}
+
+#powerbbsBody .notauthAdultVerificationBttns .bttns li {
+	display: inline-block;
+	float: left;
+	margin-right: 10px;
+}
+
+#powerbbsBody .notauthAdultVerificationBttns .bttns li:last-child {
+	margin-right: 0px;
+}
+
+#powerbbsBody .notauthAdultVerificationBttns .bttns a.button {
+	display: inline-block;
+	width: 275px;
+	height: 96px;
+	text-indent: -9999px;
+	overflow: hidden;
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/grid_560x48_white1_adult1a.png?v=2')
+		no-repeat;
+}
+
+#powerbbsBody .notauthAdultVerificationBttns .bttns a.button.reload {
+	width: 275px;
+	background-position: 0px 0px;
+}
+
+#powerbbsBody .notauthAdultVerificationBttns .bttns a.button.verificate
+	{
+	width: 275px;
+	background-position: -285px 0px;
+}
+
+#powerbbsBody .notauthAdultVerificationBttns .bttns a.button.reload:hover
+	{
+	width: 275px;
+	background-position: 0px -96px;
+}
+
+#powerbbsBody .notauthAdultVerificationBttns .bttns a.button.verificate:hover
+	{
+	width: 275px;
+	background-position: -285px -96px;
+}
+
+#powerbbsBody .notauth {
+	width: 660px;
+	_width: 710px;
+	border: 5px solid #cecece;
+	padding: 20px;
+}
+
+#powerbbsBody .notauth .notauthtitle {
+	color: #6e6e6e;
+	font-size: 15px;
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+
+#powerbbsBody .notauth .login {
+	color: #FF3600;
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+
+#powerbbsBody .notauth3499 {
+	width: 677px;
+	height: 137px;
+	margin-left: 5px;
+	overflow: hidden;
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/notauthBoard2.png')
+		no-repeat left top;
+}
+
+#powerbbsBody .notauthLogin3499 .login {
+	margin: 38px 0 0 136px;
+	display: block;
+	float: left;
+	width: 181px;
+	height: 47px;
+	overflow: hidden;
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/bttn_181x47_login.png')
+		no-repeat left top;
+	text-indent: -10000em;
+}
+
+#powerbbsBody .notauthLogin3499 .exit {
+	margin: 38px 0 0 50px;
+	display: block;
+	float: left;
+	width: 181px;
+	height: 47px;
+	overflow: hidden;
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/bttn_181x47_out.png')
+		no-repeat left top;
+	text-indent: -10000em;
+}
+
+#powerbbsBody .notauthLogin3499 .confirm {
+	margin: 38px 0 0 136px;
+	display: block;
+	float: left;
+	width: 181px;
+	height: 47px;
+	overflow: hidden;
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/bttn_181x47_confirm.png')
+		no-repeat left top;
+	text-indent: -10000em;
+}
+
+#powerbbsBody .adultOnlyText {
+	margin: 24px 0 0 137px
+}
+
+#powerbbsBody.bt_BASIC .articleList table tbody .ls {
+	height: 28px;
+}
+
+#powerbbsBody.bt_GALLERY .articleList table tbody .ls {
+	height: 60px;
+}
+
+#powerbbsBody .articleList table tr.bgcw {
+	background-color: #ffffff;
+}
+
+#powerbbsBody .articleList table tbody tr.ls {
+	text-align: center;
+}
+
+#powerbbsBody .articleList table tbody tr.dc {
+	background-color: #888888;
+}
+
+#powerbbsBody .articleList table thead td span {
+	color: #000000;
+}
+
+#powerbbsBody .articleList table tbody tr.hc {
+	background-color: #fffee9;
+}
+
+#powerbbsBody .articleList table tbody tr.tr1 {
+	background-color: #ffffff;
+}
+
+#powerbbsBody .articleList table tbody tr.tr2 {
+	background-color: #ffffff;
+}
+
+#powerbbsBody.bc_red1 .articleList table thead tr {
+	background-color: #f2e6e6;
+}
+
+#powerbbsBody.bc_red1 .articleList table tr.bgc {
+	background-color: #dababa;
+}
+
+#powerbbsBody.bc_red1 .articleList table tbody tr.ls td {
+	border-bottom: 1px solid #dababa;
+}
+
+#powerbbsBody.bc_red1 .articleList table tbody tr.nc {
+	background-color: #f9fcee;
+}
+
+#powerbbsBody.bc_red1 .articleList table tbody tr.ov {
+	background-color: #f2e6e6;
+}
+
+#powerbbsBody.bc_red1 .articleList table tbody tr.th {
+	background-color: #f7e6e6;
+}
+
+#powerbbsBody.bc_blue1 .articleList table thead tr {
+	background-color: #BFDBE9;
+}
+
+#powerbbsBody.bc_blue1 .articleList table tr.bgc {
+	background-color: #9DC1D5;
+}
+
+#powerbbsBody.bc_blue1 .articleList table tbody tr.ls td {
+	border-bottom: 1px solid #9DC1D5;
+}
+
+#powerbbsBody.bc_blue1 .articleList table tbody tr.nc {
+	background-color: #E3F8FC;
+}
+
+#powerbbsBody.bc_blue1 .articleList table tbody tr.ov {
+	background-color: #EAF4F6;
+}
+
+#powerbbsBody.bc_blue1 .articleList table tbody tr.th {
+	background-color: #E0F3F5;
+}
+
+#powerbbsBody.bc_brown1 .articleList table thead tr {
+	background-color: #EDD9B4;
+}
+
+#powerbbsBody.bc_brown1 .articleList table tr.bgc {
+	background-color: #CBA77D;
+}
+
+#powerbbsBody.bc_brown1 .articleList table tbody tr.ls td {
+	border-bottom: 1px solid #CBA77D;
+}
+
+#powerbbsBody.bc_brown1 .articleList table tbody tr.nc {
+	background-color: #FCF2E2;
+}
+
+#powerbbsBody.bc_brown1 .articleList table tbody tr.ov {
+	background-color: #FEF7EC;
+}
+
+#powerbbsBody.bc_brown1 .articleList table tbody tr.th {
+	background-color: #FCF5EA;
+}
+
+#powerbbsBody.bc_green1 .articleList table thead tr {
+	background-color: #e6f2e6;
+}
+
+#powerbbsBody.bc_green1 .articleList table tr.bgc {
+	background-color: #bcdaba;
+}
+
+#powerbbsBody.bc_green1 .articleList table tbody tr.ls td {
+	border-bottom: 1px solid #bcdaba;
+}
+
+#powerbbsBody.bc_green1 .articleList table tbody tr.nc {
+	background-color: #f2feee;
+}
+
+#powerbbsBody.bc_green1 .articleList table tbody tr.ov {
+	background-color: #e6f2e6;
+}
+
+#powerbbsBody.bc_green1 .articleList table tbody tr.th {
+	background-color: #d4e7d4;
+}
+
+#powerbbsBody.bc_orange1 .articleList table thead tr {
+	background-color: #ffd5b5;
+}
+
+#powerbbsBody.bc_orange1 .articleList table tr.bgc {
+	background-color: #ff892e;
+}
+
+#powerbbsBody.bc_orange1 .articleList table tbody tr.ls td {
+	border-bottom: 1px solid #ff892e;
+}
+
+#powerbbsBody.bc_orange1 .articleList table tbody tr.nc {
+	background-color: #fde8d8;
+}
+
+#powerbbsBody.bc_orange1 .articleList table tbody tr.ov {
+	background-color: #ffe8d7;
+}
+
+#powerbbsBody.bc_orange1 .articleList table tbody tr.th {
+	background-color: #ffd5b5;
+}
+
+#powerbbsBody.bc_purple1 .articleList table thead tr {
+	background-color: #e6e6f2;
+}
+
+#powerbbsBody.bc_purple1 .articleList table tr.bgc {
+	background-color: #bcbada;
+}
+
+#powerbbsBody.bc_purple1 .articleList table tbody tr.ls td {
+	border-bottom: 1px solid #bcbada;
+}
+
+#powerbbsBody.bc_purple1 .articleList table tbody tr.nc {
+	background-color: #f2fcf6;
+}
+
+#powerbbsBody.bc_purple1 .articleList table tbody tr.ov {
+	background-color: #e6e6f2;
+}
+
+#powerbbsBody.bc_purple1 .articleList table tbody tr.th {
+	background-color: #d7d7e8;
+}
+
+#powerbbsBody.bc_silver1 .articleList table thead tr {
+	background-color: #EDEDED;
+}
+
+#powerbbsBody.bc_silver1 .articleList table tr.bgc {
+	background-color: #CDCCCC;
+}
+
+#powerbbsBody.bc_silver1 .articleList table tbody tr.ls td {
+	border-bottom: 1px solid #CDCCCC;
+}
+
+#powerbbsBody.bc_silver1 .articleList table tbody tr.nc {
+	background-color: #F6FDF3;
+}
+
+#powerbbsBody.bc_silver1 .articleList table tbody tr.ov {
+	background-color: #F6F5F5;
+}
+
+#powerbbsBody.bc_silver1 .articleList table tbody tr.th {
+	background-color: #f1f0f0;
+}
+
+#powerbbsContent {
+	font-size: 12px;
+}
+
+#powerbbsContent.columnBoard {
+	width: 650px;
+	line-height: 1.64;
+	overflow: hidden;
+	font-size: 14px;
+	font-family: �섎닎怨좊뵓, �뗭�, dotum, 援대┝, gulim, Helvetica;
+	text-align: justify;
+}
+
+#powerbbsContent div, #powerbbsContent h1, #powerbbsContent h2,
+	#powerbbsContent h3, #powerbbsContent h4, #powerbbsContent h5,
+	#powerbbsContent h6 {
+	float: none;
+	display: block;
+}
+
+#powerbbsContent ul, #powerbbsContent ol {
+	float: none;
+	display: block;
+	margin: 0 0 0 30pt;
+	padding: 0px;
+}
+
+#powerbbsContent li, #powerbbsContent li {
+	float: none;
+	display: list-item;
+	padding: 0px;
+	margin: 0px;
+}
+
+#powerbbsContent h1, #powerbbsContent h2, #powerbbsContent h3,
+	#powerbbsContent h4, #powerbbsContent h5, #powerbbsContent h6 {
+	font-weight: bold;
+}
+
+#powerbbsBody textarea {
+	font-family: 援대┝, gulim;
+}
+
+#powerbbsBody form {
+	float: none;
+}
+/*#powerbbsContent img{max-width:650px;}*/
+
+/* LIST */
+#powerbbsBody .articleList {
+	display: block;
+	float: none;
+	font-size: 10pt;
+	clear: both;
+	text-align: center;
+}
+
+#powerbbsBody .articleList .listTopCom {
+	padding: 10px 0 5px 0;
+}
+
+#powerbbsBody .articleList table tr.overhit td.date, #powerbbsBody .articleList table tr.overhit td.hit,
+	#powerbbsBody .articleList table tr.overhit td.req {
+	color: #5521be;
+}
+
+#powerbbsBody .articleList table tr.oh td.date, #powerbbsBody .articleList table tr.oh td.hit,
+	#powerbbsBody .articleList table tr.oh td.req {
+	color: #5521be;
+}
+
+#powerbbsBody .articleList .nowArticle {
+	color: #FF143D;
+}
+
+#powerbbsBody .articleList table td.bbsNo {
+	padding-top: 4px;
+	text-align: center;
+	white-space: nowrap;
+}
+
+#powerbbsBody .articleList table td.bbsSubject {
+	padding-top: 4px;
+	text-align: left;
+	word-break: break-all;
+	overflow: hidden;
+}
+
+#powerbbsBody .articleList table td.bbsSubject a.sj_ln {
+	text-decoration: none;
+}
+
+#powerbbsBody .articleList table td.bbsSubject img.sj_ic {
+	width: 16px;
+	height: 16px;
+	margin-top: -4px;
+	vertical-align: middle;
+}
+
+#powerbbsBody .articleList table td.bbsSubject img.sj_sic {
+	width: 16px;
+	height: 16px;
+	margin-top: -4px;
+	vertical-align: middle;
+}
+
+#powerbbsBody .articleList table td.bbsSubject span.sj_cm {
+	cursor: pointer;
+	font-size: 11px;
+	color: #25710A;
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+
+#powerbbsBody .articleList table td.bbsNick {
+	padding-top: 4px;
+	color: #000000;
+	white-space: nowrap;
+	text-align: left;
+}
+
+#powerbbsBody .articleList table td.ivt {
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+
+#powerbbsBody .articleList table td.bbsNick img.lv_ic {
+	width: 24px;
+	height: 16px;
+	margin-top: -4px;
+	vertical-align: middle;
+}
+
+#powerbbsBody .articleList table td.date, #powerbbsBody .articleList table td.hit,
+	#powerbbsBody .articleList table td.req {
+	padding-top: 4px;
+	white-space: nowrap;
+}
+
+#powerbbsBody .articleList table td div.th_dv {
+	border: 1px solid #b2b2b2;
+	width: 70px;
+	height: 40px;
+	margin-left: 5px;
+	overflow: hidden;
+}
+
+#powerbbsBody .articleList table td div.th_dv .thumbimg img {
+	margin-top: -21px;
+	_margin-top: -22px;
+	margin-left: -25px;
+	_margin-left: -29px;
+	display: inline;
+	float: left;
+}
+
+/* INVENTORY */
+#powerbbsViewSign {
+	clear: both;
+	margin-left: 32px;
+	margin-top: 15px;
+}
+
+/* bbsMiddleAd */
+#powerbbsBody .bbsMiddleAd {
+	width: 710px;
+	min-height: 70px;
+	height: auto !important;
+	height: 70px;
+	text-align: center;
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/bg_710x70_white1a.png')
+		no-repeat left top;
+}
+
+#powerbbsBody .bbsMiddleAd .daum_ddn_area {
+	margin-top: 5px;
+}
+
+#powerbbsBody .bbsMiddleAd .adsbygoogle {
+	margin-top: 5px;
+}
+
+#powerbbsBody .bbsMiddleAd .bbsMiddleAd468 {
+	width: 468px;
+	height: 60px;
+	display: block;
+	float: none;
+	margin: 5px auto;
+}
+
+#powerbbsBody .bbsMiddleAd .bbsMiddleAd468 .daum_ddn_area {
+	margin-top: 0px;
+}
+
+#powerbbsBody .bbsMiddleAd .bbsMiddleAd468 .adsbygoogle {
+	margin-top: 0px;
+	position: relative;
+}
+
+/* Google AdSense */
+#powerbbsBody .googleBottomAd {
+	display: inline;
+	float: left;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	width: 710px;
+	white-space: nowrap;
+	background:
+		url("https://static.inven.co.kr/image/board/common/dot_4x1_silver1.gif")
+		repeat-x left top;
+}
+
+#powerbbsBody .googleBottomAd .googleBottomAdWrap {
+	display: inline;
+	float: left;
+	width: 710px;
+	height: 69px;
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/bg_710x69_white1_adnopoint.png')
+		no-repeat left top;
+}
+
+#powerbbsBody .googleBottomAd1 {
+	display: inline;
+	float: left;
+	width: 468px;
+	height: 60px;
+	overflow: hidden;
+	margin: 5px 0 0 6px;
+}
+
+#powerbbsBody .googleBottomAd2 {
+	/*display: inline; float:left; width: 234px; height: 60px; overflow: hidden; margin-left: 8px;*/
+	
+}
+
+/* VIEWPAGE USER INVENTORY */
+/* pwBbsInventory WRAPPING 651 OLIVE 1 : M>B>T */
+#pwBbsInventory .wrap651OL1 {
+	width: 651px;
+	overflow: hidden;
+}
+
+#pwBbsInventory .wrap651OL1 .w651T {
+	width: 651px;
+	overflow: hidden;
+	background:
+		url('https://static.inven.co.kr/image/board/common/wrap_651_olive2_top.gif')
+		no-repeat left top;
+}
+
+#pwBbsInventory .wrap651OL1 .w651M {
+	width: 651px;
+	overflow: hidden;
+	background:
+		url('https://static.inven.co.kr/image/board/common/wrap_651_olive2_mid.gif')
+		repeat-y left top;
+}
+
+#pwBbsInventory .wrap651OL1 .w651B {
+	width: 651px;
+	overflow: hidden;
+	background:
+		url('https://static.inven.co.kr/image/board/common/wrap_651_olive2_bot.gif')
+		no-repeat left bottom;
+}
+/* pwBbsInventory Common  */
+#pwBbsInventory div, #pwBbsInventory ul, #pwBbsInventory li,
+	#pwBbsInventory dl, #pwBbsInventory dt, #pwBbsInventory dd,
+	#pwBbsInventory h3, #pwBbsInventory form {
+	float: left;
+	display: inline;
+	margin: 0;
+	padding: 0;
+	height: auto;
+}
+
+#pwBbsInventory, #pwBbsInventory input, #pwBbsInventory textarea,
+	#pwBbsInventory a, #pwBbsInventory th, #pwBbsInventory td,
+	#pwBbsInventory h3 {
+	font-family: gulim, 援대┝;
+	font-size: 9pt;
+	color: #000;
+	font-weight: normal;
+	font-style: normal;
+	text-decoration: none;
+	line-height: 117.5%;
+}
+
+#pwBbsInventory a:hover, #pwBbsInventory a:active {
+	text-decoration: underline;
+}
+/* pwBbsInventory Basic  */
+#pwBbsInventory {
+	width: 651px;
+	display: inline;
+	float: left;
+	font-family: 援대┝;
+	font-size: 12px;
+	margin-top: 15px;
+	margin-left: 32px;
+}
+
+#pwBbsInventory .inventoryGroup {
+	width: 616px;
+	overflow: hidden;
+	margin: 20px 0 0 18px;
+	padding-bottom: 20px;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart {
+	width: 147px;
+	overflow: hidden;
+}
+
+#pwBbsInventory .inventoryGroup .textPart {
+	margin-left: 14px;
+	width: 455px;
+	overflow: hidden;
+}
+/* pwBbsInventory SealPart  */
+#pwBbsInventory .inventoryGroup .sealPart .sealPhoto {
+	width: 145px;
+	_width: 147px;
+	height: 145px;
+	_height: 147px;
+	overflow: hidden;
+	border: 1px solid #bfbfbf;
+	background-color: #FFF;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .expBar {
+	width: 147px;
+	margin: 7px 0 0 0px;
+	overflow: hidden;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .expBar .graphBar {
+	width: 110px;
+	height: 13px;
+	overflow: hidden;
+	background:
+		url('https://static.inven.co.kr/image/board/common/bg_110x13_blue1.gif')
+		no-repeat;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .expBar .graphBar div {
+	background:
+		url('https://static.inven.co.kr/image/board/common/bg_110x13_blue1.gif')
+		no-repeat left -13px;
+	overflow: hidden;
+	text-indent: -1000em;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .expBar span {
+	display: inline;
+	float: left;
+	width: 37px;
+	text-align: right;
+	font-size: 11px;
+	color: #1565bf;
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .iconBoxes {
+	width: 147px;
+	margin: 7px 0 0 3px;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .iconBoxes {
+	height: 13px;
+	overflow: hidden;
+	margin-top: 3px;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .iconBoxes ul {
+	height: 13px;
+	overflow: hidden;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .iconBoxes ul li {
+	
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .iconBoxes ul li span {
+	display: inline;
+	float: left;
+	height: 33px;
+	overflow: hidden;
+	text-indent: -10000em;
+	background: none no-repeat left top;
+	cursor: pointer;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .iconBoxes ul li span {
+	background:
+		url('https://static.inven.co.kr/image/board/common/icon_iconbox2.gif')
+		no-repeat left top;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .iconBoxes ul li.grayBox span
+	{
+	width: 19px;
+	background-position: 0px 0px;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .iconBoxes ul li.greenBox span
+	{
+	width: 19px;
+	background-position: -19px 0px;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .iconBoxes ul li.blueBox span
+	{
+	width: 19px;
+	background-position: -38px 0px;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .iconBoxes ul li.navyBox span
+	{
+	width: 19px;
+	background-position: -57px 0px;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .iconBoxes ul li.pinkBox span
+	{
+	width: 19px;
+	background-position: -76px 0px;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .iconBoxes ul li.goldBox span
+	{
+	width: 19px;
+	background-position: -95px 0px;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .iconBoxes ul li.grayBox span.over
+	{
+	width: 19px;
+	background-position: 0px -13px;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .iconBoxes ul li.greenBox span.over
+	{
+	width: 19px;
+	background-position: -19px -13px;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .iconBoxes ul li.blueBox span.over
+	{
+	width: 19px;
+	background-position: -38px -13px;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .iconBoxes ul li.navyBox span.over
+	{
+	width: 19px;
+	background-position: -57px -13px;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .iconBoxes ul li.pinkBox span.over
+	{
+	width: 19px;
+	background-position: -76px -13px;
+}
+
+#pwBbsInventory .inventoryGroup .sealPart .iconBoxes ul li.goldBox span.over
+	{
+	width: 19px;
+	background-position: -95px -13px;
+}
+/* pwBbsInventory TextPart  */
+#pwBbsInventory .inventoryGroup .textPart .userInfo {
+	width: 455px;
+	height: 25px;
+	margin-top: 3px;
+	border-bottom: 1px solid #d3c89c;
+}
+
+#pwBbsInventory .inventoryGroup .textPart .userInfo .userInfoNickName {
+	float: left;
+	display: inline;
+	padding-top: 4px;
+	margin-left: 5px;
+}
+
+#pwBbsInventory .inventoryGroup .textPart .userInfo .userInfoPoint {
+	float: right;
+	margin-top: 2px;
+	margin-right: 9px;
+	background:
+		url('https://static.inven.co.kr/image/board/common/sep_1x8_olive1.gif')
+		no-repeat left 4px;
+}
+
+#pwBbsInventory .inventoryGroup .textPart .userInfo .userInfoPoint dl {
+	display: inline;
+	margin-left: 14px;
+	float: left;
+	font-size: 11px;
+}
+
+#pwBbsInventory .inventoryGroup .textPart .userInfo .userInfoPoint dl dt
+	{
+	height: 16px;
+	color: #fff;
+	padding-top: 2px;
+	text-indent: 4px;
+}
+
+#pwBbsInventory .inventoryGroup .textPart .userInfo .userInfoPoint dl dd
+	{
+	margin-left: 3px;
+	padding-top: 2px;
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+
+#pwBbsInventory .inventoryGroup .textPart .userInfo .userInfoPoint dl.inni dt
+	{
+	width: 32px;
+	background:
+		url('https://static.inven.co.kr/image/board/common/bg_32x16_pink1.gif')
+		no-repeat left top;
+}
+
+#pwBbsInventory .inventoryGroup .textPart .userInfo .userInfoPoint dl.inni dd
+	{
+	color: #ff4d4d;
+}
+
+#pwBbsInventory .inventoryGroup .textPart .userInfo .userInfoPoint dl.veni dt
+	{
+	width: 32px;
+	background:
+		url('https://static.inven.co.kr/image/board/common/bg_32x16_green1.gif')
+		no-repeat left top;
+}
+
+#pwBbsInventory .inventoryGroup .textPart .userInfo .userInfoPoint dl.veni dd
+	{
+	color: #029159;
+}
+
+#pwBbsInventory .inventoryGroup .textPart .userInfo .userInfoPoint dl.exp dt
+	{
+	width: 44px;
+	background:
+		url('https://static.inven.co.kr/image/board/common/bg_44x16_blue1.gif')
+		no-repeat left top;
+}
+
+#pwBbsInventory .inventoryGroup .textPart .userInfo .userInfoPoint dl.exp dd
+	{
+	color: #1565bf;
+}
+
+#pwBbsInventory .inventoryGroup .textPart .userText {
+	width: 441px;
+	margin-top: 15px;
+	margin-left: 7px;
+	line-height: 1.4;
+}
+
+#pwBbsInventory .powerbbsContent div, #pwBbsInventory .powerbbsContent h1,
+	#pwBbsInventory .powerbbsContent h2, #pwBbsInventory .powerbbsContent h3,
+	#pwBbsInventory .powerbbsContent  h4, #pwBbsInventory .powerbbsContent  h5,
+	#pwBbsInventory .powerbbsContent  h6 {
+	float: none;
+	display: block;
+}
+
+#pwBbsInventory .powerbbsContent  ul, #pwBbsInventory .powerbbsContent  ol
+	{
+	float: none;
+	display: block;
+	margin: 0 0 0 30pt;
+	padding: 0px;
+}
+
+#pwBbsInventory .powerbbsContent  li, #pwBbsInventory .powerbbsContent  li
+	{
+	float: none;
+	display: list-item;
+	padding: 0px;
+	margin: 0px;
+}
+
+#pwBbsInventory .powerbbsContent  h1, #pwBbsInventory .powerbbsContent  h2,
+	#pwBbsInventory .powerbbsContent  h3, #pwBbsInventory .powerbbsContent  h4,
+	#pwBbsInventory .powerbbsContent  h5, #pwBbsInventory .powerbbsContent  h6
+	{
+	font-weight: bold;
+}
+
+#pwBbsInventory .powerbbsContent  p {
+	margin: 0;
+	padding: 0;
+}
+
+#pwBbsInventory .powerbbsContent  a {
+	color: #0000ee;
+	text-decoration: underline;
+}
+/* pwBbsInventory pbIconViewer  */
+#pbIconViewer {
+	float: left;
+	display: none;
+	position: absolute;
+	z-index: 800;
+}
+
+#pbIconViewer.loading {
+	background: white
+		url('https://static.inven.co.kr/image/wow/dataninfo/edb_item/loading.gif')
+		center center no-repeat;
+	width: 100px;
+	height: 100px;
+}
+
+#pbIconViewer.loading ul {
+	display: none !important;
+}
+
+#pbIconViewer div, #pbIconViewer ul, #pbIconViewer li {
+	float: left;
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+#pbIconViewer .iconBox {
+	width: 100px;
+	_width: 101px;
+	margin: 1px 0 0 1px;
+	overflow: hidden;
+	clear: both;
+	background-color: #FFF;
+	border-right: 1px solid #C4CAD1;
+	border-bottom: 1px solid #C4CAD1;
+}
+
+#pbIconViewer .iconBox li {
+	border-top: solid 1px #C4CAD1;
+	border-left: solid 1px #C4CAD1;
+}
+
+#pbIconViewer .iconBox li a {
+	float: left;
+	display: inline;
+	width: 24px;
+	height: 24px;
+	overflow: hidden;
+}
+
+#pbIconViewer .iconBox li a img {
+	width: 16px;
+	height: 16px;
+	border: none;
+	vertical-align: top;
+	margin: 4px 0 0 4px;
+}
+
+#pbIconViewer .iconBox li span.blank {
+	width: 24px;
+	height: 24px;
+	overflow: hidden;
+	float: left;
+	display: inline;
+}
+
+/* BUTTON 710x23 WHITE 1 */
+#powerbbsBody .bttn710WH1 {
+	float: left;
+	display: inline;
+	width: 710px;
+	height: 18px;
+	_height: 23px;
+	padding-top: 5px;
+	overflow: hidden;
+}
+
+#powerbbsBody .bttn710WH1 {
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_710x23_white1.gif')
+		no-repeat left top;
+}
+
+#powerbbsBody .bttn710WH1 {
+	line-height: 15px;
+	font-weight: normal;
+	letter-spacing: 0px;
+	text-decoration: none;
+	text-align: center;
+	color: #000000;
+}
+
+#powerbbsBody input.bttn710WH1 {
+	height: 23px;
+	padding-top: 0px;
+	_padding-top: 3px;
+	border: none;
+}
+
+#powerbbsBody a.bttn710WH1:hover {
+	background-position: 0 -23px;
+}
+/* BUTTON 75x23 WHITE 1 */
+#powerbbsBody .bttn75WH1 {
+	float: left;
+	display: inline;
+	width: 75px;
+	height: 18px;
+	_height: 23px;
+	padding-top: 5px;
+	overflow: hidden;
+}
+
+#powerbbsBody .bttn75WH1 {
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_75x23_white1.gif')
+		no-repeat left top;
+}
+
+#powerbbsBody .bttn75WH1 {
+	line-height: 15px;
+	font-weight: normal;
+	letter-spacing: 0px;
+	text-decoration: none;
+	text-align: center;
+	color: #000000;
+}
+
+#powerbbsBody input.bttn75WH1 {
+	height: 23px;
+	padding-top: 0px;
+	_padding-top: 3px;
+	border: none;
+}
+
+#powerbbsBody .bttn75WH1.bttn75WH1-Write {
+	text-indent: -1000em;
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_75x23_white1_write.gif')
+		no-repeat left top;
+}
+
+#powerbbsBody .bttn75WH1.bttn75WH1-Prev {
+	text-indent: -1000em;
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_75x23_white1_prev.gif')
+		no-repeat left top;
+}
+
+#powerbbsBody .bttn75WH1.bttn75WH1-Next {
+	text-indent: -1000em;
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_75x23_white1_next.gif')
+		no-repeat left top;
+}
+/* BUTTON 78x21 WHITE 1 */
+#powerbbsBody .bttn78WH1 {
+	float: left;
+	display: inline;
+	height: 18px;
+	_height: 21px;
+	padding-top: 3px;
+	overflow: hidden;
+}
+
+#powerbbsBody .bttn78WH1 {
+	color: #3c3c3c;
+	text-decoration: none;
+	line-height: 117.5%;
+	border: none;
+	text-align: center;
+}
+
+#powerbbsBody .bttn78WH1 {
+	width: 78px;
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_78x21_white1.gif')
+		repeat-y left top;
+}
+
+#powerbbsBody input.bttn78WH1 {
+	height: 21px;
+	cursor: pointer;
+	padding-top: 0;
+	_padding-top: 3px;
+}
+
+#powerbbsBody a.bttn78WH1:hover {
+	color: #ff8000;
+}
+/* BUTTON 78x21 RED 1 */
+#powerbbsBody .bttn78RE1 {
+	float: left;
+	display: inline;
+	height: 18px;
+	_height: 21px;
+	padding-top: 3px;
+	overflow: hidden;
+}
+
+#powerbbsBody .bttn78RE1 {
+	color: white;
+	text-decoration: none;
+	line-height: 117.5%;
+	border: none;
+	text-align: center;
+}
+
+#powerbbsBody .bttn78RE1 {
+	width: 78px;
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/bttn_78x21_red1.png')
+		repeat-y left top;
+}
+
+#powerbbsBody input.bttn78RE1 {
+	height: 21px;
+	cursor: pointer;
+	padding-top: 0;
+	_padding-top: 3px;
+}
+
+#powerbbsBody a.bttn78RE1:hover {
+	color: #ff8000;
+}
+/* BUTTON 78x21 ORANGE 1 */
+#powerbbsBody .bttn78OR1-QL {
+	float: left;
+	display: inline;
+	height: 21px;
+	overflow: hidden;
+	text-indent: -10000em;
+}
+
+#powerbbsBody .bttn78OR1-QL {
+	width: 78px;
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_78x21_orange_quicklink.png')
+		no-repeat left top;
+}
+
+#powerbbsBody input.bttn78OR1-QL {
+	cursor: pointer;
+}
+/* BUTTON 65x21 RED 1 */
+#powerbbsBody .bttn65RE1-CF {
+	float: left;
+	display: inline;
+	height: 21px;
+	overflow: hidden;
+	text-indent: -10000em;
+}
+
+#powerbbsBody .bttn65RE1-CF {
+	width: 65px;
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/bttn_65x21_red_confirmthread.png')
+		no-repeat left top;
+}
+
+#powerbbsBody input.bttn65RE1-CF {
+	cursor: pointer;
+}
+/* BUTTON 59x21 GREEN-3CHU 1 */
+#powerbbsBody .bttn59GE1-3C {
+	float: left;
+	display: inline;
+	height: 21px;
+	overflow: hidden;
+	text-indent: -10000em;
+}
+
+#powerbbsBody .bttn59GE1-3C {
+	width: 59px;
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/bttn_59x21_green_3chu.png')
+		no-repeat left top;
+}
+
+#powerbbsBody input.bttn59GE1-3C {
+	cursor: pointer;
+}
+/* BUTTON 59x21 GREEN-10CHU 1 */
+#powerbbsBody .bttn59GE1-10C {
+	float: left;
+	display: inline;
+	height: 21px;
+	overflow: hidden;
+	text-indent: -10000em;
+}
+
+#powerbbsBody .bttn59GE1-10C {
+	width: 59px;
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/bttn_59x21_green_10chu.png')
+		no-repeat left top;
+}
+
+#powerbbsBody input.bttn59GE1-10C {
+	cursor: pointer;
+}
+/* BUTTON 54x23 WHITE 1 */
+#powerbbsBody .bttn54WH1 {
+	float: left;
+	display: inline;
+	width: 54px;
+	height: 18px;
+	_height: 23px;
+	padding-top: 5px;
+	overflow: hidden;
+}
+
+#powerbbsBody .bttn54WH1 {
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_54x23_white1.gif')
+		no-repeat left top;
+}
+
+#powerbbsBody .bttn54WH1 {
+	line-height: 15px;
+	font-weight: normal;
+	letter-spacing: 0px;
+	text-decoration: none;
+	text-align: center;
+	color: #000000;
+}
+
+#powerbbsBody input.bttn54WH1 {
+	height: 23px;
+	padding-top: 0px;
+	_padding-top: 3px;
+	border: none;
+}
+/* BUTTON 54x21 ORANGE 1 */
+#powerbbsBody .bttn54OR1-Portal {
+	float: left;
+	display: inline;
+	height: 21px;
+	overflow: hidden;
+	text-indent: -10000em;
+}
+
+#powerbbsBody .bttn54OR1-Portal {
+	width: 76px;
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/bttn_76x21_orange_portal.png')
+		no-repeat left top;
+}
+
+#powerbbsBody input.bttn54OR1-Portal {
+	cursor: pointer;
+}
+/* BUTTON 49x21 WHITE 1 */
+#powerbbsBody .bttn49WH1 {
+	float: left;
+	display: inline;
+	height: 18px;
+	_height: 21px;
+	padding-top: 3px;
+	overflow: hidden;
+}
+
+#powerbbsBody .bttn49WH1 {
+	color: #3c3c3c;
+	text-decoration: none;
+	line-height: 117.5%;
+	border: none;
+	text-align: center;
+}
+
+#powerbbsBody .bttn49WH1 {
+	width: 49px;
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_49x21_white1.gif')
+		no-repeat left top;
+}
+
+#powerbbsBody input.bttn49WH1 {
+	height: 21px;
+	cursor: pointer;
+	padding-top: 0;
+	_padding-top: 3px;
+}
+
+#powerbbsBody a.bttn49WH1:hover {
+	color: #ff8000;
+}
+/* BUTTON 39x21 WHITE 1 */
+#powerbbsBody .bttn39WH1 {
+	float: left;
+	display: inline;
+	height: 18px;
+	_height: 21px;
+	padding-top: 3px;
+	overflow: hidden;
+}
+
+#powerbbsBody .bttn39WH1 {
+	color: #3c3c3c;
+	text-decoration: none;
+	line-height: 117.5%;
+	border: none;
+	text-align: center;
+}
+
+#powerbbsBody .bttn39WH1 {
+	width: 39px;
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_39x21_white1.gif')
+		no-repeat left top;
+}
+
+#powerbbsBody input.bttn39WH1 {
+	height: 21px;
+	cursor: pointer;
+	padding-top: 0;
+	_padding-top: 3px;
+}
+
+#powerbbsBody a.bttn39WH1:hover {
+	color: #ff8000;
+}
+/* BUTTON 30x21 WHITE 1 */
+#powerbbsBody .bttn30WH1 {
+	float: left;
+	display: inline;
+	height: 18px;
+	_height: 21px;
+	padding-top: 3px;
+	overflow: hidden;
+}
+
+#powerbbsBody .bttn30WH1 {
+	color: #3c3c3c;
+	text-decoration: none;
+	line-height: 117.5%;
+	border: none;
+	text-align: center;
+}
+
+#powerbbsBody .bttn30WH1 {
+	width: 30px;
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_30x21_white1.gif')
+		no-repeat left top;
+}
+
+#powerbbsBody input.bttn30WH1 {
+	height: 21px;
+	cursor: pointer;
+	padding-top: 0;
+	_padding-top: 3px;
+}
+
+#powerbbsBody a.bttn30WH1:hover {
+	color: #ff8000;
+}
+/* BUTTON 21x21 WHITE 1 */
+#powerbbsBody .bttn21WH1 {
+	float: left;
+	display: inline;
+	height: 18px;
+	_height: 21px;
+	padding-top: 3px;
+	overflow: hidden;
+}
+
+#powerbbsBody .bttn21WH1 {
+	color: #3c3c3c;
+	text-decoration: none;
+	line-height: 117.5%;
+	border: none;
+	text-align: center;
+}
+
+#powerbbsBody .bttn21WH1 {
+	width: 21px;
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/bttn_21x21_white1.png')
+		no-repeat left top;
+}
+
+#powerbbsBody input.bttn21WH1 {
+	height: 21px;
+	cursor: pointer;
+	padding-top: 0;
+	_padding-top: 3px;
+}
+
+#powerbbsBody a.bttn21WH1:hover {
+	color: #ff8000;
+}
+/* BUTTON IE10 PADDING */
+@media screen and (-ms-high-contrast: active) , ( -ms-high-contrast :
+	none) {
+	#powerbbsBody .bttn49WH1, #powerbbsBody .bttn78WH1 {
+		height: 16px;
+		padding-top: 5px !important;
+	}
+}
+/* TITLE 678x33 SILVER 1 */
+#powerbbsCmt2 .title678SL1 {
+	width: 654px;
+	_width: 678px;
+	padding-left: 24px;
+	height: 22px;
+	_height: 33px;
+	padding-top: 11px;
+}
+
+#powerbbsCmt2 .title678SL1 {
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_678x66_silver1.gif')
+		no-repeat left top;
+}
+
+#powerbbsCmt2 .title678SL1 {
+	line-height: 15px;
+	font-weight: normal;
+	letter-spacing: 0px;
+	overflow: hidden;
+	color: #696868;
+	text-decoration: none;
+}
+
+#powerbbsCmt2 .title678SL1.pointer {
+	cursor: pointer;
+}
+
+#powerbbsCmt2 .title678SL1 span.boldnum {
+	font-weight: bold;
+	letter-spacing: -1px;
+	overflow: hidden;
+	color: #000000;
+}
+
+#powerbbsCmt2 .title678SL1 span.bluetext {
+	color: blue;
+}
+/* LIST TOP */
+#listtop {
+	width: 710px;
+	overflow: hidden;
+	margin: 5px 0px 0px 0px;
+	clear: both;
+}
+
+#listtop .listBttns {
+	width: 710px;
+	overflow: hidden;
+	clear: both;
+	margin-top: 5px;
+}
+/* BTTN FREE SIZE : BLUE1, GRAY1 */
+span.bttnFreeSize, span.bttnFreeSize a, span.bttnFreeSize button, span.bttnFreeSize input
+	{
+	position: relative;
+	margin: 0;
+	display: inline-block;
+	text-decoration: none !important;
+	padding: 0;
+	border: 0;
+	height: 25px;
+	font: 12px;
+	font-family: gulim, 援대┝, AppleGothic;
+	white-space: nowrap;
+	background:
+		url(https://static.inven.co.kr/image_2011/board/common/bttn_715x25_blue1.png)
+		no-repeat;
+	vertical-align: middle;
+	overflow: visible;
+}
+
+span.bttnFreeSize a {
+	background-position: right top !important;
+	padding: 6px 10px 2px 8px;
+	color: #fff;
+	font-size: 12px;
+	font-family: gulim, 援대┝, AppleGothic;
+}
+
+span.bttnFreeSize a, span.bttnFreeSize button, span.bttnFreeSize input {
+	left: 2px !important;
+}
+
+span.bttnFreeSize-Blue1, span.bttnFreeSize-Blue1 a, span.bttnFreeSize-Blue1 button,
+	span.bttnFreeSize-Blue1 input {
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/bttn_715x25_blue1.png')
+		no-repeat;
+}
+
+span.bttnFreeSize-Blue1 a {
+	color: #fff;
+}
+
+span.bttnFreeSize-Gray1, span.bttnFreeSize-Gray1 a, span.bttnFreeSize-Gray1 button,
+	span.bttnFreeSize-Gray1 input {
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/bttn_715x25_gray1.png')
+		no-repeat;
+}
+
+span.bttnFreeSize-Gray1 a {
+	color: #fff;
+}
+
+span.bttnFreeSize-Selected, span.bttnFreeSize-Selected a, span.bttnFreeSize-Selected button,
+	span.bttnFreeSize-Selected input {
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/bttn_715x25_blue1.png')
+		no-repeat !important;
+}
+
+span.bttnFreeSize-Selected a {
+	background-position: right top !important;
+}
+
+/* PREV NEXT */
+#powerbbsViewPrevNext {
+	clear: both;
+	margin-top: 10px;
+	width: 714px;
+	overflow: hidden;
+}
+
+#powerbbsViewPrevNext ul {
+	width: 714px;
+	margin-top: -1px;
+}
+
+#powerbbsViewPrevNext ul li {
+	width: 714px;
+	padding: 6px 0 4px 0;
+	background:
+		url('https://static.inven.co.kr/image/board/common/dot_4x1_silver_b0b0b0.gif')
+		repeat-x left top;
+}
+
+#powerbbsViewPrevNext ul li span {
+	margin-left: 3px;
+	display: inline;
+	float: left;
+}
+
+#powerbbsViewPrevNext ul li, #powerbbsViewPrevNext ul li a,
+	#powerbbsViewPrevNext ul li span {
+	font-family: �뗭�, dotum, 援대┝, gulim, Helvetica;
+	font-size: 12px;
+	line-height: 17px;
+	text-decoration: none;
+}
+
+#powerbbsViewPrevNext ul li span.bttnUpDown {
+	text-indent: 20px;
+	width: 60px;
+	color: #000000;
+}
+
+#powerbbsViewPrevNext ul li span.bttnUpDown-Up {
+	background:
+		url('https://static.inven.co.kr/image/board/common/icon_arrow_up1.gif')
+		no-repeat left top;
+}
+
+#powerbbsViewPrevNext ul li span.bttnUpDown-Down {
+	background:
+		url('https://static.inven.co.kr/image/board/common/icon_arrow_down1.gif')
+		no-repeat left top;
+}
+
+#powerbbsViewPrevNext ul li span.updownNic, #powerbbsViewPrevNext ul li span.updownSubject
+	{
+	color: #0000ff;
+}
+
+#powerbbsViewPrevNext ul li span.updownNothing {
+	color: #6e6e6e;
+}
+
+#powerbbsViewPrevNext ul li span.updownOpinum {
+	color: #25710a;
+	font-size: 11px;
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+
+#powerbbsViewPrevNext ul li span.updownGreenmark {
+	margin-left: 3px;
+}
+
+#powerbbsViewPrevNext ul li span.updownGreenmark img {
+	margin-bottom: -1px;
+	margin-top: -4px;
+	vertical-align: middle;
+}
+
+#powerbbsViewPrevNext ul li a:hover {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+/* VIEW BASIC */
+#powerbbsBody .articleView {
+	width: 710px;
+	overflow: hidden;
+}
+
+#powerbbsBody .articleView.opibbs {
+	margin-left: 5px !important;
+}
+
+#powerbbsBody .articleView .showContent {
+	display: inline;
+}
+
+#powerbbsBody .articleView .hideContent {
+	display: none;
+}
+
+#powerbbsBody .articleView .viewTopBoardName {
+	float: right;
+	display: inline;
+	padding-top: 2px;
+}
+
+#powerbbsBody .articleView .viewTopBoardName a {
+	color: #787878;
+}
+
+#powerbbsBody .articleView .articleHead {
+	width: 710px;
+	margin-top: 2px;
+}
+
+#powerbbsBody .articleView .articleHead .articleInfo {
+	width: 646px;
+	margin-left: 32px;
+	margin-top: 7px;
+	padding-bottom: 5px;
+}
+
+#powerbbsBody .articleView .articleHead .articleInfo .articleWriter {
+	width: 215px;
+	text-align: left;
+}
+
+#powerbbsBody .articleView .articleHead .articleInfo .articleWriter img
+	{
+	vertical-align: middle;
+	margin-bottom: 2px;
+}
+
+#powerbbsBody .articleView .articleHead .articleInfo .articleDate {
+	width: 215px;
+	text-align: center;
+	font-weight: bold;
+}
+
+#powerbbsBody .articleView .articleHead .articleInfo .articleHit {
+	width: 215px;
+	text-align: right;
+}
+
+#powerbbsBody .articleView .articleHead.hC_silver1 {
+	border-top: 2px solid #CDCCCC;
+	border-bottom: 1px solid #CDCCCC;
+	background-color: #EDEDED;
+}
+
+#powerbbsBody .articleView .articleHead.hC_brown1 {
+	border-top: 2px solid #CBA77D;
+	border-bottom: 1px solid #CBA77D;
+	background-color: #EDD9B4;
+}
+
+#powerbbsBody .articleView .articleHead.hC_blue1 {
+	border-top: 2px solid #9DC1D5;
+	border-bottom: 1px solid #9DC1D5;
+	background-color: #9DC1D5;
+}
+
+#powerbbsBody .articleView .articleHead.hC_red1 {
+	border-top: 2px solid #dababa;
+	border-bottom: 1px solid #dababa;
+	background-color: #f2e6e6;
+}
+
+#powerbbsBody .articleView .articleHead.hC_orange1 {
+	border-top: 2px solid #ff892e;
+	border-bottom: 1px solid #ff892e;
+	background-color: #ffd5b5;
+}
+
+#powerbbsBody .articleView .articleHead.hC_green1 {
+	border-top: 2px solid #bcdaba;
+	border-bottom: 1px solid #bcdaba;
+	background-color: #e6f2e6;
+}
+
+#powerbbsBody .articleView .articleHead.hC_purple1 {
+	border-top: 2px solid #bcbada;
+	border-bottom: 1px solid #bcbada;
+	background-color: #e6e6f2;
+}
+
+#powerbbsBody .articleView .articleFile {
+	width: 680px;
+	_width: 710px;
+	height: 22px;
+	_height: 30px;
+	border-bottom: 1px solid #CDCCCC;
+	padding-left: 30px;
+	padding-top: 8px;
+	background-color: #f6f5f5;
+}
+
+#powerbbsBody .articleView .articleHeadMenu {
+	width: 710px;
+}
+
+#powerbbsBody .articleView .articleHeadMenu .topmenuInfo {
+	width: 646px;
+	margin-left: 32px;
+	margin-top: 7px;
+	padding-bottom: 5px;
+}
+
+#powerbbsBody .articleView .articleHeadMenu .topmenuInfo .articleCategory
+	{
+	width: 215px;
+	height: 15px;
+	text-align: left;
+}
+
+#powerbbsBody .articleView .articleHeadMenu .topmenuInfo .articleIp {
+	width: 215px;
+	text-align: center;
+}
+
+#powerbbsBody .articleView .articleHeadMenu .topmenuInfo .articleTopMenu
+	{
+	width: 215px;
+	text-align: right;
+}
+
+#powerbbsBody .articleView .articleMain .articleSubject {
+	width: 710px;
+	clear: both;
+}
+
+#powerbbsBody .articleView .articleMain .articleSubject .articleTitle {
+	width: 470px;
+	height: 120px;
+	margin-left: 30px;
+	margin-top: 80px;
+}
+
+#powerbbsBody .articleView .articleMain .articleSubject .articleTitle h1
+	{
+	font-family: Dotum, �뗭�, Helvetica;
+	font-size: 14pt;
+	font-weight: bold;
+	color: brown;
+}
+
+#powerbbsBody .articleView .articleMain .articleSubject .googleSubjectAd
+	{
+	width: 200px;
+	height: 200px;
+	float: right;
+}
+
+#powerbbsBody .articleView .articleMain .articleSubject .articleTitle420
+	{
+	width: 420px !important;
+}
+
+#powerbbsBody .articleView .articleMain .articleSubject .subjectAd250 {
+	width: 250px;
+	height: 250px;
+	float: right;
+}
+
+#powerbbsBody .articleView .articleMain .articleSubject.certification {
+	background:
+		url('https://static.inven.co.kr/image/board/common/bg_100x80_confirm_mark1.gif')
+		no-repeat 24px 9px;
+}
+
+#powerbbsBody .articleView .articleMain .articleContent {
+	width: 710px;
+	padding-bottom: 33px;
+	clear: both;
+	overflow: hidden;
+	color: #000000;
+	line-height: 150%;
+}
+
+#powerbbsBody .articleView .articleMain .articleContent .contentBody {
+	width: 670px;
+	overflow: hidden;
+	margin: 20px 0 30px 30px;
+}
+
+#staffBody #voteWraper, #powerbbsBody .articleView .articleMain .articleContent #voteWraper
+	{
+	padding: 58px 0 0 22px;
+	background:
+		url("https://static.inven.co.kr/image_2011/common/invenvote/common/result_wrapper_title1.png")
+		left top no-repeat;
+	background-color: #fcfbf8;
+	border: 1px solid #dad8d3;
+	border-top: 0px;
+	width: 518px;
+}
+
+#powerbbsBody .articleView .articleMain .articleContent #voteWraper {
+	padding: 75px 0 0 22px;
+}
+
+#powerbbsBody .articleView .articleMain .writerGuest {
+	width: 710px;
+	clear: both;
+}
+
+#powerbbsBody .articleView .articleMain .writerGuest .guestIp {
+	width: 651px;
+	margin-left: 32px;
+	margin-top: 30px;
+	clear: both;
+	text-align: right;
+}
+
+#bbsViewRecom {
+	clear: both;
+	margin-left: 32px !important;
+	margin-top: 45px !important;
+}
+
+#bbsViewRecom .contentsBotMenu {
+	overflow: hidden;
+	width: 651px;
+}
+
+#bbsViewRecom .contentsBotMenu .botMenuLeft {
+	overflow: hidden;
+	width: 214px;
+}
+
+#bbsViewRecom .contentsBotMenu .botMenuCenter {
+	overflow: hidden;
+	width: 254px;
+}
+
+#bbsViewRecom .contentsBotMenu .botMenuRight {
+	overflow: hidden;
+	width: 183px;
+	float: right;
+}
+
+#bbsViewRecom .contentsBotMenu .botMenuAdSense {
+	overflow: hidden;
+	width: 468px;
+}
+
+#bbsViewRecom .contentsBotMenu .articleBottomMenuTop {
+	display: inline;
+	float: left;
+	clear: both;
+	width: 214px;
+	height: 48px;
+}
+
+#bbsViewRecom .contentsBotMenu .articleBottomMenu {
+	display: inline;
+	float: left;
+	clear: both;
+	width: 214px;
+}
+
+#bbsViewRecom .contentsBotMenu .bttnConfirm {
+	margin-top: 0px;
+}
+
+#bbsViewRecom .contentsBotMenu .bttnConfirm ul li {
+	margin-right: 5px;
+}
+
+#bbsViewRecom .contentsBotMenu .recomManage {
+	width: 228px;
+	margin-top: 0px;
+	text-align: center;
+}
+
+#bbsViewRecom .contentsBotMenu .recomManage .mngRecom {
+	width: 96px;
+	margin-left: 9px;
+	text-align: center;
+	font-size: 8pt;
+	color: #999;
+	cursor: pointer;
+}
+
+#bbsViewRecom .contentsBotMenu .bttnRecom {
+	width: 96px;
+	height: 66px;
+	margin-left: 9px;
+}
+
+#bbsViewRecom .contentsBotMenu .bttnRecom.onlyRecom {
+	margin-left: 66px;
+}
+
+#bbsViewRecom .contentsBotMenu .bttnRecom a {
+	display: inline;
+	float: left;
+	width: 96px;
+	height: 66px;
+}
+
+#bbsViewRecom .contentsBotMenu .bttnRecom a.bttnRecommend {
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_96x66_red1_recommend.gif')
+		no-repeat left top;
+}
+
+#bbsViewRecom .contentsBotMenu .bttnRecom a.bttnNotRecommend {
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/bttn_96x66_red1b_notrecommend.png')
+		no-repeat left top;
+}
+
+#bbsViewRecom .contentsBotMenu .bttnRecom a:hover {
+	background-position: 0 -66px;
+	text-decoration: none;
+}
+
+#bbsViewRecom .contentsBotMenu .bttnRecom span.reqnum {
+	display: inline;
+	float: left;
+	text-align: center;
+	width: 83px;
+	margin-left: 6px;
+	margin-top: 37px;
+	font-size: 18px;
+	font-family: tahoma;
+	cursor: pointer;
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+
+#bbsViewRecom .contentsBotMenu .bttnRecom span.reqblue {
+	color: blue;
+}
+
+#bbsViewRecom .contentsBotMenu .bttnRecom span.reqred {
+	color: red;
+}
+
+#bbsViewRecom .contentsBotMenu .bttn63scrap {
+	width: 63px;
+	height: 64px;
+	margin-left: 4px;
+	float: right;
+}
+
+#bbsViewRecom .contentsBotMenu .bttn63scrap a {
+	display: inline;
+	float: left;
+	width: 63px;
+	height: 64px;
+	overflow: hidden;
+	text-indent: -1000em;
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_63x64_silver1_scrap.gif')
+		no-repeat left top;
+}
+
+#bbsViewRecom .contentsBotMenu .bttn84report {
+	width: 84px;
+	height: 30px;
+	margin-left: 4px;
+	float: right;
+}
+
+#bbsViewRecom .contentsBotMenu .bttn84report a {
+	display: inline;
+	float: left;
+	width: 84px;
+	height: 30px;
+	overflow: hidden;
+	text-indent: -1000em;
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_84x30_silver1_report.gif')
+		no-repeat left top;
+}
+
+#bbsViewRecom .contentsBotMenu .bttn84articlekill {
+	width: 84px;
+	height: 30px;
+	margin-left: 4px;
+	margin-top: 4px;
+	float: right;
+}
+
+#bbsViewRecom .contentsBotMenu .bttn84articlekill a {
+	display: inline;
+	float: left;
+	width: 84px;
+	height: 30px;
+	overflow: hidden;
+	text-indent: -1000em;
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_84x30_silver1_articlekill.gif')
+		no-repeat left top;
+}
+
+#bbsViewRecom .contentsBotMenu .bttn84articlelist {
+	width: 84px;
+	height: 30px;
+	margin-left: 4px;
+	margin-top: 4px;
+	float: right;
+}
+
+#bbsViewRecom .contentsBotMenu .bttn84articlelist a {
+	display: inline;
+	float: left;
+	width: 84px;
+	height: 30px;
+	overflow: hidden;
+	text-indent: -1000em;
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_84x30_silver1_articlelist.png')
+		no-repeat left top;
+}
+
+.recomList {
+	width: 100%;
+}
+
+.recomList table {
+	width: calc(100% - 15px);
+	margin: 10px auto 0;
+	border-spacing: 0;
+}
+
+.recomList th {
+	height: 30px;
+	text-align: left;
+	background-color: #f7f7f7;
+	border-top: dashed 1px #bcbcbc;
+	border-bottom: solid 1px #e1e1e1;
+}
+
+.recomList th span {
+	font-weight: bold;
+}
+
+.recomList th span:before {
+	display: inline-block;
+	content: '';
+	width: 11px;
+	height: 13px;
+	margin: 0 5px 0 18px;
+	vertical-align: top;
+}
+
+.recomList th.recommend span:before {
+	background:
+		url(https://static.inven.co.kr/image/board/common/icon_11x13_recommend.png)
+		no-repeat center;
+}
+
+.recomList th.notrecommend span:before {
+	background:
+		url(https://static.inven.co.kr/image/board/common/icon_11x13_notrecommend.png)
+		no-repeat center;
+}
+
+.recomList td {
+	width: 50%;
+	height: 25px;
+	text-align: center;
+	background-color: #fff;
+}
+
+.recomList .exTable td {
+	width: 25%;
+}
+
+.recomList.loading {
+	height: 13px;
+	background:
+		url(https://static.inven.co.kr/image_2011/board/common/loading.gif)
+		no-repeat center -28px;
+}
+
+#powerbbsBody .articleBotUrl {
+	width: 710px;
+	height: 16px;
+	margin-top: 5px;
+	padding-bottom: 5px;
+}
+
+#powerbbsBody .articleBotUrl embed {
+	float: left;
+	display: inline;
+	margin-left: 3px;
+}
+
+#powerbbsBody .articleBotUrl a {
+	color: #999;
+	float: left;
+	margin-left: 3px;
+	padding-top: 2px;
+}
+
+#powerbbsBody .articleBotMenu {
+	width: 710px;
+	margin-top: 5px;
+	padding: 10px 0 9px 0;
+	clear: both;
+	background: #f7f7f7
+		url('https://static.inven.co.kr/image/board/common/dot_4x1_silver1.gif')
+		repeat-x left top;
+}
+
+#powerbbsBody .articleBotMenu-noBG {
+	background: none;
+	padding: 5px 0 5px 0 !important;
+}
+
+#powerbbsBody .articleBotMenu .leftMenu {
+	float: left;
+	margin-left: 4px;
+}
+
+#powerbbsBody .articleBotMenu .leftMenu li {
+	margin-left: 5px;
+}
+
+#powerbbsBody .articleBotMenu .rightMenu {
+	float: right;
+	margin-right: 4px;
+}
+
+#powerbbsBody .articleBotMenu .rightMenu li {
+	margin-right: 5px;
+}
+
+#powerbbsCmt2 {
+	width: 708px;
+	_width: 710px;
+	border: 1px solid #e1e1e1;
+	clear: both;
+	padding-bottom: 10px;
+}
+
+#powerbbsCmt2 .noHasAuth {
+	width: 564px;
+	padding-left: 14px;
+	margin-top: 10px;
+	padding-bottom: 5px;
+	color: #D92214;
+	line-height: 150%;
+}
+
+#powerbbsCmt2 .textareaIME {
+	font-family: gulim;
+	overflow: hidden;
+	word-break: break-all;
+	-webkit-ime-mode: active;
+	-moz-ime-mode: active;
+	-ms-ime-mode: active;
+	ime-mode: active;
+}
+
+#powerbbsCmt2 .vertical-bar {
+	display: inline-block;
+	margin: 0 0 0 7px;
+}
+
+#powerbbsCmt2.loading {
+	background:
+		url(https://static.inven.co.kr/image_2011/board/common/loading.gif)
+		no-repeat center -28px;
+}
+
+#powerbbsCmt2 .cmtWrap {
+	width: 678px;
+	margin-left: 16px;
+	margin-top: 5px;
+}
+
+#powerbbsCmt2 .cmtHead {
+	width: 678px;
+	clear: both;
+	border-bottom: 1px solid #dadada;
+}
+
+#powerbbsCmt2 .cmtHead h4 {
+	background:
+		url("https://static.inven.co.kr/image/board/common/icon_arrow_red1.gif")
+		no-repeat left center;
+}
+
+#powerbbsCmt2 .cmtHead h4 {
+	clear: both;
+	font-weight: bold;
+	letter-spacing: -1px;
+	margin-left: 9px;
+	padding: 9px 0 5px 11px;
+	white-space: nowrap;
+}
+
+#powerbbsCmt2 .cmtHead h4 strong {
+	color: red;
+}
+
+#powerbbsCmt2 .cmtHead ul {
+	margin-left: 9px;
+	padding: 9px 0 5px 11px;
+	white-space: nowrap;
+}
+
+#powerbbsCmt2 .cmtHead ul li, #powerbbsCmt2 .cmtHead ul li a {
+	font-size: 11px;
+}
+
+#powerbbsCmt2 #diceBttn1, #powerbbsCmt2 #allviewBttn1 {
+	display: none;
+}
+
+#powerbbsCmt2 .cmtHead .recent .recent a, #powerbbsCmt2 .cmtHead .dice .dice a,
+	#powerbbsCmt2 .cmtHead .date .date a {
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+
+#powerbbsCmt2 .cmtMain {
+	width: 678px;
+	border-bottom: 1px solid #eaeaea;
+}
+
+#powerbbsCmt2 .cmtMainTail {
+	width: 678px;
+	clear: both;
+	border-top: 1px solid #eaeaea;
+}
+
+#powerbbsCmt2 .cmtMainTail .cmtMainAdminMenu {
+	float: left;
+	margin-left: 5px;
+	padding: 9px 0 5px 0;
+}
+
+#powerbbsCmt2 .cmtMainTail .cmtMainAdminMenu .vertical-bar {
+	margin: 0;
+}
+
+#powerbbsCmt2 .cmtMainTail .cmtMainAdminMenu li {
+	margin-left: 5px;
+}
+
+#powerbbsCmt2 .cmtMainTail .cmtMainAdminMenu li, #powerbbsCmt2 .cmtMainTail .cmtMainAdminMenu li a
+	{
+	color: #787e7e;
+}
+
+#powerbbsCmt2 .cmtListOpen {
+	background-position: 0 -33px !important;
+}
+
+#powerbbsCmt2 .bttnRefresh {
+	background:
+		url("https://static.inven.co.kr/image/board/common/icon_refresh_red1.gif")
+		no-repeat left center;
+}
+
+#powerbbsCmt2 .bttnRefresh {
+	float: right;
+	color: red;
+	text-decoration: underline;
+	cursor: pointer;
+	margin-left: 5px;
+	padding: 9px 0 5px 15px;
+	white-space: nowrap;
+}
+
+#powerbbsCmt2 .bttnRefresh.refreshS1 {
+	color: #ff3b3b;
+	text-decoration: none;
+	background: none;
+}
+
+#powerbbsCmt2 .bttnRefresh.refreshS2 {
+	color: #fe8181;
+	text-decoration: none;
+	background: none;
+}
+
+#powerbbsCmt2 .bttnRefresh.refreshS3 {
+	color: #ffcaca;
+	text-decoration: none;
+	background: none;
+}
+
+#powerbbsCmt2 .commentList1 ul {
+	width: 678px;
+	margin: 0 0 -1px 0px;
+}
+
+#powerbbsCmt2 .commentList1 ul::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+#powerbbsCmt2 .commentList1 ul li {
+	border-top: 1px solid #dcdcdc;
+	padding: 8px 0 8px 0;
+	width: 678px;
+	overflow: hidden;
+}
+
+#powerbbsCmt2 .commentList1 ul li div.cmtOne {
+	display: inline;
+	float: left;
+	width: 659px;
+	_width: 661px;
+	background-color: white;
+	border: 1px solid white;
+	padding: 7px 0 0 0;
+}
+
+#powerbbsCmt2 .commentList1 ul li.bestCmt div.cmtOne {
+	background-color: #fff6f3 !important;
+}
+
+#powerbbsCmt2 .commentList1 ul li.replyCmt {
+	padding-top: 0px;
+	padding-left: 35px;
+	border-top: none;
+	background:
+		url("https://static.inven.co.kr/image_2011/board/common/icon_arrow_10x9_silver2_reply.png")
+		no-repeat 23px 17px;
+}
+
+#powerbbsCmt2 .commentList1 ul li.replyCmt div.cmtOne {
+	width: 624px;
+	_width: 626px;
+	background-color: #f8f8f8;
+	border: 1px solid #ececec;
+}
+
+#powerbbsCmt2 .commentList1 ul li div.chkbox {
+	display: inline;
+	float: left;
+	margin-left: 0px;
+	margin-top: 10px;
+	width: 13px;
+	height: 13px;
+	overflow: hidden;
+}
+
+#powerbbsCmt2 .commentList1 ul li input.checkCmt {
+	display: inline;
+	float: left;
+	margin: 0;
+	padding: 0;
+	_margin-left: -3px;
+	_margin-top: -3px;
+}
+
+#powerbbsCmt2 .commentList1 ul li strong.title {
+	margin-left: 8px;
+}
+
+#powerbbsCmt2 .commentList1 ul li strong.title, #powerbbsCmt2 .commentList1 ul li strong.title a
+	{
+	color: #000000;
+	font-size: 12px;
+	font-weight: normal;
+	letter-spacing: 0;
+}
+
+#powerbbsCmt2 .commentList1 ul li strong.title {
+	display: inline;
+	float: left;
+	padding-top: 3px;
+}
+
+#powerbbsCmt2 .commentList1 ul li strong.title img {
+	height: 16px;
+	margin-top: -3px;
+	vertical-align: middle;
+}
+
+#powerbbsCmt2 .commentList1 ul li strong.title img.lvicon {
+	margin-right: 6px;
+	width: 24px;
+}
+
+#powerbbsCmt2 .commentList1 ul li strong.title img.confirmIcon {
+	width: 18px;
+	height: 18px;
+	border: none;
+	margin-left: 3px;
+}
+
+#powerbbsCmt2 .commentList1 ul li strong.title img.icon {
+	margin-right: 2px;
+	width: 16px;
+}
+
+#powerbbsCmt2 .commentList1 ul li strong.title span.date {
+	margin-left: 5px;
+	color: #848484;
+	font-size: 10px;
+	font-weight: normal;
+	letter-spacing: 0;
+	font-family: tahoma;
+}
+
+#powerbbsCmt2 .commentList1 ul li strong.title span.ip {
+	margin-left: 5px;
+	color: #848484;
+	font-size: 10px;
+	font-weight: normal;
+	letter-spacing: 0;
+	font-family: tahoma;
+}
+
+#powerbbsCmt2 .commentList1 ul li strong.title span.postip {
+	color: #848484;
+	font-size: 10px;
+	font-weight: normal;
+	letter-spacing: 0;
+	font-family: tahoma;
+}
+
+#powerbbsCmt2 .commentList1 ul li a.delete {
+	background:
+		url("https://static.inven.co.kr/image/board/common/icon_rect_olive1.gif")
+		no-repeat scroll left top transparent;
+	display: inline;
+	float: left;
+	height: 10px;
+	margin: 4px 0 0 3px;
+	overflow: hidden;
+	text-indent: -1000em;
+	width: 10px;
+}
+
+#powerbbsCmt2 .commentList1 ul li a.recover {
+	background:
+		url("https://static.inven.co.kr/image_2011/board/common/icon_rect_olive1_repair.png")
+		no-repeat scroll left top transparent;
+	display: inline;
+	float: left;
+	height: 10px;
+	margin: 4px 0 0 3px;
+	overflow: hidden;
+	text-indent: -1000em;
+	width: 10px;
+}
+
+#powerbbsCmt2 .commentList1 ul li a.blind {
+	background:
+		url("https://static.inven.co.kr/image/board/common/icon_rect_olive2_blind.gif")
+		no-repeat scroll left top transparent;
+	display: inline;
+	float: left;
+	height: 10px;
+	margin: 4px 0 0 3px;
+	overflow: hidden;
+	text-indent: -1000em;
+	width: 10px;
+}
+
+#powerbbsCmt2 .commentList1 ul li .comment {
+	clear: both !important;
+	float: left !important;
+	margin-left: 8px;
+	width: 643px;
+	overflow: hidden;
+}
+
+#powerbbsCmt2 .commentList1 ul li.replyCmt .comment {
+	width: 616px;
+}
+
+#powerbbsCmt2 .commentList1 ul li.replyCmt .bottomLine {
+	width: 625px;
+	padding-bottom: 3px;
+}
+
+#powerbbsCmt2 .commentList1 ul li span.content {
+	display: inline;
+	float: left;
+	line-height: 150%;
+	margin-top: 14px;
+	width: 464px;
+}
+
+#powerbbsCmt2 .commentList1 ul li span.content {
+	font-family: gulim, 援대┝, Helvetica;
+	font-size: 9pt;
+	text-align: left;
+	text-decoration: none;
+	line-height: 150%;
+	color: black;
+	font-weight: normal;
+	word-wrap: break-word;
+}
+
+#powerbbsCmt2 .commentList1 ul li.adminCmt .comment span {
+	color: #5521be !important;
+}
+
+#powerbbsCmt2 .commentList1 ul li.adminCmt .comment span a {
+	color: #5521be !important;
+}
+
+#powerbbsCmt2 .commentList1 ul li.adminCmt .comment span a:hover {
+	color: blue !important;
+}
+
+#powerbbsCmt2 .commentList1 ul li.partnerCmt .comment span {
+	color: #0063DB !important;
+}
+
+#powerbbsCmt2 .commentList1 ul li.partnerCmt .comment span a {
+	color: #0063DB !important;
+}
+
+#powerbbsCmt2 .commentList1 ul li.partnerCmt .comment span a:hover {
+	color: blue !important;
+}
+
+#powerbbsCmt2 .commentList1 ul li.amaCmt .comment span {
+	font-weight: bold !important;
+}
+
+#powerbbsCmt2 .commentList1 ul li.dice .comment span {
+	color: green !important;
+}
+
+#powerbbsCmt2 .commentList1 ul li.blindCmt .comment span .powerbbsBlindCommentMenu
+	{
+	color: silver !important;
+}
+
+#powerbbsCmt2 .commentList1 ul li.dice .comment span .powerbbsBlindComment
+	{
+	color: green !important;
+}
+
+#powerbbsCmt2 .commentList1 ul li span .powerbbsBlindComment {
+	clear: both;
+}
+
+#powerbbsCmt2 .commentList1 ul li .comment span.nickmenu {
+	cursor: pointer;
+	color: #3e3e3e !important;
+}
+
+#powerbbsCmt2 .commentList1 ul li strong.title span.snsIcons {
+	
+}
+
+#powerbbsCmt2 .commentList1 ul li strong.title span.snsIcons.snsloading
+	{
+	height: 18px;
+	font-size: 10px;
+	border: 1px solid #9e9e9e;
+	padding: 0 2px;
+	margin-left: 3px;
+	background-color: #e3e3e3;
+}
+
+#powerbbsCmt2 .commentList1 ul li strong.title span.snsIcons img.snsIcon
+	{
+	margin-left: 3px;
+	width: 14px;
+	height: 14px;
+	cursor: pointer;
+}
+
+#powerbbsCmt2 .commentList1 ul li .bottomLine {
+	clear: both;
+	float: left;
+	width: 659px;
+}
+
+#powerbbsCmt2 .commentList1 ul li a.replyBttn {
+	clear: both;
+	float: right;
+	margin-right: 17px;
+	color: #a7a7a7;
+	text-decoration: none;
+}
+
+#powerbbsCmt2 .commentList1 ul li a.replyBttn:hover {
+	color: black;
+}
+
+#powerbbsCmt2 .commentList1 ul li .goodbadpart {
+	float: right;
+	width: 174px;
+	margin-right: 0px;
+}
+
+#powerbbsCmt2 .commentList1 ul li .goodbadpart.nogood {
+	width: 110px;
+}
+
+#powerbbsCmt2 .commentList1 ul li .goodbadpart span.goodbadnum {
+	display: inline;
+	float: left;
+	height: 16px;
+	padding-top: 1px;
+	margin-left: 4px;
+	text-indent: 33px;
+	cursor: pointer;
+}
+
+#powerbbsCmt2 .commentList1 ul li .goodbadpart span.goodbadnum {
+	font-family: tahoma;
+	font-size: 8pt;
+	font-weight: bold;
+	letter-spacing: -1px;
+	color: #323232;
+}
+
+#powerbbsCmt2 .commentList1 ul li .goodbadpart .goodnum {
+	width: 58px;
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_29x16_red1_good.gif')
+		no-repeat left top;
+}
+
+#powerbbsCmt2 .commentList1 ul li .goodbadpart .badnum {
+	width: 50px;
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_29x16_black1_report.gif')
+		no-repeat left top;
+}
+
+#powerbbsCmt2 .commentList1 ul li .goodbadpart .killnum {
+	width: 50px;
+	background:
+		url("https://static.inven.co.kr/image_2011/board/common/bttn_50x16_black1_reportkill.png")
+		no-repeat left top;
+}
+
+#powerbbsCmt2 .commentList1 ul li .goodbadpart span.goodbadicon {
+	display: inline;
+	float: left;
+	height: 16px;
+	padding-top: 1px;
+	margin-left: 4px;
+	text-indent: 20px;
+	cursor: pointer;
+}
+
+#powerbbsCmt2 .commentList1 ul li .goodbadpart span.goodbadicon {
+	font-family: tahoma;
+	font-size: 8pt;
+	font-weight: bold;
+	letter-spacing: -1px;
+	color: #323232;
+}
+
+#powerbbsCmt2 .commentList1 ul li .goodbadpart .goodicon {
+	width: 36px;
+	text-indent: 20px;
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/bttn_16x16_red1_good.png')
+		no-repeat left top;
+}
+
+#powerbbsCmt2 .commentList1 ul li .goodbadpart .badicon {
+	width: 36px;
+	text-indent: 20px;
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/bttn_16x16_blue1_bad.png')
+		no-repeat left top;
+}
+
+#powerbbsCmt2 .commentList1 ul li .goodbadpart .reporticon {
+	width: 32px;
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_29x16_black1_report.gif')
+		no-repeat left top;
+}
+
+#powerbbsCmt2 .commentList1 ul li .goodbadmng {
+	display: inline;
+	float: right;
+	width: 134px;
+	margin-right: 10px;
+}
+
+#powerbbsCmt2 .commentList1 ul li .goodbadmng .mngRecommend {
+	cursor: pointer;
+	color: #999;
+	font-size: 8pt;
+}
+
+#powerbbsCmt2 .commentList1 ul li .goodbadmng .mngNotRecommend {
+	cursor: pointer;
+	color: #999;
+	font-size: 8pt;
+	float: right;
+	margin-right: 10px;
+}
+
+#powerbbsCmt2 .commentList1.bestComment {
+	
+}
+
+#powerbbsCmt2 .commentList1.bestComment ul {
+	border-bottom: 1px solid #dcdcdc;
+}
+
+#powerbbsCmt2 .commentList1.bestComment ul li {
+	padding-top: 53px;
+}
+
+#powerbbsCmt2 .commentList1.bestComment ul li {
+	background: #fff6f3
+		url('https://static.inven.co.kr/image/board/common/bg_best_commend.gif')
+		no-repeat left top;
+}
+
+#powerbbsCmt2 .commentList1.bestComment ul li div.cmtOne {
+	background-color: #FFF6F3;
+	border: 1px solid #FFF6F3;
+}
+
+#powerbbsCmt2 .commentList1.bestComment ul li.bestCmt {
+	padding-top: 53px;
+}
+
+#powerbbsCmt2 .commentList1.bestComment ul li.bestCmt {
+	background: #fff6f3
+		url('https://static.inven.co.kr/image/board/common/bg_best_commend.gif')
+		no-repeat left top;
+}
+
+#powerbbsCmt2 .commentList1.bestComment ul li.bestCmt div.cmtOne {
+	background-color: #FFF6F3;
+	border: 1px solid #FFF6F3;
+}
+
+#powerbbsCmt2 .commentList1 ul li.preDelCmt .comment span {
+	color: #999 !important;
+}
+
+#powerbbsCmt2 .commentList1 ul li.deleteCmt {
+	background: #cecece;
+}
+
+#powerbbsCmt2 .commentList1 ul li.deleteCmt div.cmtOne {
+	background: #cecece;
+	border-color: #cecece;
+}
+
+#powerbbsCmt2 .bttnBlockOpinion {
+	display: inline;
+	float: left;
+	margin-top: 2px;
+}
+
+#powerbbsCmt2 .powerbbsBlockOpinionTitleOpen .bttnBlockOpinion {
+	background-position: 0 -33px !important;
+}
+
+#powerbbsCmt2 .powerbbsBlockOpinionTitleOpen .bttnBlockOpinion span.bluetext
+	{
+	display: none !important;
+}
+/* 肄붾찘�� �곌린 */
+#powerbbsCmt2 .commentWrite {
+	background-color: #F8F8F8;
+	clear: both;
+	width: 678px;
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm {
+	padding: 12px 0 12px 0;
+	width: 678px;
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm .cmtTitle {
+	margin-left: 10px;
+	overflow: hidden;
+	width: 111px;
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm .cmtGuest {
+	display: inline;
+	float: left;
+	clear: both;
+	width: 575px;
+	margin-left: 37px;
+	margin-bottom: 5px;
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm .cmtTitle strong {
+	display: inline;
+	float: left;
+	margin-top: 8px;
+	text-align: center;
+	width: 111px;
+	height: 26px;
+	_height: 30px;
+	padding-top: 4px;
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm .cmtContent {
+	margin-left: 8px;
+	width: 464px;
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm .cmtContent textarea {
+	display: inline;
+	float: left;
+	height: 66px;
+	margin: 0;
+	width: 466px;
+	line-height: 1.5;
+	font-size: 12px;
+	border: 1px solid #abadb3;
+	background-color: #fff;
+	background-image: none;
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm .textLogin {
+	width: 583px !important;
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm .textLogin textarea {
+	width: 585px !important;
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm .cmtContent textarea.notice {
+	background: #ffffff
+		url("https://static.inven.co.kr/image_2011/board/common/bg_462x64_comment1a.png")
+		no-repeat left top;
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm .cmtSubmit {
+	margin-left: 9px;
+	width: 68px;
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm .cmtSubmit button {
+	overflow: hidden;
+	background:
+		url("https://static.inven.co.kr/image_2011/board/common/bttn_68x66_silver1_submit.png")
+		no-repeat left top;
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm .cmtSubmit button.loading {
+	overflow: hidden;
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/loading_68x66.gif')
+		no-repeat left top;
+}
+
+@media screen and (-ms-high-contrast: active) , ( -ms-high-contrast :
+	none) {
+	#powerbbsCmt2 .commentWrite .cmtWriteForm .cmtSubmit button {
+		text-indent: -99em;
+	}
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm .cmtSubmit button {
+	cursor: pointer;
+	font-weight: bold;
+	letter-spacing: -1px;
+/* 	font-size: 0; */
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm .cmtSubmit button {
+	border: 0 none;
+	height: 66px;
+	overflow: hidden;
+	text-align: center;
+	width: 68px;
+}
+
+#powerbbsCmt2 .commentList1 ul li.replyCmt .commentWrite {
+	width: 651px;
+	margin-left: 13px;
+	margin-top: 8px;
+}
+
+#powerbbsCmt2 .commentList1 ul li.replyCmt .commentWrite .cmtWriteForm {
+	width: 651px;
+}
+
+#powerbbsCmt2 .commentList1 ul li.replyCmt .commentWrite .cmtWriteForm .cmtTitle
+	{
+	width: 84px;
+	margin-left: 0px;
+}
+
+#powerbbsCmt2 .commentList1 ul li.replyCmt .commentWrite .cmtWriteForm .cmtTitle strong
+	{
+	width: 84px;
+}
+
+#powerbbsCmt2 .commentList1 ul li.replyCmt .commentWrite .cmtWriteForm .cmtContent
+	{
+	margin-left: 2px;
+	position: relative;
+}
+
+#powerbbsCmt2 .commentList1 ul li.replyCmt .commentWrite .cmtWriteForm .cmtSubmit
+	{
+	margin-left: 4px;
+}
+
+#labelReplyNick {
+	position: absolute;
+	display: none;
+	padding: 2px 13px 1px 2px;
+	line-height: 14px;
+	left: 2px;
+	top: 2px;
+	background: #f6f7f8
+		url('https://static.inven.co.kr/image_2011/common/common/icon_15x15_x.png')
+		no-repeat right 1px;
+	border: 1px solid #a7b8d2;
+	border-radius: 3px;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm .cmtSns {
+	margin-left: 8px;
+	width: 464px;
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm .cmtSns li {
+	margin-left: 10px;
+}
+
+#powerbbsCmt2 .commentList1 ul.cmtSns li {
+	border: none;
+	padding: 0;
+	width: auto;
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm .cmtSns li input {
+	display: inline;
+	float: left;
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm .cmtSns li label.snsIcon {
+	display: inline;
+	float: left;
+	margin-top: 2px;
+	width: 16px;
+	height: 16px;
+	text-indent: -9999px;
+	cursor: pointer;
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm .cmtSns label.snsIcon.snsIcon-Twitter
+	{
+	background:
+		url('https://static.inven.co.kr/image_2011/common/sns/bg_16x16_sns1_twitter1.png')
+		no-repeat left top;
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm .cmtSns label.snsIcon.snsIcon-Facebook
+	{
+	background:
+		url('https://static.inven.co.kr/image_2011/common/sns/bg_16x16_sns1_facebook1.png')
+		no-repeat left top;
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm .cmtSns label.snsIcon.snsIcon-Me2day
+	{
+	background:
+		url('https://static.inven.co.kr/image_2011/common/sns/bg_16x16_sns1_me2day1.png')
+		no-repeat left top;
+}
+
+#powerbbsCmt2 .commentWrite .cmtWriteForm .cmtSns li.Available label.snsIcon
+	{
+	background-position: 0 -16px !important;
+}
+/* PREVIEW LAYER */
+.boardPreview {
+	position: absolute;
+	z-index: 1000;
+	width: 340px;
+	min-height: 50px;
+	height: auto !important;
+	height: 50px;
+	display: none;
+	border: 1px solid #cccccc;
+	padding: 3px;
+	background: #ffffff;
+	box-shadow: 3px 3px 3px #3c3c3c;
+	-moz-box-shadow: 3px 3px 3px #3c3c3c;
+	-webkit-box-shadow: 3px 3px 3px #3c3c3c;
+}
+
+.boardPreview div.image, .boardPreview div.image div, .boardPreview div.image img
+	{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+
+.boardPreview div.image div.icon-movie, .boardPreview div.image div.icon-gif
+	{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: transparent url('') center center no-repeat;
+}
+
+.boardPreview div.image div.icon-movie {
+	background-image:
+		url('https://static.inven.co.kr/image_2011/mobile/common/cardbbs_icon_movie.png');
+}
+
+.boardPreview div.image div.icon-gif {
+	background-image:
+		url('https://static.inven.co.kr/image_2011/mobile/common/cardbbs_icon_gif.png');
+}
+
+.boardPreview div.subject {
+	overflow: hidden;
+	padding: 7px 10px;
+	font-size: 15px;
+	font-weight: bold;
+	letter-spacing: -1px;
+	color: #222;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-wrap: normal;
+}
+
+.boardPreview div.previewcontent {
+	line-height: 1.7;
+	overflow: hidden;
+	word-break: break-all;
+	word-wrap: break-word;
+}
+/* THUMB LAYER */
+div#bThumbLayers {
+	z-index: 999;
+}
+
+div.bThumbLayer {
+	position: absolute;
+	display: none;
+	z-index: 9999;
+}
+
+.bThumbLayer {
+	width: 490px;
+	overflow: hidden;
+	padding: 5px;
+}
+
+div.bThumbLayer img {
+	width: 100%;
+	border: 2px solid #323232;
+	background-color: #ffffff;
+	zoom: 1;
+	filter: alpha(opacity = 0);
+	opacity: 0;
+}
+
+#powerbbsCmt {
+	width: 708px;
+	_width: 710px;
+	border: 1px solid #e1e1e1;
+	clear: both;
+	padding-bottom: 10px;
+}
+
+#powerbbsCmt .cmtWrap {
+	width: 678px;
+	margin-left: 16px;
+	margin-top: 16px;
+}
+
+#powerbbsCmt .cmtHead {
+	width: 678px;
+	clear: both;
+	border-bottom: 1px solid #dadada;
+}
+
+#powerbbsCmt .cmtHead h4 {
+	background:
+		url("https://static.inven.co.kr/image/board/common/icon_arrow_red1.gif")
+		no-repeat left center;
+}
+
+#powerbbsCmt .cmtHead h4 {
+	clear: both;
+	font-weight: bold;
+	letter-spacing: -1px;
+	margin-left: 9px;
+	padding: 9px 0 5px 11px;
+	white-space: nowrap;
+}
+
+#powerbbsCmt .cmtHead h4 strong {
+	color: red;
+}
+
+#powerbbsCmt .cmtMain {
+	width: 678px;
+	border-bottom: 1px solid #eaeaea;
+}
+
+#powerbbsCmt .cmtMainTail {
+	width: 678px;
+	clear: both;
+	border-top: 1px solid #eaeaea;
+}
+
+#powerbbsCmt .cmtMainTail .cmtMainAdminMenu {
+	float: left;
+	margin-left: 5px;
+	padding: 9px 0 5px 0;
+}
+
+#powerbbsCmt .cmtMainTail .cmtMainAdminMenu li {
+	margin-left: 5px;
+}
+
+#powerbbsCmt .cmtMainTail .cmtMainAdminMenu li, #powerbbsCmt .cmtMainTail .cmtMainAdminMenu li a
+	{
+	color: #787e7e;
+}
+
+#powerbbsCmt .bttnRefresh {
+	background:
+		url("https://static.inven.co.kr/image/board/common/icon_refresh_red1.gif")
+		no-repeat left center;
+}
+
+#powerbbsCmt .bttnRefresh {
+	float: right;
+	color: red;
+	text-decoration: underline;
+	cursor: pointer;
+	margin-left: 5px;
+	padding: 9px 0 5px 15px;
+	white-space: nowrap;
+}
+
+#powerbbsCmt .commentList1 ul {
+	margin: 0 0 -1px 0px;
+	overflow: hidden;
+}
+
+#powerbbsCmt .commentList1 ul li {
+	border-top: 1px solid #dcdcdc;
+	padding: 15px 0 15px;
+	width: 678px;
+}
+
+#powerbbsCmt .commentList1 ul li strong.title, #powerbbsCmt .commentList1 ul li strong.title a
+	{
+	color: #000000;
+	font-size: 12px;
+	font-weight: bold;
+	letter-spacing: 0;
+}
+
+#powerbbsCmt .commentList1 ul li strong.title {
+	display: inline;
+	float: left;
+	padding-top: 3px;
+	margin-left: 21px;
+}
+
+#powerbbsCmt .commentList1 ul li strong.title img {
+	height: 16px;
+	margin-top: -3px;
+	vertical-align: middle;
+}
+
+#powerbbsCmt .commentList1 ul li strong.title img.lvicon {
+	margin-right: 6px;
+	width: 24px;
+}
+
+#powerbbsCmt .commentList1 ul li strong.title img.icon {
+	margin-right: 2px;
+	width: 16px;
+}
+
+#powerbbsCmt .commentList1 ul li strong.title span.date {
+	color: #848484;
+	font-size: 10px;
+	font-weight: normal;
+	letter-spacing: 0;
+	font-family: tahoma;
+}
+
+#powerbbsCmt .commentList1 ul li strong.title span.postip {
+	color: #848484;
+	font-size: 10px;
+	font-weight: normal;
+	letter-spacing: 0;
+	font-family: tahoma;
+}
+
+#powerbbsCmt .commentList1 ul li a.delete {
+	background:
+		url("https://static.inven.co.kr/image/board/common/icon_rect_olive1.gif")
+		no-repeat scroll left top transparent;
+	display: inline;
+	float: left;
+	height: 10px;
+	margin: 4px 0 0 3px;
+	overflow: hidden;
+	text-indent: -1000em;
+	width: 10px;
+}
+
+#powerbbsCmt .commentList1 ul li a.blind {
+	background:
+		url("https://static.inven.co.kr/image/board/common/icon_rect_olive2_blind.gif")
+		no-repeat scroll left top transparent;
+	display: inline;
+	float: left;
+	height: 10px;
+	margin: 4px 0 0 3px;
+	overflow: hidden;
+	text-indent: -1000em;
+	width: 10px;
+}
+
+#powerbbsCmt .commentList1 ul li span.content {
+	clear: both;
+	display: inline;
+	float: left;
+	line-height: 150%;
+	margin-top: 14px;
+	margin-left: 21px;
+	width: 464px;
+}
+
+#powerbbsCmt .commentList1 ul li span.content {
+	font-family: gulim, 援대┝, Helvetica;
+	font-size: 9pt;
+	text-align: left;
+	text-decoration: none;
+	line-height: 150%;
+	color: #3d3d3d;
+	font-weight: normal;
+}
+
+#powerbbsCmt .commentList1 ul li span .powerbbsBlindComment {
+	clear: both;
+}
+
+#powerbbsCmt .commentList1 ul li .goodbadpart {
+	float: right;
+	width: 124px;
+	margin-right: 10px;
+}
+
+#powerbbsCmt .commentList1 ul li .goodbadpart span.goodbadnum {
+	display: inline;
+	float: left;
+	width: 58px;
+	height: 16px;
+	padding-top: 1px;
+	margin-left: 4px;
+	text-indent: 33px;
+	cursor: pointer;
+}
+
+#powerbbsCmt .commentList1 ul li .goodbadpart span.goodbadnum {
+	font-family: tahoma;
+	font-size: 8pt;
+	font-weight: bold;
+	letter-spacing: -1px;
+	color: #323232;
+}
+
+#powerbbsCmt .commentList1 ul li .goodbadpart .goodnum {
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_29x16_red1_good.gif')
+		no-repeat left top;
+}
+
+#powerbbsCmt .commentList1 ul li .goodbadpart .badnum {
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_29x16_black1_report.gif')
+		no-repeat left top;
+}
+
+#powerbbsCmt .commentList1 ul li .goodbadpart .mngRecommend {
+	cursor: pointer;
+	color: #999;
+	font-size: 8pt;
+}
+
+#powerbbsCmt .commentList1 ul li .goodbadpart .mngNotRecommend {
+	cursor: pointer;
+	color: #999;
+	font-size: 8pt;
+	float: right;
+	margin-right: 10px;
+}
+
+#powerbbsCmt .commentList1.bestComment {
+	padding-bottom: 24px;
+}
+
+#powerbbsCmt .commentList1.bestComment ul {
+	border-bottom: 1px solid #dcdcdc;
+}
+
+#powerbbsCmt .commentList1.bestComment ul li {
+	padding-top: 53px;
+}
+
+#powerbbsCmt .commentList1.bestComment ul li {
+	background: #fff6f3
+		url('https://static.inven.co.kr/image/board/common/bg_best_commend.gif')
+		no-repeat left top;
+}
+
+#powerbbsCmt .commentList1 ul li.deleteCmt {
+	background: #eeeeee;
+}
+
+#powerbbsCmt .bttnBlockOpinion {
+	display: inline;
+	float: left;
+	margin-top: 2px;
+}
+
+#powerbbsCmt .powerbbsBlockOpinionTitleOpen .bttnBlockOpinion {
+	background-position: 0 -33px !important;
+}
+
+#powerbbsCmt .powerbbsBlockOpinionTitleOpen .bttnBlockOpinion span.bluetext
+	{
+	display: none !important;
+}
+
+#powerbbsCmt .commentWrite {
+	background-color: #F8F8F8;
+	clear: both;
+	width: 678px;
+}
+
+#powerbbsCmt .commentWrite .cmtWriteForm {
+	padding: 12px 0 12px 0;
+	width: 678px;
+}
+
+#powerbbsCmt .commentWrite .cmtWriteForm .cmtTitle {
+	margin-left: 10px;
+	overflow: hidden;
+	width: 111px;
+}
+
+#powerbbsCmt .commentWrite .cmtWriteForm .cmtGuest {
+	display: inline;
+	float: left;
+	clear: both;
+	width: 575px;
+	margin-left: 37px;
+	margin-bottom: 5px;
+}
+
+#powerbbsCmt .commentWrite .cmtWriteForm .cmtTitle strong {
+	display: inline;
+	float: left;
+	margin-top: 26px;
+	text-align: center;
+	width: 111px;
+	height: 26px;
+	_height: 30px;
+	padding-top: 4px;
+}
+
+#powerbbsCmt .commentWrite .cmtWriteForm .cmtContent {
+	margin-left: 8px;
+	width: 464px;
+}
+
+#powerbbsCmt .commentWrite .cmtWriteForm .cmtContent textarea {
+	display: inline;
+	float: left;
+	height: 66px;
+	margin: 0;
+	width: 464px;
+	line-height: 15px;
+	font-size: 12px;
+}
+
+#powerbbsCmt .commentWrite .cmtWriteForm .cmtSubmit {
+	margin-left: 9px;
+	width: 68px;
+}
+
+#powerbbsCmt .commentWrite .cmtWriteForm .cmtSubmit input {
+	background:
+		url("https://static.inven.co.kr/image/common/databoard/common/bttn_68x66_silver1.gif")
+		no-repeat left top;
+}
+
+#powerbbsCmt .commentWrite .cmtWriteForm .cmtSubmit input {
+	cursor: pointer;
+	font-weight: bold;
+	letter-spacing: -1px;
+}
+
+#powerbbsCmt .commentWrite .cmtWriteForm .cmtSubmit input {
+	border: 0 none;
+	height: 66px;
+	overflow: hidden;
+	text-align: center;
+	width: 68px;
+}
+
+#powerbbsBody .articleView .bttnHideContents {
+	display: inline;
+	float: left;
+	margin-top: 5px;
+}
+
+#powerbbsBody .bttnCloseContents {
+	display: inline;
+	float: left;
+	margin-top: 5px;
+	margin-left: 5px;
+}
+#powerbbsBody .contentBody .itweetBox {
+	display: inline-block;
+	width: 100%;
+	position: relative;
+	padding-bottom: 1px;
+	margin-bottom: 10px;
+}
+
+#powerbbsBody .contentBody .itweetBox .loader {
+	height: 100px;
+	position: relative;
+	width: 100px;
+	border-radius: 100%;
+}
+
+#powerbbsBody .contentBody .itweetBox .loader {
+	border: 2px solid transparent;
+	border-color: transparent #006eff transparent #006eff;
+	-moz-animation: rotate-loading 1.5s linear 0s infinite normal;
+	-moz-transform-origin: 50% 50%;
+	-o-animation: rotate-loading 1.5s linear 0s infinite normal;
+	-o-transform-origin: 50% 50%;
+	-webkit-animation: rotate-loading 1.5s linear 0s infinite normal;
+	-webkit-transform-origin: 50% 50%;
+	animation: rotate-loading 1.5s linear 0s infinite normal;
+	transform-origin: 50% 50%;
+}
+
+#powerbbsBody .contentBody .itweetBox .loader {
+	-webkit-transition: all 0.5s ease-in-out;
+	-moz-transition: all 0.5s ease-in-out;
+	-ms-transition: all 0.5s ease-in-out;
+	-o-transition: all 0.5s ease-in-out;
+	transition: all 0.5s ease-in-out;
+}
+
+#powerbbsBody .contentBody .itweetBox .loading-text {
+	-moz-animation: loading-text-opacity 2s linear 0s infinite normal;
+	-o-animation: loading-text-opacity 2s linear 0s infinite normal;
+	-webkit-animation: loading-text-opacity 2s linear 0s infinite normal;
+	animation: loading-text-opacity 2s linear 0s infinite normal;
+	color: #006eff;
+	font-family: "Nanum Barun Gothic, dotum,sans-serif";
+	font-size: 10px;
+	font-weight: bold;
+	margin-top: 45px;
+	opacity: 0;
+	position: absolute;
+	text-align: center;
+	text-transform: uppercase;
+	top: 0;
+	width: 100px;
+}
+
+#powerbbsBody .contentBody .itweetBox.youtubeBox .loader {
+	border-color: transparent #FF0000 transparent #FF0000;
+}
+
+#powerbbsBody .contentBody .itweetBox.youtubeBox .loading-text {
+	color: #FF0000;
+}
+
+#powerbbsBody .contentBody .itweetBox.instaBox .loader {
+	border-color: transparent #000 transparent #000;
+}
+
+#powerbbsBody .contentBody .itweetBox.instaBox .loading-text {
+	color: #000;
+}
+
+#powerbbsBody .contentBody .itweetBox.youtubeBox, #powerbbsCmt2 .youtubeIframe
+	{
+	width: 100%;
+}
+
+/* cmtImage */
+#cmtImageUploader {
+	margin-top: -12px;
+}
+
+#cmtImageUploader #cmtUploadImage {
+	margin-top: 1px;
+	filter: alpha(opacity = 0);
+	opacity: 0;
+	position: absolute;
+	width: 78px;
+	height: 21px;
+	font-size: 11px;
+	display: block;
+	cursor: pointer;
+}
+
+#cmtImageUploader .bttnSubmitUpload {
+	width: 78px;
+	height: 21px;
+	background:
+		url('https://static.inven.co.kr/image/board/common/bttn_78x21_white1.gif')
+		no-repeat left top;
+	border: 0;
+	font-size: 11px;
+	cursor: pointer;
+}
+
+#cmtImageUploader .tabContent {
+	display: none;
+}
+
+#cmtImageUploader.tab1 .tabContent1, #cmtImageUploader.tab2 .tabContent2,
+	#cmtImageUploader.tab3 .tabContent3 {
+	display: inline;
+}
+
+#cmtImageUploader .tabContent {
+	float: left;
+	display: none;
+	width: 676px;
+}
+
+#cmtImageUploader .tabContent {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border: 1px solid #9b9b9b;
+}
+
+.cmtUploadImgTop .cmtUploadImg {
+	display: inline-block;
+	float: left;
+	padding-bottom: 13px;
+}
+
+.cmtUploadImgTop .cmtUploadImg img {
+	float: none;
+	display: block;
+	max-width: 100%;
+}
+
+.cmtUploadImgTop .deleteCmtImg {
+	display: block;
+	float: none;
+	background-color: #999;
+	margin-top: 2px;
+	height: 16px;
+	width: 100%;
+	text-align: center;
+	cursor: pointer;
+	font-size: 13px;
+	color: #fff;
+	font-weight: bold;
+}
+
+#cmtImageUploader .cmtImageControl {
+	margin-left: 130px;
+	padding-bottom: 7px;
+}
+
+.replyCmt #cmtImageUploader .cmtImageControl {
+	margin-left: 86px;
+}
+
+/* delete icon renew*/
+.cmtUploadImg {
+	position: relative;
+}
+
+.cmtUploadImgTop .deleteCmtImg {
+	display: none;
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	width: 25px;
+	height: 25px;
+	margin: 0;
+	padding: 0;
+	border-radius: 15px;
+	background-color: rgba(0, 0, 0, 0.7);
+	border: 1px solid white;
+}
+
+.cmtUploadImgTop .cmtUploadImg.loaded .deleteCmtImg {
+	display: block;
+}
+
+.cmtUploadImgTop .deleteCmtImg .icon_delete {
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	fill: #fff;
+}
+
+#powerbbsCmt2 img.cmtimage {
+	max-width: 100%;
+}
+
+#powerbbsCmt2 div.cmtimager {
+	display: inline-block;
+	float: none;
+	width: auto;
+	max-width: 320px;
+	position: relative;
+}
+
+#powerbbsCmt2 div.cmtimager video {
+	max-width: 320px;
+	display: block;
+	cursor: pointer;
+}
+
+#powerbbsCmt2 div.cmtimager .cmtimageFull {
+	font-size: 0;
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+	display: none;
+	text-decoration: none;
+}
+
+#powerbbsCmt2 div.cmtimager .cmtimageFull:before {
+	font-size: 25px;
+	color: white;
+	text-shadow: 0 0 3px black;
+}
+
+#powerbbsCmt2 div.cmtimager:hover .cmtimageFull {
+	display: block;
+}
+
+#powerbbsCmt2 div.cmtimageMore {
+	height: 10px;
+	background-color: #dddddd;
+	text-align: center;
+	line-height: 5px;
+	clear: both;
+}
+
+#powerbbsCmt2 div.cmtmessage {
+	margin-top: 15px;
+	clear: both;
+	width: 464px;
+}
+
+#powerbbsCmt2 .cmtimager.cmtvideo>span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	cursor: pointer;
+	z-index: 1;
+}
+
+#powerbbsCmt2 .cmtimager.cmtvideo>span::after {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: transparent
+		url(https://static.inven.co.kr/image_2011/common/comment/icon_play.png)
+		center center no-repeat;
+	background-color: rgba(0, 0, 0, .8);
+	opacity: .5;
+}
+
+#powerbbsCmt2 .cmtimager.cmtvideo>span:hover::after {
+	opacity: .3;
+}
+
+#powerbbsCmt2 .cmtimager.cmtvideo.play>span::after {
+	display: none;
+}
+
+#powerbbsCmt2 div.cmtgifmp4 a {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 12px !important;
+	color: #fff !important;
+	cursor: pointer;
+	height: 20px;
+	line-height: 20px !important;
+	text-decoration: none !important;
+	margin: 0 !important;
+	padding: 0 6px !important;
+	outline: none !important;
+	text-indent: 16px !important;
+	background: rgba(0, 0, 0, 0.6)
+		url('https://static.inven.co.kr/image_2011/board/common/icon_view_gif_24x24.png')
+		6px 4px no-repeat;
+	background-size: 12px 12px;
+	overflow: hidden;
+}
+
+#powerbbsCmt2 .commentList1 ul li.adminCmt .comment span div.cmtgifmp4 a
+	{
+	color: #fff !important;
+}
+
+#powerbbsCmt2 div.cmtgifmp4_loaded:hover a, #powerbbsCmt2 div.cmtgifmp4_pause a
+	{
+	display: inline-block !important;
+}
+
+#powerbbsCmt2 div.cmtgifmp4 div {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: transparent
+		url('https://static.inven.co.kr/image_2011/board/common/icon_play_68x68.png')
+		center center no-repeat;
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+#powerbbsCmt2 div.cmtgifmp4_pause div {
+	display: block !important;
+}
+
+#powerbbsBody .banCmtBottomEvent {
+	display: inline;
+	float: left;
+	width: 710px;
+	height: 159px;
+	margin-top: 4px;
+	background:
+		url('https://static.inven.co.kr/image_2011/board/common/bg_710x159_white1a.png')
+		no-repeat left top;
+}
+
+#powerbbsBody .banCmtBottomEvent .banTitle {
+	width: 710px;
+	height: 55px;
+	overflow: hidden;
+}
+
+#powerbbsBody .banCmtBottomEvent .banTitle a {
+	width: 710px;
+	height: 55px;
+	overflow: hidden;
+	text-indent: -999px;
+	display: inline;
+	float: left;
+}
+
+#powerbbsBody .banCmtBottomEvent .banWrap {
+	margin-left: 7px;
+}
+
+#powerbbsBody .banCmtBottomEvent .banWrap ul li {
+	width: 223px;
+	height: 90px;
+	margin-left: 7px;
+}
+
+#powerbbsBody .banCmtBottomEvent .banWrap ul li img {
+	width: 223px;
+	height: 90px;
+}
+
+/* OVERRIDE */
+#powerbbsCmt2 .commentList1 ul li .goodbadpart {
+	width: 242px;
+}
+
+#powerbbsCmt2 .commentList1 ul li .bttn_sep11 {
+	float: left;
+	padding: 1px 4px;
+	font-size: 11px;
+	letter-spacing: -1px;
+	cursor: pointer;
+}
+
+#powerbbsCmt2 .commentList1 ul li .bttn_sep11sep {
+	float: left;
+	padding: 1px 1px;
+	font-size: 11px;
+	letter-spacing: -1px;
+}
+
+#powerbbsCmt2 .commentList1 ul li .bttn_b11 {
+	float: left;
+	padding: 1px 4px;
+	height: 15px;
+	line-height: 14px;
+	line-height: 20px;
+	vertical-align: top;
+	border: 1px solid #9f9f9f;
+	font-size: 11px;
+	background-color: #fff;
+	letter-spacing: -1px;
+	font-family: dotum, sans-serif;
+	cursor: pointer;
+}
+
+#powerbbsCmt2 .commentList1 ul li .bttn_b11right {
+	float: right;
+	padding: 1px 4px;
+	height: 15px;
+	line-height: 14px;
+	line-height: 20px;
+	vertical-align: top;
+	border: 1px solid #9f9f9f;
+	font-size: 11px;
+	background-color: #fff;
+	letter-spacing: -1px;
+	font-family: dotum, sans-serif;
+	cursor: pointer;
+}
+
+#powerbbsCmt2 .commentList1 ul li .bttn_report {
+	color: #3e3e3e;
+}
+
+#powerbbsCmt2 .commentList1 ul li .bttn_reportkill {
+	color: #3e3e3e;
+}
+
+#powerbbsCmt2 .commentList1 ul li .bttn_recommender {
+	color: #3e3e3e;
+	margin-right: 5px;
+}
+
+#powerbbsCmt2 .commentList1 ul li .bttn_good {
+	color: #e94a23;
+	margin-right: 5px;
+}
+
+#powerbbsCmt2 .commentList1 ul li .bttn_bad {
+	color: #007acf;
+	margin-right: 5px;
+}
+
+#powerbbsCmt2 .commentList1 ul li .cmtSt2 .bttn_report {
+	margin-right: 0px;
+}
+
+#powerbbsCmt2 .commentList1 ul li .cmtSt2 .bttn_bad {
+	margin-right: 7px;
+}
+
+#powerbbsCmt2 .commentList1 ul li .cmtSt2 a.replyBttn {
+	float: left;
+	margin-right: 0px;
+	margin-left: 3px;
+}
+
+#powerbbsCmt2 .commentList1 ul li .cmtSt2 .goodbadpart {
+	width: 85px;
+}
+
+#powerbbsCmt2 .commentList1 ul li .cmtSt2 .goodbadline {
+	width: 136px;
+	float: right;
+	margin-right: 0;
+	padding-bottom: 7px;
+}
+
+#powerbbsCmt2 div.cmtimager.cmtvideo .cmtimageGif {
+	display: block;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	z-index: 2;
+	padding: 0px 10px;
+	color: white;
+	background-color: black;
+	font-size: 10px;
+}
+
+#powerbbsCmt2 .commentList1 ul li.adminCmt .comment span a.cmtimageGif {
+	color: white !important;
+}
+
+#powerbbsCmt2 div.cmtimager.video .cmtimageGif:hover {
+	text-decoration: none;
+}
+
+/* PwCMT V2 Mobile */
+/**
+		 * Tablet Size => PC Layout
+		 */
+.mobile:not(.tablet) #powerbbsCmt2 {
+	width: auto;
+	box-sizing: border-box;
+	margin: 0;
+	padding-bottom: 0;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .cmtWrap {
+	width: auto;
+	box-sizing: border-box;
+	margin: 3px;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .cmtHead {
+	width: auto;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .cmtHead ul li {
+	display: inline !important;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .cmtHead ul li, .mobile:not(.tablet) #powerbbsCmt2 .cmtHead ul li a
+	{
+	font-size: 13px;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .vertical-bar {
+	display: inline-block;
+	margin: 0 2px 0 3px;
+	vertical-align: 1px;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .cmtMainTail {
+	width: auto;
+	box-sizing: border-box;
+	overflow: hidden;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentWrite {
+	width: auto;
+	box-sizing: border-box;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentWrite .cmtWriteForm {
+	width: auto;
+	box-sizing: border-box;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentWrite .cmtWriteForm .textLogin
+	{
+	overflow: hidden;
+	width: auto !important;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentWrite .cmtWriteForm .cmtContent textarea.notice
+	{
+	box-sizing: border-box;
+	width: 100% !important;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .cmtMain {
+	overflow: hidden;
+	box-sizing: border-box;
+	width: auto;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .title678SL1 {
+	width: auto;
+	height: 33px;
+	box-sizing: border-box;
+	line-height: initial;
+	background: #e9e8e8
+		url(https://static.inven.co.kr/image_2011/board/common/icon_18x36_plus_pwcmt1a.gif)
+		98% 50% no-repeat;
+	padding: 0 0 0 1.5em;
+	line-height: 31px;
+	border-color: #c0c0c0;
+	border-width: 1px 1px 1px 1px;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentList1 ul {
+	width: auto;
+	margin: 0;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentList1 ul li {
+	width: auto;
+	padding: 0;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentList1 ul li div.chkbox {
+	display: block;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentList1 ul li div.cmtOne {
+	display: block;
+	float: right;
+	width: calc(100% - 15px);
+	clear: unset;
+	margin-bottom: 5px;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentList1 ul li span.content {
+	margin-top: unset;
+	font-size: 13px;
+	width: auto;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentList1 ul li strong.title {
+	padding-top: 0;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentList1 ul li strong.title .nickname
+	{
+	font-size: 14px;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentList1 ul li .bttn_b11right {
+	font-size: 12px;
+	padding: 2px 5px;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentList1 ul li.replyCmt {
+	background-position: 10px 4px;
+	margin-bottom: 10px;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentList1 ul li.replyCmt div.cmtOne
+	{
+	width: calc(100% - 30px);
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentList1 ul li .bottomLine {
+	width: auto;
+	margin-bottom: 5px;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentList1 ul li.replyCmt .bottomLine
+	{
+	height: auto;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentList1 ul li a.replyBttn {
+	float: left;
+	clear: unset;
+	margin-right: 0;
+	font-size: 13px;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentList1 ul li .goodbadpart.nogood
+	{
+	width: auto;
+	margin-right: 5px;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentList1 ul li.replyCmt .comment
+	{
+	width: auto;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentWrite .cmtWriteForm .cmtContent textarea.notice
+	{
+	background-size: contain;
+	background-position: left 50%;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentList1 ul li .comment {
+	width: auto;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .cmtMainTail .cmtMainAdminMenu ul {
+	overflow: hidden;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .cmtMainTail .cmtMainAdminMenu li {
+	float: left;
+	display: inline-block;
+	height: 22px;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .cmtMainTail .cmtMainAdminMenu li input[type="checkbox"]
+	{
+	margin-top: 5px !important;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .cmtMainTail .cmtMainAdminMenu li a {
+	float: none;
+}
+
+.mobile:not(.tablet) #powerbbsCmt2 .commentWrite .cmtWriteForm .cmtContent
+	{
+	overflow: hidden;
+	width: auto;
+}
+
+#i-comment-list {
+	height: 0;
+	overflow: hidden
+}
+
+body.styler-webzine>#webzineBody #i-comment-list {
+	position: relative;
+	top: -70px
+}

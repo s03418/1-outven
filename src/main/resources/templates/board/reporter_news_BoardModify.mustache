@@ -1,0 +1,17 @@
+{{>layouts/header}}
+<article>
+	{{>layouts/nav}}
+	<script>
+		if({{result}}) {
+			alert("정상적으로 수정되었습니다.");
+			location.href="/board/reporter_news_BoardView?board_num={{board_num}}&pg={{pg}}"
+		} else {
+			alert("[ERROR]수정 실패");
+			history.back();
+		}
+	</script>
+		
+	</section>
+</article>
+{{>layouts/footer}}
+		

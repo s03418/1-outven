@@ -1,0 +1,45 @@
+/* 테두리 스타일 설정 */
+.table {
+    border-collapse: collapse; /* 테두리 겹치기 */
+}
+
+/* 테두리 색상 및 두께 설정 */
+.table, .table th, .table td {
+    border: 1px solid #ccc;
+}
+
+/* 테두리 안쪽 여백 설정 */
+.table th, .table td {
+    padding: 10px;
+}
+
+/* 선택 옵션 스타일 설정 */
+select {
+    width: 150px; /* 너비 설정 */
+    padding: 5px; /* 내부 여백 설정 */
+    border: 1px solid #ccc; /* 테두리 설정 */
+    border-radius: 5px; /* 모서리 둥글게 설정 */
+}
+
+/* 제목 입력란 스타일 설정 */
+input[type="text"] {
+    width: 300px; /* 너비 설정 */
+    padding: 5px; /* 내부 여백 설정 */
+    border: 1px solid #ccc; /* 테두리 설정 */
+    border-radius: 5px; /* 모서리 둥글게 설정 */
+}
+
+/* 버튼 스타일 설정 */
+input[type="button"] {
+    padding: 8px 20px; /* 내부 여백 설정 */
+    background-color: #007bff; /* 배경색 설정 */
+    color: #fff; /* 글자색 설정 */
+    border: none; /* 테두리 없음 */
+    border-radius: 5px; /* 모서리 둥글게 설정 */
+    cursor: pointer; /* 마우스 커서 설정 */
+}
+
+/* 버튼 호버 효과 설정 */
+input[type="button"]:hover {
+    background-color: #0056b3; /* 호버 배경색 설정 */
+}

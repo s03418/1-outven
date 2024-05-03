@@ -1,0 +1,365 @@
+{{>layouts/header}}
+<article>
+	{{>layouts/nav}}
+	<script type="text/javascript" src="../lib/jquery-3.7.1.min.js"></script>
+	<script type="text/javascript">
+		$(function() {
+			// 이전에 선택한 값 불러오기
+			var selectedCategory = localStorage.getItem('selectedCategory');
+			if (selectedCategory) {
+				$("#option_detail").val(selectedCategory);
+			}
+
+			// 카테고리 값 검사 및 설정
+			$("select[id='option_detail']")
+					.change(
+							function() {
+								var result = $(this).val();
+								// 선택한 값을 로컬 스토리지에 저장
+								localStorage
+										.setItem('selectedCategory', result);
+								location.href = "/board/imageBoardList?detail_category="
+										+ result + "&pg={{pg}}";
+							});
+		});
+
+		document.addEventListener("DOMContentLoaded", function() {
+			// 검색어 입력 필드
+			var keywordInput = document.getElementById('keyword');
+
+			// 엔터 키 이벤트 핸들러
+			keywordInput.addEventListener("keyup", function(event) {
+				// 엔터 키의 keyCode 값은 13입니다.
+				if (event.keyCode === 13) {
+					event.preventDefault(); // 기본 동작 방지 (폼 제출)
+					keywordSearch(); // 검색 함수 호출
+				}
+			});
+		});
+
+		//검색 요청 함수
+		function keywordSearch() {
+			var name = document.forms["form1"]["name"].value; // 선택된 검색 조건
+			var keyword = document.getElementById('keyword').value; // 검색어
+			// 검색어가 비어있는지 확인
+			if (keyword.trim() === '') {
+				alert('검색어를 입력하세요.');
+				return;
+			}
+			// 검색 요청 URL 생성
+			var url = "/search?name=" + name + "&keyword="
+					+ encodeURIComponent(keyword);
+			// 검색 요청 보내기
+			window.location.href = url;
+
+		}
+	</script>
+	
+<style type="text/css">
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4개의 열을 가진 그리드 */
+    gap: 20px; /* 그리드 간격 설정 */
+}
+
+.grid-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+.grid-item img {
+    max-width: 100%;
+    height: auto;
+}
+
+.grid-item .info {
+    margin-top: 10px;
+}
+
+.grid-item .title {
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+}
+
+.grid-item .author {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.grid-item .stats {
+    margin-top: 10px;
+}
+
+.grid-item .stats span {
+    margin-right: 10px;
+}
+
+.grid-item .stats img {
+    width: 16px;
+    height: 16px;
+}
+	
+<!-- 페이징 꾸미기 -->
+
+.paging {
+	color: blue;
+	text-decoration: none;
+}
+
+.currentPaging {
+	color: red;
+	text-decoration: underline;
+}
+
+#subjectA:link {
+	color: black;
+	text-decoration: none;
+}
+
+#subjectA:visited {
+	color: black;
+	text-decoration: none;
+}
+
+#subjectA:hover {
+	color: red;
+	text-decoration: underline;
+}
+
+#subjectA:active {
+	color: black;
+	text-decoration: none;
+}
+
+.btn-white {
+	background-color: #fff;
+	color: #000;
+	padding: 5px 10px;
+	font-size: 15px;
+}
+
+.btn-black {
+	background-color: #000;
+	color: #fff;
+	padding: 5px 10px;
+	font-size: 15px;
+}
+
+.search {
+	background-color: #fff;
+	color: #000;
+	padding: 5px 10px;
+	font-size: 10px;
+}
+
+.wrap {
+	border: 1px solid rgba(0, 0, 0, 0.3); /* 회색 투명선 */
+	padding: 5px; /* 내부 여백 */
+}
+
+.wrap>.cnt {
+	display: flex;
+	justify-content: space-between;
+}
+
+<!--위의 카테고리 스타일 -->
+.detail_category {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #ccc;
+	padding: 5px; /* 내부 여백 */
+	border-bottom-color: #ddd; /* 아래쪽 선 색상 */
+}
+
+.detail_category a {
+	font-size: 14px; /* 글자 크기 조정 */
+	color: rgba(128, 128, 128, 0.7); /* 투명한 회색으로 글자색 설정 */
+	padding: 2px 7px; /* 패딩 값 조절 */
+	border-radius: 20px; /* 테두리 둥글게 */
+	text-decoration: none; /* 링크 밑줄 제거 */
+	transition: background-color 0.3s, color 0.3s; /* 색상 변경에 애니메이션 적용 */
+}
+
+.detail_category a:hover {
+	background-color: #bbb; /* 눌렀을 때 배경색을 검정색으로 변경 */
+	color: #fff; /* 눌렀을 때 텍스트 색상을 흰색으로 변경 */
+}
+</style>
+
+
+	<section class="commu-center">
+		<script src="https://www.inven.co.kr/board/bbs/include/board.js"></script>
+		<div id="iBuilderHeader">
+			<section class="list-wrap  w-100">
+				<article class="list-common">
+					<style>
+#imid_bc7508c96f3cc48 .common-title::before {
+	background: #074f68
+}
+
+#imid_bc7508c96f3cc48 .common-title {
+	background: #047e99;
+	color: #ffffff
+}
+</style>
+
+					<section class="commu-common" id=imid_bc7508c96f3cc48>
+						<h2 class="common-title">
+							<span class="main">LoL 팬아트/카툰 게시판</span> <span class="sub"></span>
+						</h2>
+					</section>
+				</article>
+
+				<article class="new-board" id="new-board">
+					<h3 class="commu-hidden">LoL 팬아트/카툰 게시판 게시판</h3>
+
+
+
+					<div class="admin-area"></div>
+
+					<div class="post-area"></div>
+					<script type="text/javascript"
+						src="https://www.inven.co.kr/common/lib/js/store.min.js"></script>
+					<script type="text/javascript"
+						src="https://www.inven.co.kr/board/lib/js/bbs_history.js?v=20210824"></script>
+					<link rel="stylesheet" type="text/css"
+						href="https://www.inven.co.kr/board/lib/style/dist/bbs_history.css" />
+					<div class="board-top">
+						<div class="left">
+							<select id="option_detail">
+								<option value="">카테고리</option>
+								<option value="일반">일반</option>
+								<option value="습작">습작</option>
+								<option value="기타">기타</option>
+							</select> 
+						</div>
+
+						<div class="right">
+							<div class="bbs-history-wrap">
+								
+								<div id="bbs-history-button"></div>
+							</div>
+						</div>
+					</div>
+
+					
+
+					<br>
+					<div>
+						<h3 class="commu-hidden">LoL 팬아트/카툰 게시판 게시판</h3>
+					</div>
+					<br>
+					<!-- 이미지 article -->
+					<div class="image-grid">
+						{{#list}}
+						<div class="grid-item" onclick="location.href='/board/imageBoardView?board_num={{board_num}}&pg={{pg}}'">
+							<p>{{detail_category}}</p>
+								{{#board_img}}
+								<img src="../storage/{{board_img}}" width="150px;" height="100px;">
+								
+								 <div style="text-align: center; margin-top: 10%; margin-bottom: 10%;">
+                                 {{/board_img}}
+                                 {{^board_img}}
+                                    <label>이미지가 없습니다.</label>
+                                 {{/board_img}}
+    							 </div>
+    							 
+							<div class="info">
+								{{board_title}}
+								<p class="author">{{nick_name}}</p>
+								<div class="stats">
+									<span class="views"><img src="/image/icons/eye.png"
+										alt="Views" >{{board_hit}}</span>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										&nbsp;
+									<span class="likes">
+										<img src="/image/icons/thumbs_up.png" alt="Likes">
+										{{board_recommend}}
+									</span>
+								</div>
+							</div>
+						</div>
+						{{/list}}
+					</div>
+					<br> <br>
+					<div class="post_area" style="width: 750px; margin: auto;">
+						<div class="footer" align="right">
+							<input type="button" value="목록" class="btn-white"
+								onclick="location.href='/board/imageBoardList'"> 
+							{{#member}}
+							<span>
+								<input type="button" value="글쓰기" class="btn-black"
+								onclick="location.href='/board/imageBoardWriteForm'">
+							</span>
+							{{/member}}
+						</div>
+						<br> <br>
+						<!-- 페이징 처리 (페이지) -->
+						<div class="pages" align="center">
+							{{#previousPage}} 
+							{{^detail_category}} 
+							[<a class="paging" href="/board/imageBoardList?pg={{previousPage}}">이전</a>]
+							{{/detail_category}} 
+							
+							{{#detail_category}} 
+							[<a class="paging" href="/board/imageBoardList?pg={{previousPage}}&detail_category={{detail_category}}">이전</a>]
+							{{/detail_category}} 							
+							{{/previousPage}} 
+							
+							{{#pageList}} 
+							{{#current}}
+							{{^detail_category}} 
+							[<a class="currentPaging" href="/board/imageBoardList?pg={{page}}">{{page}}</a>]
+							{{/detail_category}} 
+							
+							{{#detail_category}} 
+							[<a class="currentPaging" href="/board/imageBoardList?pg={{page}}&detail_category={{detail_category}}">{{page}}</a>]
+							{{/detail_category}} 							
+							{{/current}} 
+							
+							{{^current}}
+							{{^detail_category}} 
+							[<a class="paging" href="/board/imageBoardList?pg={{page}}">{{page}}</a>]
+							{{/detail_category}} 
+							
+							{{#detail_category}} 
+							[<a class="paging" href="/board/imageBoardList?pg={{page}}&detail_category={{detail_category}}">{{page}}</a>]
+							{{/detail_category}} 
+							{{/current}} 							
+							{{/pageList}} 
+							
+							{{#nextPage}}
+							{{^detail_category}} 
+							[<a class="paging" href="/board/imageBoardList?pg={{nextPage}}">다음</a>]
+			 				{{/detail_category}} 
+			 				
+			 				{{#detail_category}} 
+			 				[<a class="paging" href="/board/imageBoardList?pg={{nextPage}}&detail_category={{detail_category}}">다음</a>]
+							{{/detail_category}} 
+							{{/nextPage}}
+							
+						</div>
+						<br> <br>
+						<div class="board_bottom" align="center" style="font-size: 0;">
+							<form action="/board/imageBoardList" method="get" name="form1">
+								<select name="name" style="margin: 0; font-size: inherit;">
+									<option value="board_title">제목</option>
+									<option value="board_content">내용</option>
+									<option value="nick_name">닉네임</option>
+									<option value="member_id">글작성자</option>
+									<option value="keyword">제목+내용</option>
+								</select> 
+								<input type="search" id="keyword" placeholder="검색어를 입력해주세요"
+									style="margin: 0; font-size: inherit;">
+								<button type="button" class="search" onclick="keywordSearch()">검색</button>
+							</form>
+						</div>
+
+					</div>
+			</section>
+</article>
+{{>layouts/footer}}

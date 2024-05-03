@@ -1,0 +1,110 @@
+{{>layouts/header}} 
+<script type="text/javascript" src="../js/imageBoardScript.js"></script>
+<article>
+	{{>layouts/nav}}
+	<section class="commu-center">
+<div id="iBuilderHeader">	
+<section class="list-wrap  w-100">
+		<article class="list-common">
+<style>
+#imid_bc7508c96f3cc48 .common-title::before{background:#074f68}#imid_bc7508c96f3cc48 .common-title{background:#047e99;color:#ffffff}
+#con {resize:none;}
+
+.btn-white {
+ 	background-color: #fff; 
+ 	color: #999; /* 연한 회색 텍스트 색상 */
+    padding: 5px 10px;
+    font-size: 15px;
+    border: 1px solid #ddd; /* 연한 회색 테두리 */
+}
+<!-- 내용 스타일 -->
+#content {
+    width: 100%;
+    height: 600px;
+    float: left;
+    display: block;
+    background-color: #f5f5f5; /* 연한 회색 배경색 */
+    border: 1px solid #ddd; /* 연한 회색 테두리 */
+    padding: 5px;
+}
+
+</style>
+
+<section class="commu-common" id=imid_bc7508c96f3cc48>
+	<h2 class="common-title">
+		<span class="main">LoL 팬아트/카툰 게시판</span>
+		<span class="sub"></span>
+	</h2>
+</section>
+</article>
+
+<div id="powerbbsHead"></div><script>
+
+
+</script>
+
+<article class="new-board" id="new-board">
+    <h3 class="commu-hidden">LoL 팬아트/카툰 게시판 게시판</h3>
+
+    
+
+<div class="admin-area">
+    </div>
+
+<br><br>
+
+<div class="container" style="background-color: #87CEFA;">
+	<form action="/board/imageBoardWrite" method="post" name="form1" enctype="multipart/form-data">
+	      <select name="detail_category">
+	            <option value="">카테고리</option>
+	            <option value="일반">일반</option>
+	            <option value="습작">습작</option>
+	            <option value="기타">기타</option>
+	      </select>
+      {{#member}}
+      <input type="hidden" name="nick_name" value={{nick_name}}>
+      <input type="hidden" name="member_id" value={{member_id}}>
+            <table class="table" border="1" style="width: 100%">
+               <thead id="member">
+
+                  <tr colspan="3" class="member-row" data-nick-name="{{nick_name}}" data-member-id="{{member_id}}">
+                     <td style="text-align: left; font-weight: bold;">{{nick_name}}</td>
+                     <td style="text-align: center;">{{member_id}}</td>
+                     <td>레벨 : {{member_level}}</td>
+                  </tr>
+       {{/member}}
+               </thead>
+               <tbody>
+                  <tr style="height: 20px;">
+                     <td align="center" style="width: 60px padding: 0 5px 0 0;" >제목 :            
+                        <input type="text" name="board_title" style="width: 400px; border: 1 #C4CAD1 solid; font-size: 9pt; padding-top: 3px;" maxlength="150">
+                     </td>
+                  </tr>
+                  <tr align="center">
+                     <td colspan="3">
+                     <textarea name="board_content" id="content"
+                     style="width: 100%; height: 600px; float: left; 
+                     display: block;"></textarea>
+                     </td>
+                  </tr>
+               </tbody>
+               <tfoot>
+                  <tr align="left">
+                     <td colspan="3">
+                        <input type="file" id="board_img" name="img">
+                     </td>
+                  </tr>
+                  <tr align="right">
+                     <td colspan="3">
+                        <input type="button" value="글쓰기" onclick="checkWriteForm()" class="btn-white">
+                        <input type="button" value="글수정" onclick="location.href='/board/imageBoardModifyForm'" class="btn-white">
+                        <input type="button" value="글삭제" onclick="location.href='/board/imageBoardDelete'" class="btn-white">
+                     </td>
+                  </tr>
+               </tfoot>
+            </table>
+         </form>
+         </div>
+</section>
+</article>
+{{>layouts/footer}}

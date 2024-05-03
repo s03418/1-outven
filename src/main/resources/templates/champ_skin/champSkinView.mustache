@@ -1,0 +1,332 @@
+{{>layouts/header}} 
+
+<style>
+.champimg1{
+	float: center;
+	padding: 10px;
+}
+hr{
+	clear: both;
+}
+.champlist {
+    text-align: center;
+    list-style: none; /* Remove default list styling */
+    padding: 0; /* Remove default padding */
+}
+
+.listWrap{
+	
+    background-color: navy; /* 남색 배경색 적용 */
+}
+
+.champlist li {
+    display: inline-block; 
+    margin: 0 10px; 
+    vertical-align: top; 
+    color: white; /* 글자색을 흰색으로 설정 */
+    padding: 10px; /* 내부 여백 추가 */
+}
+
+#imid_bc7508c96f3cc48 .common-title::before {
+    background: #074f68; /* 가상 요소에 배경색 지정 */
+
+}
+
+#imid_bc7508c96f3cc48 .common-title {
+    background: #047e99; /* 요소에 배경색 지정 */
+    color: #ffffff; /* 글자색 지정 */
+}
+
+
+</style>
+<article>
+	{{>layouts/nav}}
+	<section class="commu-center">
+	<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+	<script type="text/javascript">
+		$(function(){
+		// 24/02/21 수정 : 로그인 유무 확인
+			$(".rateBtn").click(function(){
+				{{^member}}
+				alert("로그인부터 해주세요");
+				return false;
+				{{/member}}	
+				
+				{{#member}}
+				// alert("진입 확인");
+				const urlParams = new URL(location.href).searchParams;
+				const name = urlParams.get('name');
+				const champ_code = urlParams.get('champ_code');
+				const skin_code  = urlParams.get('skin_code');
+				var member_id = $("#hiddenData").data("id");
+				var rate = $(this).data("rate");
+				// alert("champ_code : " + champ_code + " skin_code : " + skin_code + " rate : " + rate +" member_id : " + member_id);
+				$.ajax({
+					type : "POST",
+					url : "/checkSkinRate",
+					data : {
+						"champ_code" : champ_code,
+						"skin_code" : skin_code,
+						"member_id" : member_id
+					},
+					success : function(data){
+						if(data == true){
+							alert("평점은 한번만 줄 수 있습니다.");
+							return false;
+						}else{
+							location.href="/champ_skin/skinRateUpdate?champ_code="+champ_code+"&skin_code="+skin_code+"&rate="+rate;
+						}
+					}
+				});
+				
+				return false;
+				{{/member}}
+			});
+		
+			// 댓글 입력 기능 눌렀을때 member값이 없으면 로그인 해주세요 창 뛰움
+			$("#write").click(function(){
+			{{^member}}
+				alert("로그인부터 해주세요");
+				return false;
+			{{/member}}
+						
+			{{#member}}
+				var frm1 = document.comWrite;
+				if(!frm1.champskin_com.value){
+				alert("내용을 입력해주세요");
+				frm1.champskin_com.focus;
+				return false;
+				}
+				frm1.submit();
+			{{/member}}
+			});	
+	
+			// 답글 기능 숨기기
+			$(".recomment").hide();
+			$(".rc_btn").click(function(){
+				// 아이디가 없을때 로그인 하라고 알림창 뜨기
+				{{^member}}
+				alert("로그인부터 해주세요");
+				return false;
+				{{/member}}
+				$(".recomment").slideUp(10);
+				// alert("test");
+				$('.reText').val('');
+				// 답글버튼(input의 부모 td tr next .recomment)
+				// 답글 버튼을 눌렀을때 활성화
+				//$(this).parent("tr").next().children().slideDown(10);
+				$(this).parent().parent().next().children().slideDown(10);
+			});
+			
+			
+			
+		});
+	</script>
+		<section class="commu-common" id=imid_bc7508c96f3cc48>
+			<h2 class="common-title">
+				<span class="main">챔피언 스킨</span> <span class="sub"></span>
+			</h2>
+		</section>	
+		<!-- 로그인 성공시 있는 데이터 -->
+		{{#member}}<input type="hidden" id="hiddenData" data-id="{{member_id}}">{{/member}}
+		<div class="listWrap">
+		<ul class="champlist">
+		{{#champ_skin_list}}
+			<li class="champimg1">
+				<a class="" href="/champ_skin/champSkinView?champ_code={{champ_code}}&skin_code={{skin_code}}" class="champ_img_button" data-skincode="{{skin_code}}" data-champcode="{{champ_code}}">
+				<img alt="" src="../champ_skin_img/{{champ_skin_img}}" width="200px" height="120px"></a>
+				<p><nobr>{{champ_skin_name}}</nobr></p>
+				<p>{{champ_skin_rate}}</p>
+			</li>
+		{{/champ_skin_list}}
+		</ul>
+		</div>
+		
+		
+		<hr>
+		
+		<!-- 댓글 테이블 스킨을 클릭하면 없어짐-->
+		{{#listExist}}
+		<div class="skin_comment" align="center">
+			
+			<table border="1" style="width: 700px;">
+				<tr>
+					<th>스킨</th>
+					<th>스킨 평가</th>
+					<th>작성자</th>
+				</tr>
+				{{#champCom}}
+				<tr>
+					<td width="64px;"><img src="../champ_skin_icon_img/{{champ_icon_img}}"></td>
+					<td><h5>{{champ_skin_name}}</h5>&nbsp;{{champ_skin_rate}}<br>
+							{{champskin_com}}
+					</td>
+					<td>{{nick_name}}<br>
+						{{comment_logtime}}
+					</td>
+				</tr>
+				{{/champCom}}
+				<!-- 페이징 부분 -->
+			<tr>
+				<td colspan="3" align="center">
+					{{#previousPage}} [<a
+						class="paging"
+						href="champSkinView?champ_code={{champ_code}}&pg={{previousPage}}">이전</a>]
+					{{/previousPage}} 
+						{{#pageList}} 
+						
+						{{#current}} 
+						[<a class="currentPaging"
+						href="champSkinView?champ_code={{champ_code}}&pg={{page}}">{{page}}</a>]
+						{{/current}} 
+						
+						{{^current}} 
+						[<a class="paging"
+						href="champSkinView?champ_code={{champ_code}}&pg={{page}}">{{page}}</a>]
+						{{/current}} 
+						{{/pageList}} 
+						
+						{{#nextPage}} [<a class="paging"
+						href="champSkinView?champ_code={{champ_code}}&pg={{nextPage}}">다음</a>]
+						{{/nextPage}}
+				</td>
+			</tr>
+			</table>
+		</div>
+		{{/listExist}}
+		
+		
+		<!-- 챔프 상세보기 -->
+		{{#detail_view}}
+		<div id="detail">
+			<p>{{champ_skin_name}} rp : {{skin_rp}}</p>
+			<br>
+			<img alt="" src="../champ_skin_img/{{champ_skin_img}}" style="width: 500px; height: 300px;">				
+				<table class="sk_table">
+				<br>
+				<tr>
+					<td colspan="5">내가 생각하는 챔피언의 점수는?</td>
+				</tr>
+				<tr>
+					<td><a class="rateBtn" data-rate=1 
+						href="#">
+							최악 1점 &nbsp; </a></td>
+					<td><a class="rateBtn" data-rate=2
+						href="#">
+							별로 2점 &nbsp; </a></td>
+					<td><a class="rateBtn" data-rate=3
+						href="#">
+							보통 3점 &nbsp; </a></td>
+					<td><a class="rateBtn" data-rate=4 
+						href="#">
+							우수 4점 &nbsp; </a></td>
+					<td><a class="rateBtn" data-rate=5 
+						href="#">
+							최고 5점 </a></td>
+				</tr>
+			</table>
+		{{/detail_view}}
+		</div>
+		<br><br>
+		<!-- 스킨 클릭했을때 나오는 댓글 리스트 -->
+		{{#skinExist}}
+	
+		<table border="1" style="width: 700px">
+				<tr>
+					<th>닉네임</th>
+					<th>스킨 평가</th>
+					<th>게시일</th>
+				</tr>
+				{{#skinCom}}
+					
+				
+				
+				{{^com_judge}}
+				<tr>
+					<td>{{nick_name}}</td>
+					<td>{{champskin_com}}</td>
+					<td>{{comment_logtime}}<br>
+					<input
+						type="button" class="rc_btn" value="답글"
+						data-num="{{skin_com_num}}"> : <a href="#">신고</a>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3" class="recomment">
+					<form action="/champ_skin/recomment" class="recomform" method="post" name="form1">
+						<input type="hidden" name="skin_re_ref" value="{{skin_com_num}}">
+						<input type="hidden" name="skin_re_lev" value="{{skin_re_lev}}">
+						<input type="hidden" name="skin_re_seq" value="{{skin_re_seq}}">
+						<input type="hidden" name="champ_code" value="{{champ_code}}">
+						<input type="hidden" name="skin_code" value="{{skin_code}}">
+						<input type="hidden" name="pg" value="{{pg}}">
+						<table style="width: 700px">
+							<tr>
+								<td><textarea class="reText" rows="5" cols="80" name="champskin_com"></textarea></td>
+								<td><input type="submit" value="등록"></td>
+							</tr>
+						</table>
+					</form>
+					</td>
+				</tr>
+				{{/com_judge}}
+				
+				{{#com_judge}}
+				<tr>
+					<td>{{nick_name}}</td>
+					<td>&nbsp;└ &nbsp;{{champskin_com}}</td>
+					<td>{{comment_logtime}}<br>
+					<a href="#">신고</a>
+					</td>
+				</tr>
+				{{/com_judge}}
+				
+				
+				
+				{{/skinCom}}
+				<tr>
+				<td colspan="3" align="center">
+					{{#previousPage}} [<a
+						class="paging"
+						href="champSkinView?champ_code={{champ_code}}&skin_code={{skin_code}}&pg={{previousPage}}">이전</a>]
+					{{/previousPage}} 
+						{{#pageList}} 
+						
+						{{#current}} 
+						[<a class="currentPaging"
+						href="champSkinView?champ_code={{champ_code}}&skin_code={{skin_code}}&pg={{page}}">{{page}}</a>]
+						{{/current}} 
+						
+						{{^current}} 
+						[<a class="paging"
+						href="champSkinView?champ_code={{champ_code}}&skin_code={{skin_code}}&pg={{page}}">{{page}}</a>]
+						{{/current}} 
+						{{/pageList}} 
+						
+						{{#nextPage}} [<a class="paging"
+						href="champSkinView?champ_code={{champ_code}}&skin_code={{skin_code}}&pg={{nextPage}}">다음</a>]
+						{{/nextPage}}
+				</td>
+			</tr>
+		</table>	
+		{{/skinExist}}
+		
+			
+		<br>
+		{{#commentView}}
+		<h2>댓글 입력</h2>
+		<form action="/champ_skin/skinComWrite" method="post" name="comWrite">
+			<input type="hidden" value="{{pg}}" name="pg">
+			<input type="hidden" value="{{champ_code}}" name="champ_code">
+			<input type="hidden" value="{{skin_code}}" name="skin_code">
+			<table border="1" id="wrtieCom">
+				<tr>
+					<td><textarea rows="5" cols="112" name="champskin_com"></textarea></td>
+					<td><input id="write" type="button" value="등록"></td>
+				</tr>
+			</table>		
+		</form>
+		{{/commentView}}
+	</section>
+</article>
+{{>layouts/footer}}

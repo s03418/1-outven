@@ -1,0 +1,283 @@
+{{>layouts/header}}
+<article>
+	{{>layouts/nav}}
+	<section class="commu-center">
+		<div id="comAdExtVideo" class="comAdExtVideo floating">
+			<div style="width: 800px;">
+				<div id="__A1VideoLargeBanner" style="float: none; display: block;"></div>
+			</div>
+		</div>
+		<div class="commu-body pcMain">
+
+			<div id="nickNameLayer"></div>
+			<!-- ADOP SEO Tag S-->
+			<div class="articleView ">
+				<!-- A1 Video Code S -->
+				<div style="width: 100%; position: relative">
+					<div
+						style="position: absolute; z-index: 99999999; top: 0; left: 0; right: 0;">
+						<div id="__A1VideoLargeBanner_board"
+							style="float: none; display: block;"></div>
+					</div>
+				</div>
+				<!-- A1 Video Code E -->
+				<div class="viewTopBoardName" style="float: right; display: inline; padding-top: 2px;">
+					<a style="color: #787878;" href="/board/free_Topic_BoardList">자유 게시판</a>
+				</div>
+				<table cellpadding="0" cellspacing="0" border="0"
+					style="table-layout: fixed; word-wrap: break-word; clear: both;">
+					<tbody>
+						<tr>
+							<td>
+								<div id="tbArticle">
+									<div class="articleHead hC_purple1">
+										<div class="articleInfo">
+											<div class="articleWriter">
+												<span onclick="layerNickName('kokoboll','pbNickNameHandler')" style="cursor: pointer"> 
+													<img src="https://upload.inven.co.kr/upload/2011/09/30/icon/i2213169565.gif" width="16" height="16" align="absmiddle">&nbsp;{{board.nick_name}}
+												</span>
+											</div>
+											<div class="articleDate">{{board.board_logtime}}</div>
+											<div class="articleHit">
+												<strong>조회: </strong>{{board.board_hit}}&nbsp;&nbsp;&nbsp;&nbsp; <strong>추천: </strong><span id="bbsRecommendNum1">{{board.board_recommend}}</span>
+											</div>
+										</div>
+									</div>
+									<div class="articleHeadMenu">
+										<div class="topmenuInfo">
+											<div class="articleCategory">{{board.detail_category}}&nbsp;</div>
+											<div class="articleIp">&nbsp;</div>
+											<div class="articleTopMenu">
+												<span style="color: #787878;"> <a style="color: #787878;" href="/board/free_Topic_BoardList?pg={{pg}}">목록</a> 
+													{{#isMemId}}
+														<a style="color: #787878;" href="/board/free_Topic_BoardDelete?board_num={{board_num}}&pg={{pg}}" onclick="confirmDel()">삭제</a>
+														<a style="color: #787878;" href="/board/free_Topic_BoardModifyForm?board_num={{board_num}}&pg={{pg}}">수정</a>
+													{{/isMemId}}
+													<a style="color: #787878;" href="javascript:void(0);" onclick="document.getElementById('i-comment-list').scrollIntoView();">댓글(<span style="color: #F94B4B;">0</span>)
+												</a>
+												</span>
+											</div>
+										</div>
+									</div>
+									<div class="articleMain">
+										<div class="articleSubject ">
+											<div class="articleTitle">
+												<h1>{{board.board_title}}</h1>
+											</div>
+											<div class="googleSubjectAd">
+
+
+											</div>
+										</div>
+										<div class="articleContent">
+											<div id="imageCollectDiv" class="contentBody">
+												<!-- ============== CONTENT ============== -->
+												<div id="powerbbsContent">
+													<div>
+														{{#board.board_img}}
+															<img src="../storage/{{board.board_img}}" border="0" loading="lazy" style="aspect-ratio: 800/519; cursor: pointer; width: 800px;"><br>
+														{{/board.board_img}} 
+														{{^board.board_img}}
+														<!-- 이미지가 없는 경우 -->
+															<p style="display: none;">이미지가 없습니다.</p>
+														{{/board.board_img}}
+													</div>
+												{{board.board_content}}
+												<!-- ============== End CONTENT ============== -->
+
+											</div>
+											{{#member}}<input type="hidden" id="hiddenData" data-id="{{member_id}}" data-wid="{{board.member_id}}" data-bnum={{board.board_num}}>{{/member}}
+
+<!-- 24/02/23 추가 -->
+<script type="text/javascript">
+	$(function(){
+		// 추천 버튼 클릭시 이벤트 처리
+		$("#btnRecom").click(function(){
+			{{^member}}
+			alert("로그인을 해야 추천 할 수 있습니다.");
+			{{/member}}
+			
+			{{#member}}
+			alert("로그인 되면 뜨는 창");
+			var member_id = $("#hiddenData").data("id");
+			var board_num = $("#hiddenData").data("bnum");
+			var pg = {{pg}};
+			alert("member_id : " + member_id + " board_num : " + board_num + " pg :" + pg);
+			$.ajax({
+				type : "POST",
+				url : "/checkRecommend",
+				data : {
+					"board_num" : board_num,
+					"member_id" : member_id
+					
+				},
+				success : function(data){
+					if(data == true){
+						alert("추천은 한번만 줄 수 있습니다.");
+						return false;
+					}else{
+						alert("추천 주기")
+						location.href="/board/recommend?board_num="+ board_num +"&member_id="+ member_id +"&pg=" + pg;
+					}
+				}
+			});
+			{{/member}}
+		});
+		// 신고 버튼 클릭시 이벤트 처리
+		$("#btnreport").click(function(){
+			{{^member}}
+			alert("로그인후 이용하세요.");
+			{{/member}}
+			
+			{{#member}}
+			alert("로그인 후 상태 이벤트")
+			var member_id = $("#hiddenData").data("id");
+			var board_num = $("#hiddenData").data("bnum");
+			var pg = {{pg}};
+			alert("member_id : " + member_id + " board_num : " + board_num + " pg :" + pg);
+			// 중복 신고 검사 값이 있으면 신고 처리 안됨
+				$.ajax({
+				type : "POST",
+				url : "/checkReport",
+				data : {
+					"board_num" : board_num,
+					"member_id" : member_id
+					
+				},
+				success : function(data){
+					if(data == true){
+						alert("신고는 한번만 줄 수 있습니다.");
+						return false;
+					}else{
+						// 새창 실행
+						var popup = window.open("/reportForm?member_id=" + member_id +"&board_num="+ board_num 
+								+"&pg=" + pg, "", "width=500 height=300 left=500 top=200");
+					}
+				}
+			});
+			
+			{{/member}}
+		});
+		
+	});
+</script>
+												<!-- id = 현재 로그인 아이디 wid = 게시글 작성자의 id -->
+												{{#member}}<input type="hidden" id="hiddenData" data-id="{{member_id}}" data-wid="{{board.member_id}}" data-bnum={{board.board_num}}>{{/member}}
+												<div id="bbsViewRecom">
+													<div class="contentsBotMenu">
+														<div class="botMenuLeft">
+															<div class="articleBottomMenuTop"></div>
+															<div class="articleBottomMenu"></div>
+														</div>
+														<div class="botMenuCenter">
+															<div class="bttnRecom onlyRecom">
+																<!-- 24/02/23 수정 -->
+																<a class="bttnRecommend" id="btnRecom" href="#" title="추천하기"><span class="reqnum reqblue"><span id="recomresult_41904">{{board.board_recommend}}</span></span></a>
+															</div>
+														</div>
+
+														<div class="botMenuRight">
+															<!-- 24/02/23 수정 -->
+															<div class="bttn84report">
+																<a class="bttnReport" id="btnreport" href="#" title="신고하기">신고하기</a>
+															</div>
+															
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<table cellpadding="0" cellspacing="0" border="0" style="table-layout: fixed; word-wrap: break-word; clear: both;">
+					<tbody>
+						<tr>
+							<td>
+								<div id="powerbbsCmt2">
+									<div id="i-comment-list"></div>
+									<div class="cmtWrap">
+										<div class="cmtHead">
+											<h4>댓글<strong id="cmtCount_1707878367"></strong></h4>
+											<div id="cmtReloadBttn1_1707878367" class="bttnRefresh" onclick="PwCMT.reload(this);">새로고침</div>
+										</div>
+
+										<div id="cmtWrapMain_1707878367" class="cmtMain">
+											<div id="pwbbsbestCmt_1707878367" class="commentList1 bestComment"></div>
+											<div id="pwbbsCmt_1707878367" class="commentList1"></div>
+										</div>
+										<div id="cmtFormWrap_1708916334" class="cmtBottom">
+											<div id="cmtForm_1708916334" class="commentWrite">
+												<form id="fmCmtF1_1708916334" name="fmCmtF1" onsubmit="return false;">
+													<div class="cmtWriteForm">
+														<table cellspacing="0" cellpadding="0">
+															<tbody>
+																<tr>
+																	<td class="cmtContentTd">
+																		<div class="cmtContent textLogin">
+																			<textarea id="cmtComment" name="COMMENT" class="notice textareaIME" rows="3" tabindex="99" onfocus="login();"></textarea>
+																		</div>
+																		<div id="cmtUploadImgBot_1708916334"></div>
+																	</td>
+																	<td class="cmtBttnTd" style="vertical-align: bottom;">
+																		<div class="cmtSubmit">
+																			<button id="bttnCmtF1_1708916334"  tabindex="100" value="">등록</button>
+																		</div>
+																	</td>
+																</tr>
+															</tbody>
+														</table>
+													</div>
+												</form>
+
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<!-- ADOP SEO Tag E-->
+<style>
+.arrowmenu {
+	padding-top: 7px;
+	padding-right: 5px;
+}
+
+.arrowmenu a.bttn_prev {
+	font-size: 11px;
+	color: #333333;
+	padding-left: 10px;
+	background:
+		url('https://static.inven.co.kr/image_2011/common/common/map_arrow1a_333333.png')
+		no-repeat left top;
+}
+
+.arrowmenu a.bttn_top {
+	font-size: 11px;
+	color: #333333;
+	padding-left: 10px;
+	background:
+		url('https://static.inven.co.kr/image_2011/common/common/map_arrow1a_333333.png')
+		no-repeat left -18px;
+}
+</style>
+
+
+			<div style="float: left; display: inline; width: 710px; height: 30px;">&nbsp;</div>
+			<article class="new-board" id="new-board">
+				<div class="admin-area"></div>
+				<div class="board-top">
+					<div class="right"></div>
+				</div>
+			</article>
+		</div>
+	</section>
+</article>
+{{>layouts/footer}}

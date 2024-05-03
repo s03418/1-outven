@@ -1,0 +1,65 @@
+<section class="commu-left">
+	<div class="left-info">
+		<h2>
+			<a href="/index" title="메인 페이지로 이동"> 리그오브레전드 아웃벤 </a>
+		</h2>
+		{{^member}}
+		<div class="log-out">
+			<p>
+				로그인하고<br> <span class="color">출석보상</span> 받으세요!
+			</p>
+			<p>
+				<input type="button" class="btn"
+					onclick="location.href='/loginForm'" value="로그인">
+			</p>
+			<div>
+				<a href="/joinForm">회원가입</a> <a href="/membersearch">ID/PW 찾기</a>
+			</div>
+		</div>
+		{{/member}} {{#member}}
+		<div class="log-in">
+			<div class="user-info">
+				<h4>{{nick_name}}님 환영합니다!</h4>
+				<div>
+					<p>
+						<b>레벨</b><span> {{member_level}}</span>
+					</p>
+					<p>
+						<b>exp</b><span> {{member_exp}}</span>
+					</p>
+				</div>
+			</div>
+			<p>
+				<input type="button" class="btn" onclick="location.href='/logout'"
+					value="로그아웃"> <input type="button" class="btn"
+					onclick="location.href='/modifyForm'" value="회원정보수정"
+					style="margin-top: 10px;">
+			</p>
+		</div>
+		{{/member}}
+	</div>
+	<div class="search" id="__left-search">
+		<form action="/mainSearch" method="GET">
+			<input type="text" name="keyword" placeholder="LoL 아웃벤 통합검색">
+			<button type="submit">검색</button>
+		</form>
+	</div>
+	<div class="left-menu">
+		<h3>LoL 뉴스 / 정보</h3>
+		<ul class="list">
+			<li class="firstMenuItem"><span><a href="/board/reporter_news_BoardList"><span style="font-weight: bold; color: #1E90FF;">리포터뉴스</span></a></span></li>
+			<li><span><a href="/board/tipBoardList">팁 & 공략 게시판</a></span></li>
+			<li><span><a href="/board/patchBoardList"><span style="font-weight: bold;">패치 & 정보 게시판</span></a></span></li>
+			<li><span><a href="/board/positionBoardList">포지션 게시판</a></span></li>
+			<li><a href="/board/recommend_BoardList"><span style="font-weight: bold; color: red;">추천 게시판</span></a></li>
+		</ul>
+		<h3 class="" style="">커뮤니티 게시판</h3>
+		<ul class="list">
+			<li><span><a href="/board/freeBoardList"><span style="font-weight: bold; color: #000000;">자유 게시판</span></a></span></li>
+			<li><span><a href="/board/accidentBoardList">사건 & 사고 게시판</a></span></li>
+			<li><span><a href="javascript:alert(&quot;리그오브레전드 아웃벤과 관련된 건의\/제보 사항은 lol@outven.co.kr로 보내주시기 바랍니다. 감사합니다.&quot;);">사이트 건의 / 제보</a></span></li>
+			<li><span><a href="/board/imageBoardList"><span style="font-weight: bold;">팬아트/카툰 게시판</span></a></span></li>
+		</ul>
+	</div>
+</section>
+

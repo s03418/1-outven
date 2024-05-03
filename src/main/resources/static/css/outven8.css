@@ -1,0 +1,899 @@
+#powerbbsContent, .boardContent {
+	position: relative;
+	font-family: "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo",
+		sans-serif;
+	font-size: 15px;
+	letter-spacing: -0.5px;
+	line-height: 1.64;
+	word-break: break-all
+}
+
+#powerbbsContent div, #powerbbsContent span, #powerbbsContent applet,
+	#powerbbsContent object, #powerbbsContent iframe, #powerbbsContent h1,
+	#powerbbsContent h2, #powerbbsContent h3, #powerbbsContent h4,
+	#powerbbsContent h5, #powerbbsContent h6, #powerbbsContent p,
+	#powerbbsContent blockquote, #powerbbsContent pre, #powerbbsContent a,
+	#powerbbsContent abbr, #powerbbsContent acronym, #powerbbsContent address,
+	#powerbbsContent big, #powerbbsContent cite, #powerbbsContent code,
+	#powerbbsContent del, #powerbbsContent dfn, #powerbbsContent em,
+	#powerbbsContent img, #powerbbsContent ins, #powerbbsContent kbd,
+	#powerbbsContent q, #powerbbsContent s, #powerbbsContent samp,
+	#powerbbsContent small, #powerbbsContent strike, #powerbbsContent strong,
+	#powerbbsContent sub, #powerbbsContent sup, #powerbbsContent tt,
+	#powerbbsContent var, #powerbbsContent b, #powerbbsContent u,
+	#powerbbsContent i, #powerbbsContent center, #powerbbsContent dl,
+	#powerbbsContent dt, #powerbbsContent dd, #powerbbsContent ol,
+	#powerbbsContent ul, #powerbbsContent li, #powerbbsContent fieldset,
+	#powerbbsContent form, #powerbbsContent label, #powerbbsContent legend,
+	#powerbbsContent article, #powerbbsContent aside, #powerbbsContent canvas,
+	#powerbbsContent details, #powerbbsContent embed, #powerbbsContent figure,
+	#powerbbsContent figcaption, #powerbbsContent footer, #powerbbsContent header,
+	#powerbbsContent hgroup, #powerbbsContent menu, #powerbbsContent nav,
+	#powerbbsContent output, #powerbbsContent ruby, #powerbbsContent section,
+	#powerbbsContent summary, #powerbbsContent time, #powerbbsContent mark,
+	#powerbbsContent audio, #powerbbsContent video, #powerbbsContent xmp,
+	.boardContent div, .boardContent span, .boardContent applet,
+	.boardContent object, .boardContent iframe, .boardContent h1,
+	.boardContent h2, .boardContent h3, .boardContent h4, .boardContent h5,
+	.boardContent h6, .boardContent p, .boardContent blockquote,
+	.boardContent pre, .boardContent a, .boardContent abbr, .boardContent acronym,
+	.boardContent address, .boardContent big, .boardContent cite,
+	.boardContent code, .boardContent del, .boardContent dfn, .boardContent em,
+	.boardContent img, .boardContent ins, .boardContent kbd, .boardContent q,
+	.boardContent s, .boardContent samp, .boardContent small, .boardContent strike,
+	.boardContent strong, .boardContent sub, .boardContent sup,
+	.boardContent tt, .boardContent var, .boardContent b, .boardContent u,
+	.boardContent i, .boardContent center, .boardContent dl, .boardContent dt,
+	.boardContent dd, .boardContent ol, .boardContent ul, .boardContent li,
+	.boardContent fieldset, .boardContent form, .boardContent label,
+	.boardContent legend, .boardContent article, .boardContent aside,
+	.boardContent canvas, .boardContent details, .boardContent embed,
+	.boardContent figure, .boardContent figcaption, .boardContent footer,
+	.boardContent header, .boardContent hgroup, .boardContent menu,
+	.boardContent nav, .boardContent output, .boardContent ruby,
+	.boardContent section, .boardContent summary, .boardContent time,
+	.boardContent mark, .boardContent audio, .boardContent video,
+	.boardContent xmp {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-family: "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo",
+		sans-serif;
+	font-size: 100%
+}
+
+#powerbbsContent table, #powerbbsContent th, #powerbbsContent td,
+	#powerbbsContent form, #powerbbsContent input, #powerbbsContent textarea,
+	#powerbbsContent button, #powerbbsContent select, .boardContent table,
+	.boardContent th, .boardContent td, .boardContent form, .boardContent input,
+	.boardContent textarea, .boardContent button, .boardContent select {
+	font-family: "Malgun Gothic", "맑은 고딕", helvetica, "Apple SD Gothic Neo",
+		sans-serif;
+	font-size: 100%
+}
+
+#powerbbsContent font[size="1"], .boardContent font[size="1"] {
+	font-size: 11px
+}
+
+#powerbbsContent font[size="2"], .boardContent font[size="2"] {
+	font-size: 15px
+}
+
+#powerbbsContent font[size="3"], .boardContent font[size="3"] {
+	font-size: 16px
+}
+
+#powerbbsContent font[size="4"], .boardContent font[size="4"] {
+	font-size: 18px
+}
+
+#powerbbsContent font[size="5"], .boardContent font[size="5"] {
+	font-size: 24px
+}
+
+#powerbbsContent font[size="6"], .boardContent font[size="6"] {
+	font-size: 32px
+}
+
+#powerbbsContent font[size="7"], .boardContent font[size="7"] {
+	font-size: 48px
+}
+
+#powerbbsContent ol, #powerbbsContent ul, .boardContent ol,
+	.boardContent ul {
+	float: none;
+	display: block;
+	padding: 0 0 0 40px;
+	background: none
+}
+
+#powerbbsContent ol, #powerbbsContent ol li, .boardContent ol,
+	.boardContent ol li {
+	list-style-type: decimal
+}
+
+#powerbbsContent ul, #powerbbsContent ul li, .boardContent ul,
+	.boardContent ul li {
+	list-style-type: disc
+}
+
+#powerbbsContent table, .boardContent table {
+	max-width: 100%;
+	border-collapse: collapse;
+	empty-cells: show
+}
+
+#powerbbsContent table th, #powerbbsContent table td, .boardContent table th,
+	.boardContent table td {
+	min-width: 5px;
+	padding: 5px;
+	border: 1px solid #585858
+}
+
+#powerbbsContent xmp, .boardContent xmp {
+	font-family: inherit;
+	font-size: 100%;
+	font-weight: normal;
+	letter-spacing: inherit;
+	white-space: inherit;
+	line-height: 1.64
+}
+
+#powerbbsContent img, .boardContent img {
+	max-width: 100%;
+	height: auto;
+	border: 0
+}
+
+#powerbbsContent video, .boardContent video {
+	max-width: 100%;
+	height: auto
+}
+
+#powerbbsContent iframe, #powerbbsContent object, #powerbbsContent embed,
+	.boardContent iframe, .boardContent object, .boardContent embed {
+	max-width: 100%
+}
+
+#powerbbsContent figure.figImageMax img, .boardContent figure.figImageMax img
+	{
+	width: 650px
+}
+
+#powerbbsContent figure.figImageBorder img, .boardContent figure.figImageBorder img
+	{
+	border: 1px solid black
+}
+
+#powerbbsContent blockquote, .boardContent blockquote {
+	box-sizing: border-box;
+	max-width: 100%;
+	background: none;
+	word-break: break-all
+}
+
+#powerbbsContent blockquote.blockQuoteStyle1, .boardContent blockquote.blockQuoteStyle1
+	{
+	padding: 1px 0 0 12px;
+	background:
+		url("https://static.inven.co.kr/image/board/common/bg_blockquote_silver1.gif")
+		no-repeat left top
+}
+
+#powerbbsContent blockquote.blockQuoteStyle2, .boardContent blockquote.blockQuoteStyle2
+	{
+	padding: 1px 0 0 8px;
+	border-left: 5px solid #ababab
+}
+
+#powerbbsContent blockquote.blockQuoteStyle3, .boardContent blockquote.blockQuoteStyle3
+	{
+	padding: 5px 0 0 8px;
+	background:
+		url("https://static.inven.co.kr/image/board/common/bg_blockquote_silver31.gif")
+		no-repeat left top
+}
+
+#powerbbsContent blockquote.blockQuoteStyle4, .boardContent blockquote.blockQuoteStyle4
+	{
+	padding: 1px 0 0 30px;
+	background:
+		url("https://static.inven.co.kr/image/board/common/bg_blockquote_silver2.gif")
+		no-repeat left top
+}
+
+#powerbbsContent blockquote.blockQuoteStyle5, .boardContent blockquote.blockQuoteStyle5
+	{
+	padding: 5px;
+	border: 1px solid #999999
+}
+
+#powerbbsContent blockquote.blockQuoteStyle6, .boardContent blockquote.blockQuoteStyle6
+	{
+	padding: 5px;
+	border: 1px dotted #999999
+}
+
+#powerbbsContent div.divBoxStyleWH1, .boardContent div.divBoxStyleWH1 {
+	box-sizing: border-box;
+	max-width: 100%;
+	padding: 10px;
+	border: 1px solid #CCCCCC;
+	background-color: #FFFFFF;
+	word-break: break-all
+}
+
+#powerbbsContent div.divBoxStyleSL1, .boardContent div.divBoxStyleSL1 {
+	box-sizing: border-box;
+	max-width: 100%;
+	padding: 10px;
+	border: 1px solid #BBBBBB;
+	background-color: #EEEEEE;
+	word-break: break-all
+}
+
+#powerbbsContent div.divBoxStyleYE1, .boardContent div.divBoxStyleYE1 {
+	box-sizing: border-box;
+	max-width: 100%;
+	padding: 10px;
+	border: 1px solid #F3C534;
+	background-color: #FEFEB8;
+	word-break: break-all
+}
+
+#powerbbsContent div.divBoxStyleOR1, .boardContent div.divBoxStyleOR1 {
+	box-sizing: border-box;
+	max-width: 100%;
+	padding: 10px;
+	border: 1px solid #f29950;
+	background-color: #ffe8d7;
+	word-break: break-all
+}
+
+#powerbbsContent div.divBoxStyleVL1, .boardContent div.divBoxStyleVL1 {
+	box-sizing: border-box;
+	max-width: 100%;
+	padding: 10px;
+	border: 1px solid #866da6;
+	background-color: #eee7f8;
+	word-break: break-all
+}
+
+#powerbbsContent div.divBoxStyleRE1, .boardContent div.divBoxStyleRE1 {
+	box-sizing: border-box;
+	max-width: 100%;
+	padding: 10px;
+	border: 1px solid #c15b58;
+	background-color: #ffe2e2;
+	word-break: break-all
+}
+
+#powerbbsContent div.divBoxStyleLM1, .boardContent div.divBoxStyleLM1 {
+	box-sizing: border-box;
+	max-width: 100%;
+	padding: 10px;
+	border: 1px solid #9fbd63;
+	background-color: #f3ffe3;
+	word-break: break-all
+}
+
+#powerbbsContent div.divBoxStyleSK1, .boardContent div.divBoxStyleSK1 {
+	box-sizing: border-box;
+	max-width: 100%;
+	padding: 10px;
+	border: 1px solid #55afc7;
+	background-color: #e1f8ff;
+	word-break: break-all
+}
+
+#powerbbsContent div.divBoxStyleBU1, .boardContent div.divBoxStyleBU1 {
+	box-sizing: border-box;
+	max-width: 100%;
+	padding: 10px;
+	border: 1px solid #5987bf;
+	background-color: #e0ebff;
+	word-break: break-all
+}
+
+#powerbbsContent blockquote.tiktok-embed section, .boardContent blockquote.tiktok-embed section
+	{
+	background-color: #fff;
+	color: #161823;
+	border: 1px solid rgba(22, 24, 35, 0.12);
+	box-sizing: border-box;
+	border-radius: 8px;
+	padding: 10px 14px 12px 14px;
+	font-size: 16px;
+	line-height: 20px;
+	font-family: "proxima-semibold", PingFangSC, sans-serif;
+	font-weight: 400;
+	margin: 18px auto
+}
+
+#powerbbsContent blockquote.tiktok-embed section *, .boardContent blockquote.tiktok-embed section *
+	{
+	line-height: 20px
+}
+
+#powerbbsContent blockquote.tiktok-embed section a, .boardContent blockquote.tiktok-embed section a
+	{
+	color: #161823;
+	font-weight: 600;
+	text-decoration: none
+}
+
+#powerbbsContent blockquote.tiktok-embed section a[title^="♬"],
+	.boardContent blockquote.tiktok-embed section a[title^="♬"] {
+	font-weight: 400
+}
+
+#powerbbsContent blockquote.tiktok-embed section p, .boardContent blockquote.tiktok-embed section p
+	{
+	display: block;
+	font-size: 15px;
+	line-height: 18px;
+	margin: 8px 0 8px 0;
+	padding: 0;
+	font-weight: 400;
+	word-break: keep-all;
+	white-space: pre-wrap
+}
+
+#powerbbsContent table.ieditor-table, .boardContent table.ieditor-table
+	{
+	table-layout: fixed
+}
+
+#powerbbsContent table.ieditor-table.ieditor-table-style1,
+	#powerbbsContent table.ieditor-table.ieditor-table-style2,
+	#powerbbsContent table.ieditor-table.ieditor-table-style3,
+	#powerbbsContent table.ieditor-table.ieditor-table-style4,
+	#powerbbsContent table.ieditor-table.ieditor-table-style5,
+	#powerbbsContent table.ieditor-table.ieditor-table-style6,
+	#powerbbsContent table.ieditor-table.ieditor-table-style7,
+	#powerbbsContent table.ieditor-table.ieditor-table-style8,
+	.boardContent table.ieditor-table.ieditor-table-style1, .boardContent table.ieditor-table.ieditor-table-style2,
+	.boardContent table.ieditor-table.ieditor-table-style3, .boardContent table.ieditor-table.ieditor-table-style4,
+	.boardContent table.ieditor-table.ieditor-table-style5, .boardContent table.ieditor-table.ieditor-table-style6,
+	.boardContent table.ieditor-table.ieditor-table-style7, .boardContent table.ieditor-table.ieditor-table-style8
+	{
+	background-color: #fff
+}
+
+#powerbbsContent table.ieditor-table.ieditor-table-style1 tr:nth-child(even),
+	#powerbbsContent table.ieditor-table.ieditor-table-style4 tr:nth-child(even),
+	#powerbbsContent table.ieditor-table.ieditor-table-style7 tr:nth-child(even),
+	.boardContent table.ieditor-table.ieditor-table-style1 tr:nth-child(even),
+	.boardContent table.ieditor-table.ieditor-table-style4 tr:nth-child(even),
+	.boardContent table.ieditor-table.ieditor-table-style7 tr:nth-child(even)
+	{
+	background-color: #e2efda
+}
+
+#powerbbsContent table.ieditor-table.ieditor-table-style1 th,
+	#powerbbsContent table.ieditor-table.ieditor-table-style1 td,
+	#powerbbsContent table.ieditor-table.ieditor-table-style4 th,
+	#powerbbsContent table.ieditor-table.ieditor-table-style4 td,
+	#powerbbsContent table.ieditor-table.ieditor-table-style7 th,
+	#powerbbsContent table.ieditor-table.ieditor-table-style7 td,
+	.boardContent table.ieditor-table.ieditor-table-style1 th,
+	.boardContent table.ieditor-table.ieditor-table-style1 td,
+	.boardContent table.ieditor-table.ieditor-table-style4 th,
+	.boardContent table.ieditor-table.ieditor-table-style4 td,
+	.boardContent table.ieditor-table.ieditor-table-style7 th,
+	.boardContent table.ieditor-table.ieditor-table-style7 td {
+	color: #000;
+	border-color: #70ad47
+}
+
+#powerbbsContent table.ieditor-table.ieditor-table-style2 tr:nth-child(even),
+	#powerbbsContent table.ieditor-table.ieditor-table-style5 tr:nth-child(even),
+	#powerbbsContent table.ieditor-table.ieditor-table-style8 tr:nth-child(even),
+	.boardContent table.ieditor-table.ieditor-table-style2 tr:nth-child(even),
+	.boardContent table.ieditor-table.ieditor-table-style5 tr:nth-child(even),
+	.boardContent table.ieditor-table.ieditor-table-style8 tr:nth-child(even)
+	{
+	background-color: #d9e1f2
+}
+
+#powerbbsContent table.ieditor-table.ieditor-table-style2,
+	#powerbbsContent table.ieditor-table.ieditor-table-style2 th,
+	#powerbbsContent table.ieditor-table.ieditor-table-style2 td,
+	#powerbbsContent table.ieditor-table.ieditor-table-style5,
+	#powerbbsContent table.ieditor-table.ieditor-table-style5 th,
+	#powerbbsContent table.ieditor-table.ieditor-table-style5 td,
+	#powerbbsContent table.ieditor-table.ieditor-table-style8,
+	#powerbbsContent table.ieditor-table.ieditor-table-style8 th,
+	#powerbbsContent table.ieditor-table.ieditor-table-style8 td,
+	.boardContent table.ieditor-table.ieditor-table-style2, .boardContent table.ieditor-table.ieditor-table-style2 th,
+	.boardContent table.ieditor-table.ieditor-table-style2 td,
+	.boardContent table.ieditor-table.ieditor-table-style5, .boardContent table.ieditor-table.ieditor-table-style5 th,
+	.boardContent table.ieditor-table.ieditor-table-style5 td,
+	.boardContent table.ieditor-table.ieditor-table-style8, .boardContent table.ieditor-table.ieditor-table-style8 th,
+	.boardContent table.ieditor-table.ieditor-table-style8 td {
+	color: #000;
+	border-color: #4472c4
+}
+
+#powerbbsContent table.ieditor-table.ieditor-table-style3 tr:nth-child(even),
+	#powerbbsContent table.ieditor-table.ieditor-table-style6 tr:nth-child(even),
+	.boardContent table.ieditor-table.ieditor-table-style3 tr:nth-child(even),
+	.boardContent table.ieditor-table.ieditor-table-style6 tr:nth-child(even)
+	{
+	background-color: #eee
+}
+
+#powerbbsContent table.ieditor-table.ieditor-table-style3,
+	#powerbbsContent table.ieditor-table.ieditor-table-style3 th,
+	#powerbbsContent table.ieditor-table.ieditor-table-style3 td,
+	#powerbbsContent table.ieditor-table.ieditor-table-style6,
+	#powerbbsContent table.ieditor-table.ieditor-table-style6 th,
+	#powerbbsContent table.ieditor-table.ieditor-table-style6 td,
+	.boardContent table.ieditor-table.ieditor-table-style3, .boardContent table.ieditor-table.ieditor-table-style3 th,
+	.boardContent table.ieditor-table.ieditor-table-style3 td,
+	.boardContent table.ieditor-table.ieditor-table-style6, .boardContent table.ieditor-table.ieditor-table-style6 th,
+	.boardContent table.ieditor-table.ieditor-table-style6 td {
+	color: #000;
+	border-color: #585858
+}
+
+#powerbbsContent table.ieditor-table.ieditor-table-style3 tr:first-child,
+	#powerbbsContent table.ieditor-table.ieditor-table-style6 tr:first-child,
+	.boardContent table.ieditor-table.ieditor-table-style3 tr:first-child,
+	.boardContent table.ieditor-table.ieditor-table-style6 tr:first-child {
+	background-color: #585858
+}
+
+#powerbbsContent table.ieditor-table.ieditor-table-style4 tr:first-child,
+	#powerbbsContent table.ieditor-table.ieditor-table-style7 tr:first-child,
+	.boardContent table.ieditor-table.ieditor-table-style4 tr:first-child,
+	.boardContent table.ieditor-table.ieditor-table-style7 tr:first-child {
+	background-color: #70ad47
+}
+
+#powerbbsContent table.ieditor-table.ieditor-table-style5 tr:first-child,
+	#powerbbsContent table.ieditor-table.ieditor-table-style8 tr:first-child,
+	.boardContent table.ieditor-table.ieditor-table-style5 tr:first-child,
+	.boardContent table.ieditor-table.ieditor-table-style8 tr:first-child {
+	background-color: #4472c4
+}
+
+#powerbbsContent table.ieditor-table.ieditor-table-style3 tr:first-child th,
+	#powerbbsContent table.ieditor-table.ieditor-table-style3 tr:first-child td,
+	#powerbbsContent table.ieditor-table.ieditor-table-style4 tr:first-child th,
+	#powerbbsContent table.ieditor-table.ieditor-table-style4 tr:first-child td,
+	#powerbbsContent table.ieditor-table.ieditor-table-style5 tr:first-child th,
+	#powerbbsContent table.ieditor-table.ieditor-table-style5 tr:first-child td,
+	#powerbbsContent table.ieditor-table.ieditor-table-style6 tr:first-child th,
+	#powerbbsContent table.ieditor-table.ieditor-table-style6 tr:first-child td,
+	#powerbbsContent table.ieditor-table.ieditor-table-style7 tr:first-child th,
+	#powerbbsContent table.ieditor-table.ieditor-table-style7 tr:first-child td,
+	.boardContent table.ieditor-table.ieditor-table-style3 tr:first-child th,
+	.boardContent table.ieditor-table.ieditor-table-style3 tr:first-child td,
+	.boardContent table.ieditor-table.ieditor-table-style4 tr:first-child th,
+	.boardContent table.ieditor-table.ieditor-table-style4 tr:first-child td,
+	.boardContent table.ieditor-table.ieditor-table-style5 tr:first-child th,
+	.boardContent table.ieditor-table.ieditor-table-style5 tr:first-child td,
+	.boardContent table.ieditor-table.ieditor-table-style6 tr:first-child th,
+	.boardContent table.ieditor-table.ieditor-table-style6 tr:first-child td,
+	.boardContent table.ieditor-table.ieditor-table-style7 tr:first-child th,
+	.boardContent table.ieditor-table.ieditor-table-style7 tr:first-child td
+	{
+	color: #fff
+}
+
+#powerbbsContent table.ieditor-table.ieditor-table-style6 th,
+	#powerbbsContent table.ieditor-table.ieditor-table-style6 td,
+	#powerbbsContent table.ieditor-table.ieditor-table-style7 th,
+	#powerbbsContent table.ieditor-table.ieditor-table-style7 td,
+	#powerbbsContent table.ieditor-table.ieditor-table-style8 th,
+	#powerbbsContent table.ieditor-table.ieditor-table-style8 td,
+	.boardContent table.ieditor-table.ieditor-table-style6 th,
+	.boardContent table.ieditor-table.ieditor-table-style6 td,
+	.boardContent table.ieditor-table.ieditor-table-style7 th,
+	.boardContent table.ieditor-table.ieditor-table-style7 td,
+	.boardContent table.ieditor-table.ieditor-table-style8 th,
+	.boardContent table.ieditor-table.ieditor-table-style8 td {
+	border-left-width: 0px;
+	border-right-width: 0px
+}
+
+#powerbbsContent div.ieditor-text-box, .boardContent div.ieditor-text-box
+	{
+	display: block;
+	float: none;
+	width: auto;
+	height: auto;
+	box-sizing: border-box;
+	padding: 10px;
+	margin: 4px 0px;
+	max-width: 100%
+}
+
+#powerbbsContent div.ieditor-blockquote-style1, .boardContent div.ieditor-blockquote-style1
+	{
+	margin: 4px 12px;
+	padding: 1px 0 0 12px;
+	background: transparent
+		url("https://static.inven.co.kr/image/board/common/bg_blockquote_silver1.gif")
+		no-repeat left top
+}
+
+#powerbbsContent div.ieditor-blockquote-style2, .boardContent div.ieditor-blockquote-style2
+	{
+	margin: 4px 12px;
+	padding: 3px 0 2px 7px;
+	border-left: 5px solid #ababab
+}
+
+#powerbbsContent div.ieditor-blockquote-style3, .boardContent div.ieditor-blockquote-style3
+	{
+	margin: 4px 12px;
+	padding: 11px 0 0 12px;
+	background: transparent
+		url("https://static.inven.co.kr/image/board/common/bg_blockquote_silver31.gif")
+		no-repeat left top
+}
+
+#powerbbsContent .tx-content-container em, .boardContent .tx-content-container em
+	{
+	font-style: italic
+}
+
+#powerbbsContent .tx-content-container button, .boardContent .tx-content-container button
+	{
+	background-color: transparent;
+	border: none;
+	padding: 0;
+	text-align: left;
+	margin: 0
+}
+
+#powerbbsContent .tx-content-container button img, .boardContent .tx-content-container button img
+	{
+	vertical-align: middle
+}
+
+#powerbbsContent .tx-hr-border-1, .boardContent .tx-hr-border-1 {
+	height: 1px;
+	border: 0 none;
+	border-top: 1px solid #666;
+	display: block
+}
+
+#powerbbsContent .tx-hr-border-2, .boardContent .tx-hr-border-2 {
+	height: 7px;
+	border-top: 1px solid #666;
+	border-bottom: 3px solid #666;
+	border-left: 0 none;
+	border-right: 0 none;
+	display: block
+}
+
+#powerbbsContent .tx-hr-border-3, .boardContent .tx-hr-border-3 {
+	height: 1px;
+	border: 0 none;
+	border-top: 1px dotted #666;
+	display: block
+}
+
+#powerbbsContent div.tx-hr-image-1, .boardContent div.tx-hr-image-1 {
+	border: 0 none;
+	height: 15px;
+	background:
+		url("https://static.inven.co.kr/image_2011/common/editor/deditor/images/deco/contents/horizontalrule/line03.gif?v=2")
+		repeat-x scroll left;
+	width: 99%
+}
+
+#powerbbsContent div.tx-hr-image-1 hr, .boardContent div.tx-hr-image-1 hr
+	{
+	position: relative;
+	top: -999px;
+	left: -999px;
+	border: 0 none
+}
+
+#powerbbsContent div.tx-hr-image-2, .boardContent div.tx-hr-image-2 {
+	border: 0 none;
+	height: 15px;
+	background:
+		url("https://static.inven.co.kr/image_2011/common/editor/deditor/images/deco/contents/horizontalrule/line05.gif?v=2")
+		repeat-x scroll left;
+	width: 99%
+}
+
+#powerbbsContent div.tx-hr-image-2 hr, .boardContent div.tx-hr-image-2 hr
+	{
+	position: relative;
+	top: -999px;
+	left: -999px;
+	border: 0 none
+}
+
+#powerbbsContent div.tx-hr-image-3, .boardContent div.tx-hr-image-3 {
+	border: 0 none;
+	height: 15px;
+	background:
+		url("https://static.inven.co.kr/image_2011/common/editor/deditor/images/deco/contents/horizontalrule/line06.gif?v=2")
+		repeat-x scroll left;
+	width: 99%
+}
+
+#powerbbsContent div.tx-hr-image-3 hr, .boardContent div.tx-hr-image-3 hr
+	{
+	position: relative;
+	top: -999px;
+	left: -999px;
+	border: 0 none
+}
+
+#powerbbsContent div.tx-hr-image-4, .boardContent div.tx-hr-image-4 {
+	border: 0 none;
+	height: 15px;
+	background:
+		url("https://static.inven.co.kr/image_2011/common/editor/deditor/images/deco/contents/horizontalrule/line08.gif?v=2")
+		no-repeat scroll center;
+	width: 99%
+}
+
+#powerbbsContent div.tx-hr-image-4 hr, .boardContent div.tx-hr-image-4 hr
+	{
+	position: relative;
+	top: -999px;
+	left: -999px;
+	border: 0 none
+}
+
+#powerbbsContent blockquote.tx-quote1, .boardContent blockquote.tx-quote1
+	{
+	border: 1px solid #dbdbdb;
+	margin: 10px;
+	padding: 10px
+}
+
+#powerbbsContent blockquote.tx-quote2, .boardContent blockquote.tx-quote2
+	{
+	border: 3px solid #dbdbdb;
+	margin: 10px;
+	padding: 10px
+}
+
+#powerbbsContent blockquote.tx-quote3, .boardContent blockquote.tx-quote3
+	{
+	border: 1px dashed #dbdbdb;
+	margin: 10px;
+	padding: 10px
+}
+
+#powerbbsContent blockquote.tx-quote4, .boardContent blockquote.tx-quote4
+	{
+	border: none;
+	background:
+		url("https://static.inven.co.kr/image_2011/common/editor/deditor/images/deco/contents/quote/titation01.gif?v=2")
+		top left no-repeat;
+	padding: 0 20px 10px 20px;
+	margin: 10px
+}
+
+#powerbbsContent blockquote.tx-quote5, .boardContent blockquote.tx-quote5
+	{
+	border: none;
+	border-left: 2px solid #dbdbdb;
+	margin: 10px;
+	padding: 10px
+}
+
+#powerbbsContent .txc-textbox1, .boardContent .txc-textbox1 {
+	padding: 10px;
+	background-color: #fff;
+	border: 1px solid #f7f7f7
+}
+
+#powerbbsContent .txc-textbox2, .boardContent .txc-textbox2 {
+	padding: 10px;
+	background-color: #eee;
+	border: 1px solid #eee
+}
+
+#powerbbsContent .txc-textbox3, .boardContent .txc-textbox3 {
+	padding: 10px;
+	background-color: #f2f2b8;
+	border: 1px solid #f2f2b8
+}
+
+#powerbbsContent .txc-textbox4, .boardContent .txc-textbox4 {
+	padding: 10px;
+	background-color: #fedec7;
+	border: 1px solid #fedec7
+}
+
+#powerbbsContent .txc-textbox5, .boardContent .txc-textbox5 {
+	padding: 10px;
+	background-color: #e7fdb5;
+	border: 1px solid #e7fdb5
+}
+
+#powerbbsContent .txc-textbox6, .boardContent .txc-textbox6 {
+	padding: 10px;
+	background-color: #dbe8fb;
+	border: 1px solid #dbe8fb
+}
+
+#powerbbsContent .txc-textbox7, .boardContent .txc-textbox7 {
+	padding: 10px;
+	background-color: #fff;
+	border: 1px dotted #cbcbcb
+}
+
+#powerbbsContent .txc-textbox8, .boardContent .txc-textbox8 {
+	padding: 10px;
+	background-color: #eee;
+	border: 1px dotted #c1c1c1
+}
+
+#powerbbsContent .txc-textbox9, .boardContent .txc-textbox9 {
+	padding: 10px;
+	background-color: #f2f2b8;
+	border: 1px dotted #f3c534
+}
+
+#powerbbsContent .txc-textbox10, .boardContent .txc-textbox10 {
+	padding: 10px;
+	background-color: #fedec7;
+	border: 1px dotted #fe8943
+}
+
+#powerbbsContent .txc-textbox11, .boardContent .txc-textbox11 {
+	padding: 10px;
+	background-color: #e7fdb5;
+	border: 1px dotted #9fd331
+}
+
+#powerbbsContent .txc-textbox12, .boardContent .txc-textbox12 {
+	padding: 10px;
+	background-color: #dbe8fb;
+	border: 1px dotted #79a5e4
+}
+
+#powerbbsContent .txc-textbox13, .boardContent .txc-textbox13 {
+	padding: 10px;
+	background-color: #fff;
+	border: 1px solid #cbcbcb
+}
+
+#powerbbsContent .txc-textbox14, .boardContent .txc-textbox14 {
+	padding: 10px;
+	background-color: #eee;
+	border: 1px solid #c1c1c1
+}
+
+#powerbbsContent .txc-textbox15, .boardContent .txc-textbox15 {
+	padding: 10px;
+	background-color: #f2f2b8;
+	border: 1px solid #f3c534
+}
+
+#powerbbsContent .txc-textbox16, .boardContent .txc-textbox16 {
+	padding: 10px;
+	background-color: #fedec7;
+	border: 1px solid #fe8943
+}
+
+#powerbbsContent .txc-textbox17, .boardContent .txc-textbox17 {
+	padding: 10px;
+	background-color: #e7fdb5;
+	border: 1px solid #9fd331
+}
+
+#powerbbsContent .txc-textbox18, .boardContent .txc-textbox18 {
+	padding: 10px;
+	background-color: #dbe8fb;
+	border: 1px solid #79a5e4
+}
+
+#powerbbsContent .txc-textbox19, .boardContent .txc-textbox19 {
+	padding: 10px;
+	background-color: #fff;
+	border: 3px double #cbcbcb
+}
+
+#powerbbsContent .txc-textbox20, .boardContent .txc-textbox20 {
+	padding: 10px;
+	background-color: #eee;
+	border: 3px double #c1c1c1
+}
+
+#powerbbsContent .txc-textbox21, .boardContent .txc-textbox21 {
+	padding: 10px;
+	background-color: #f2f2b8;
+	border: 3px double #f3c534
+}
+
+#powerbbsContent .txc-textbox22, .boardContent .txc-textbox22 {
+	padding: 10px;
+	background-color: #fedec7;
+	border: 3px double #fe8943
+}
+
+#powerbbsContent .txc-textbox23, .boardContent .txc-textbox23 {
+	padding: 10px;
+	background-color: #e7fdb5;
+	border: 3px double #9fd331
+}
+
+#powerbbsContent .txc-textbox24, .boardContent .txc-textbox24 {
+	padding: 10px;
+	background-color: #dbe8fb;
+	border: 3px double #79a5e4
+}
+
+div.invenGifMp4 {
+	display: inline-block !important;
+	position: relative;
+	max-width: 100%;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important;
+	overflow: hidden
+}
+
+div.invenGifMp4 video.invenGifMp4 {
+	max-width: 100%;
+	height: auto;
+	cursor: pointer
+}
+
+div.invenGifMp4 a.invenGifMp4ViewGif {
+	display: none;
+	cursor: pointer;
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	font-size: 12px !important;
+	color: #ffffff !important;
+	height: 20px;
+	line-height: 20px !important;
+	text-decoration: none !important;
+	margin: 0 !important;
+	padding: 0 6px !important;
+	outline: none !important;
+	text-indent: 16px !important;
+	background: rgba(0, 0, 0, 0.6)
+		url("https://static.inven.co.kr/image_2011/board/common/icon_view_gif_24x24.png")
+		6px 4px no-repeat;
+	background-size: 12px 12px;
+	overflow: hidden
+}
+
+div.invenGifMp4.invenGifMp4Loaded:hover a.invenGifMp4ViewGif, div.invenGifMp4.invenGifMp4Paused a.invenGifMp4ViewGif
+	{
+	display: inline-block !important
+}
+
+div.invenGifMp4 div.invenGifMp4PlayButton {
+	display: none !important;
+	cursor: pointer;
+	position: absolute;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: transparent
+		url("https://static.inven.co.kr/image_2011/board/common/icon_play_68x68.png")
+		center center no-repeat;
+	cursor: pointer;
+	opacity: 0.8;
+	margin: 0 !important;
+	padding: 0 !important;
+	border: 0 !important
+}
+
+div.invenGifMp4.invenGifMp4Paused div.invenGifMp4PlayButton {
+	display: block !important
+}
+
+/*# sourceMappingURL=boardcontent.css.map */

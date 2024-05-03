@@ -1,0 +1,247 @@
+{{>layouts/header}}
+<style>
+#imid_bc7508c96f3cc48 .common-title::before {
+    background: #074f68; /* 가상 요소에 배경색 지정 */
+
+}
+
+#imid_bc7508c96f3cc48 .common-title {
+    background: #047e99; /* 요소에 배경색 지정 */
+    color: #ffffff; /* 글자색 지정 */
+}
+</style>
+<article>
+	{{>layouts/nav}}
+	<section class="commu-center">
+		<script type="text/javascript" src="../js/jquery-3.7.1.min.js"></script>
+		<script type="text/javascript">
+		
+			$(function() {
+				// 24/02/21 수정 : 로그인 유무 확인 
+				$(".rateBtn").click(function(){
+					{{^member}}
+					alert("로그인부터 해주세요");
+					return false;
+					{{/member}}
+					
+					// ajax로 값을 보냄
+					{{#member}}
+					// alert("진입 확인");
+					var champ_code = $("#hiddenData").data("champ");
+					var member_id = $("#hiddenData").data("id");
+					var rate = $(this).data("rate");
+					// alert(member_id);
+					// alert(champ_code);
+					// alert(rate);
+					$.ajax({
+						type : "POST",
+						url : "/checkRate",
+						data : {
+							"champ_code" : champ_code,
+							"member_id" : member_id
+						},
+						success : function(data){
+							if(data == true){
+								alert("평점은 한번만 줄 수 있습니다.");
+								return false;
+							}else{
+								location.href="/champ_board/championRateUpdate?champ_code="+champ_code+"&rate="+rate;
+							}
+						}
+					});
+					
+
+					{{/member}}
+					
+					
+				});
+				// 댓글 입력 기능 눌렀을때 member값이 없으면 로그인 해주세요 창 뛰움
+				$("#write").click(function(){
+					{{^member}}
+					alert("로그인부터 해주세요");
+					return false;
+					{{/member}}
+					
+					{{#member}}
+					var frm1 = document.comWrite;
+					if(!frm1.champ_comment.value){
+						alert("내용을 입력해주세요");
+						frm1.champ_comment.focus;
+						return false;
+					}
+					frm1.submit();
+					{{/member}}
+				});
+				
+				
+				// 평점 버튼을 클릭했을 때 세션에 값이 없으면 로그인하라고 창뛰우기
+				// html() : 태그의 값을 읽어오던지, 태그에 값을 집어 넣을 때 사용
+				// 답글 기능 숨기기
+				$("#comment_table .recomment").hide();
+				$(".rc_btn").click(function() {
+					// 아이디가 없을때 로그인 하라고 알림창 뜨기
+					{{^member}}
+					alert("로그인부터 해주세요");
+					return false;
+					{{/member}}
+					$(".recomment").slideUp(10);
+					$('.reText').val('');
+					// 답글버튼(input의 부모 td tr next .recomment)
+					// 답글 버튼을 눌렀을때 활성화
+					$(this).parent().parent().next().children().slideDown(10);
+					
+				});
+				
+				
+			});
+		</script>
+		<section class="commu-common" id=imid_bc7508c96f3cc48>
+			<h2 class="common-title">
+				<span class="main">챔피언 정보</span> <span class="sub"></span>
+			</h2>
+		</section>	
+		<!-- 로그인 성공시 있는 데이터 -->
+		{{#member}}<input type="hidden" id="hiddenData" data-champ="{{champion.champ_code}}" data-id="{{member.member_id}}">{{/member}}
+		<hr>
+		{{#champion}}
+		<div class="container">
+			<table class="table" style="width: 450px">
+				<tr>
+					<td style="width: 20px"><img alt=""
+						src="../champion_image/{{champ_image}}" width="64px" height="64px"></td>
+					<td>{{champ_name}},{{champ_nick_name}}<br>
+						{{rp}}&nbsp;{{be}}
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2" style="width: 200px">{{champ_content}}</td>
+				</tr>
+				<tr>
+					<td colspan="2">포지션 : {{champ_position}}</td>
+				</tr>
+				<tr>
+					<td colspan="2">평점 : {{champ_rate}} 점</td>
+				</tr>
+			</table>
+
+			<table>
+				<tr>
+					<td colspan="5">내가 생각하는 챔피언의 점수는?</td>
+				</tr>
+				<tr><!-- 24/02/21 수정 : 로그인 유무 확인 -->
+					<td><a class="rateBtn" data-rate=1
+						href="#">
+							최악 1점 &nbsp; </a></td>
+					<td><a class="rateBtn" data-rate=2
+						href="#">
+							별로 2점 &nbsp; </a></td>
+					<td><a class="rateBtn" data-rate=3
+						href="#">
+							보통 3점 &nbsp; </a></td>
+					<td><a class="rateBtn" data-rate=4
+						href="#">
+							우수 4점 &nbsp; </a></td>
+					<td><a class="rateBtn" data-rate=5
+						href="#">
+							최고 5점 </a></td>
+				</tr>
+			</table>
+		</div>
+		{{/champion}}
+		<hr>
+		<!-- 댓글 테이블 -->
+		<div class="container">
+		{{#listExist}}
+			<table border="1" id="comment_table" style="width: 700px">
+				{{#champCom}}
+				{{^com_judge}}
+				<tr>
+					<td>{{nick_name}}</td>
+					<td>{{champ_comment}}</td>
+					<td>{{comment_logtime}}<br> <input
+						type="button" class="rc_btn" value="답글"
+						data-num="{{champ_com_num}}"> : <a href="#">신고</a>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3" class="recomment">
+						<form action="/champ_board/recomment" method="post" name="comRe" >
+							<input type="hidden" name="com_re_ref" value="{{champ_com_num}}">
+							<input type="hidden" name="com_re_lev" value="{{com_re_lev}}">
+							<input type="hidden" name="com_re_seq" value="{{com_re_seq}}">
+							<input type="hidden" name="champ_code" value="{{champ_code}}">
+							<input type="hidden" name="pg" value="{{pg}}">
+						<table style="width: 700px">
+							<tr>
+								<td><textarea class="reText" rows="5" cols="80" name="champ_comment"></textarea></td>
+								<td align="center"><input type="submit" value="등록"></td>
+							</tr>
+						</table>
+						</form>
+					</td>
+				</tr>
+				{{/com_judge}}
+				
+				{{#com_judge}}
+				<tr>
+					<td>{{nick_name}}</td>
+					<td>&nbsp;└ &nbsp;{{champ_comment}}</td>
+					<td>{{comment_logtime}}<br> {{#islogin}}
+					<a href="#">신고</a>
+						{{/islogin}}
+					</td>
+				</tr>
+				{{/com_judge}}
+		
+				{{/champCom}}
+
+				<tr>
+					<td colspan="3" align="center">
+					{{#previousPage}} [<a
+						class="paging"
+						href="championView?pg={{previousPage}}&champ_code={{champion.champ_code}}">이전</a>]
+					{{/previousPage}} 
+						{{#pageList}} 
+						
+						{{#current}} 
+						[<a class="currentPaging"
+						href="championView?pg={{page}}&champ_code={{champion.champ_code}}">{{page}}</a>]
+						{{/current}} 
+						
+						{{^current}} 
+						[<a class="paging"
+						href="championView?pg={{page}}&champ_code={{champion.champ_code}}">{{page}}</a>]
+						{{/current}} 
+						{{/pageList}} 
+						
+						{{#nextPage}} [<a class="paging"
+						href="championView?pg={{nextPage}}&champ_code={{champion.champ_code}}">다음</a>]
+						{{/nextPage}}
+
+					</td>
+				</tr>
+			</table>
+			{{/listExist}}
+			
+			{{^listExist}}
+				<h2 align="center">작성된 글이 없습니다 첫 작성자가 되어보세요!</h2>
+			{{/listExist}}
+			
+			<br>
+			<h2>댓글입력</h2>
+			<form action="/champ_board/commentWrite" method="post" name="comWrite" >
+				<input type="hidden" value="{{pg}}" name="pg"> <input
+					type="hidden" value="{{champion.champ_code}}" name="champ_code">
+				<table border="1" style="width: 700px">
+					<tr>
+						<td><textarea rows="5" cols="100" name="champ_comment"></textarea></td>
+						<td><input id="write" type="button" value="등록"></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
+		
+	</section>
+</article>
+{{>layouts/footer}}

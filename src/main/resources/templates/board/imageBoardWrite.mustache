@@ -1,0 +1,13 @@
+{{>layouts/header}}
+
+<script>
+	if({{result}}) {
+		alert("정상적으로 작성되었습니다.");
+		location.href="/board/imageBoardList?pg=1"
+	} else {
+		alert("[ERROR]작성 실패");
+		history.back();
+	}
+</script>pt>
+
+{{>layouts/footer}}

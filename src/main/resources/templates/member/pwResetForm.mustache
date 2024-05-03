@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>아웃벤 회원탈퇴</title>
+<link rel="stylesheet" href="../css/joinForm.css">
+<link rel="stylesheet" href="../css/footer.css">
+</head>
+<script src="../lib/jquery-3.7.1.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		// 비밀번호 정규식
+		$("#password1").on("keyup", function() {
+		    var regExp = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[!@#$%^&*()\-_=+[\]{};:'",.<>\/?])[A-Za-z\d!@#$%^&*()\-_=+[\]{};:'",.<>\/?]{8,20}$/;
+		    // 문자열이 최소 8자 이상 20자 이하의 영문자와 숫자로만 이루어져 있으며, 
+		    // 최소한 하나의 영문자와 하나의 숫자를 포함하고 있는지를 확인
+		    // 최소한 하나의 특수문자가 포함되어야 합니다.
+		    if (!$("#password1").val()) { // 입력값이 비어있는 경우
+		        $("#pwdlabel").html("<b>비밀번호<small>[8~20자리] 영문, 숫자만 입력가능 특수문자는 반드시 한개이상</small></b>");
+		        $("#pwdcss").remove(); // 메시지가 있는 경우 삭제
+		    } else if (!regExp.test($("#password1").val())) { // 비밀번호가 유효하지 않은 경우
+		        $("#pwdlabel").html("<span id='pwdcss'>패스워드 형식이 맞지 않습니다</span>");
+		        $("#pwdcss").css({
+		            "color" : "#FA3E3E",
+		            "font-weight" : "bold",
+		            "font-size" : "13px"
+		        });
+		    } else { // 유효한 경우
+		        $("#pwdlabel").html("<span id='pwdcss'>올바른 비밀번호 입니다</span>");
+		        $("#pwdcss").css({
+		            "color" : "#0D6EFD",
+		            "font-weight" : "bold",
+		            "font-size" : "13px"
+		        });
+		    }
+		});
+
+
+		// 패스워드 2중 검사
+		$("#password2").on("keyup", function() {
+		    if (!$("#password2").val()) { // 입력값이 비어있는 경우
+		        $("#pwdconfirmlabel").html("<b>비밀번호 재확인</b>");
+		        $("#pwdcss2").remove(); // 메시지가 있는 경우 삭제
+		    } else {
+		        if ($("#password2").val() != $("#password1").val()) {
+		            $("#pwdconfirmlabel").html("<span id='pwdcss2'>비밀번호가 일치하지 않습니다</span>")
+		            $("#pwdcss2").css({
+		                "color" : "#FA3E3E",
+		                "font-weight" : "bold",
+		                "font-size" : "13px"
+		            })
+		        } else {
+		            //console.log("동일한 비밀번호");
+		            $("#pwdconfirmlabel").html("<span id='pwdcss2'>비밀번호 일치 확인</span>")
+		            $("#pwdcss2").css({
+		                "color" : "#0D6EFD",
+		                "font-weight" : "bold",
+		                "font-size" : "13px"
+		            })
+		        }
+		    }
+		});
+	});
+</script>
+<body>
+	<div class="member">
+		<!-- 로고 -->
+		<a href="/index"><img class="logo" src="../image/logo.png"
+			width="350" style="align-content: center; margin-bottom: 50px;"></a>
+		<form action="/pwReset" method="post" name="form1">	
+			<div class="field">
+				<label id="idlabel"><b>아이디</b></label>
+				<input type="hidden" class="form-control" style="font-size: medium;"
+				name="member_id" id="member_id" value="{{id}}">
+				<input type="text" class="form-control" style="font-size: medium;"
+				value="{{id}}" disabled="disabled">
+			</div>
+			<div class="field">
+				<label id="pwdlabel"><b>비밀번호<small>[8~20자리] 영문, 숫자만 입력가능 특수문자는 반드시 한개이상</small></b></label>
+				<input type="password" name="password1" id="password1">	
+			</div>
+			<div class="field">
+				<label id="pwdconfirmlabel"><b>비밀번호 재확인</b></label>
+				<input type="password" name="password2" id="password2">
+			</div>
+			<div style="margin-top:50px; margin-bottom: 225px;">
+				<button type="submit" id="btnAgree" 
+				class="btn_submit">비밀번호 재설정</button>
+			</div>
+		</form>
+	</div>
+	<div class="member-footer">
+		{{>layouts/footer}}
+	</div>

@@ -1,0 +1,51 @@
+<section class="commu-left">
+	<div class="left-info">
+		<h2>
+			<a href="/admin/index" title="메인 페이지로 이동"> 아웃벤 관리자용 홈페이지 </a>
+		</h2>
+		{{#member}}
+		<div class="log-in">
+			<div class="user-info">
+				<h4>{{nick_name}}님 환영합니다!</h4>
+				<div>
+					<p>
+						<b>레벨</b><span> 관리자</span>
+					</p>
+					<p>
+						<b>등급</b><span> admin</span>
+					</p>
+				</div>
+			</div>
+			<p>
+				<input type="button" class="btn" onclick="location.href='/logout'"
+					value="로그아웃">
+			</p>
+		</div>
+		{{/member}}
+	</div>
+	<div class="search" id="__left-search">
+		<form action="/mainSearch" method="GET">
+			<input type="text" name="keyword" placeholder="LoL 아웃벤 통합검색">
+			<button type="submit">검색</button>
+		</form>
+	</div>
+<div class="left-menu">
+		<h3>LoL 뉴스 / 정보</h3>
+		<ul class="list">
+			<li class="firstMenuItem"><span><a href="/board/admin_reporter_news_BoardList"><span style="font-weight: bold; color: #1E90FF;">리포터뉴스</span></a></span></li>
+			<li><span><a href="/board/admin_tipBoardList">팁 & 공략 게시판</a></span></li>
+			<li><span><a href="/board/patchBoardList"><span style="font-weight: bold;">패치 & 정보 게시판</span></a></span></li>
+			<li><span><a href="/board/positionBoardList">포지션 게시판</a></span></li>
+			<li><a href="/board/recommend_BoardList"><span style="font-weight: bold; color: red;">추천 게시판</span></a></li>
+		</ul>
+		<h3 class="" style="">커뮤니티 게시판</h3>
+		<ul class="list">
+			<li><span><a href="/board/free_Topic_BoardList"><span style="font-weight: bold; color: #000000;">자유 게시판</span></a></span></li>
+			<li><span><a href="/board/accidentBoardList">사건 & 사고 게시판</a></span></li>
+			<li><span><a href="javascript:alert(&quot;리그오브레전드 아웃벤과 관련된 건의\/제보 사항은 lol@outven.co.kr로 보내주시기 바랍니다. 감사합니다.&quot;);">사이트 건의 / 제보</a></span></li>
+			<li><span><a href="/board/imageBoardList"><span style="font-weight: bold;">팬아트/카툰 게시판</span></a></span></li>
+			<li class="firstMenuItem"><span><a href="/admin/memberCheck?pg=1&role=user"><span style="font-weight: bold;">[회원관리]</span></a></span></li>
+			
+		</ul>
+	</div>
+</section>
